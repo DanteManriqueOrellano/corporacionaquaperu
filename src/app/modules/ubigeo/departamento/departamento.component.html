@@ -1,0 +1,28 @@
+<fieldset  [formGroup]="formGroup">
+    <legend>Departamento</legend>
+    
+    <mat-form-field>
+        <input matInput placeholder="Nombre Departamento" autocomplete="off" [formControlName]="formControlNames.nombre_departamento">
+    </mat-form-field>
+    
+    <div [formArrayName] = "formControlNames.provincias" *ngFor="let unaProvincia of formGroupControls.provincias.controls; let i = index">
+       
+        <app-provincia [formControl]='unaProvincia'></app-provincia>
+        
+        <button  mat-button color="warn" (click)='eliminarProvincia(i)'>Eliminar Provincia</button>
+    </div>
+    <button  mat-button color="primary"  (click)='agregarProvincia()'>Agregar Provincia</button>
+</fieldset>
+
+<div class="body">
+    
+<mat-card  class="box items mat-elevation-z8">
+   
+    <mat-card-content>
+        <button mat-stroked-button color="primary" (click)='guardarUbigeo()'>Guardar Ubigeo</button>
+    
+    </mat-card-content>
+   
+  </mat-card>
+
+</div>

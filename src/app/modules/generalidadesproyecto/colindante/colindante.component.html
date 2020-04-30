@@ -1,0 +1,17 @@
+<fieldset [formGroup]="formGroup">
+    <legend>Colindantes</legend>
+    
+    <mat-form-field>
+        <input matInput placeholder="Este" autocomplete="off" [formControlName]="formControlNames.este">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Oeste" autocomplete="off" [formControlName]="formControlNames.oeste">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Norte" autocomplete="off" [formControlName]="formControlNames.norte">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Sur" autocomplete="off" [formControlName]="formControlNames.sur">
+    </mat-form-field>
+
+</fieldset>

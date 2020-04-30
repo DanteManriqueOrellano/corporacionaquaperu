@@ -1,0 +1,21 @@
+<fieldset [formGroup]="formGroup">
+    <legend>Historial Documentario</legend>
+    <mat-form-field>
+        <input matInput placeholder="Año Priorización" autocomplete="off" [formControlName]='formControlNames.anio_priorizacion'>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Fecha Aprovación" autocomplete="off" [formControlName]='formControlNames.fecha_aprobacion'>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Informe Técnico Nº" autocomplete="off" [formControlName]='formControlNames.nro_inf_tecnico'>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Resp. Und. Formuladora" autocomplete="off" [formControlName]='formControlNames.responsable_unidad_formuladora'>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Resp. Und. Evaluadora" autocomplete="off" [formControlName]='formControlNames.responsable_unidad_evaluadora'>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Resp. Und. Ejecutora" autocomplete="off" [formControlName]='formControlNames.responsable_unidad_ejecutora'>
+    </mat-form-field>
+</fieldset>

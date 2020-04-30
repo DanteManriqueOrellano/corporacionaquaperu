@@ -1,0 +1,13 @@
+<fieldset [formGroup]="formGroup">
+    <legend>Anexo</legend>
+    <mat-form-field>
+        <input matInput placeholder="Nombre Anexo" autocomplete="off" [formControlName]="formControlNames.nombre_anexo" >
+    </mat-form-field>
+    
+    <div [formArrayName]="formControlNames.barrios" *ngFor="let unBarrio of formGroupControls.barrios.controls; let i = index">
+       
+        <app-barrio [formControl] = 'unBarrio'></app-barrio>
+        <button mat-button color='warn' (click)='borrarBarrio(i)'>Eliminar Barrio</button>
+    </div>
+    <button mat-button color ='primary' (click)='agregarBarrio()'>Agregar Barrio</button>
+</fieldset>

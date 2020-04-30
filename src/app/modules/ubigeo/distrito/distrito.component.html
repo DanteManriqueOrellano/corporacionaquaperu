@@ -1,0 +1,13 @@
+<fieldset [formGroup]="formGroup">
+    <legend>Distrito</legend>
+    <mat-form-field>
+        <input matInput placeholder="Nombre Distrito" autocomplete="off" [formControlName]= 'formControlNames.nombre_distrito'>
+    </mat-form-field>
+    
+    <div [formArrayName]="formControlNames.caserios" *ngFor="let unCacerio of formGroupControls.caserios.controls; let i = index">
+        <app-cacerio [formControl]='unCacerio'></app-cacerio>
+        <button mat-button color='warn' (click)='eliminarCacerio(i)'>Eliminar Cacerio</button>
+    </div>
+    <button mat-button color ='primary' (click)='agregarCacerio()'>Agregar Cacerio</button>
+
+</fieldset>

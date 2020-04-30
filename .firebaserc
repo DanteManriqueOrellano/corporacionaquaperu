@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "corporacionaquaperu": {
+      "hosting": {
+        "corporacionaquaperu": [
+          "corporacionaquaperu"
+        ]
+      }
+    }
+  }
+}
