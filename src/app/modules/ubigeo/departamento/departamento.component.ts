@@ -5,6 +5,8 @@ import { IDepartamento } from '../IDepartamento';
 import { FormControl, Validators, FormArray } from '@angular/forms';
 import { IProvincia } from '../IProvincia';
 import { ShareModuleDataService } from 'src/app/shareModuleData/share.module.data.service';
+import { UbigeoDataService } from '../ubigeo.data.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-departamento',
@@ -14,7 +16,7 @@ import { ShareModuleDataService } from 'src/app/shareModuleData/share.module.dat
 })
 export class DepartamentoComponent extends NgxSubFormComponent<IProvincia[],IDepartamento> implements OnInit {
   
-  constructor(private webApiUbigeo:ShareModuleDataService){
+  constructor(private webApiUbigeo:UbigeoDataService){
     super();
 
   }
@@ -62,10 +64,35 @@ export class DepartamentoComponent extends NgxSubFormComponent<IProvincia[],IDep
         return new FormControl(value);
     }
   }
+  up:IDepartamento[]
 
   guardarUbigeo(){
-    this.webApiUbigeo.agregarUbigeo(this.formGroupValues);
+    this.webApiUbigeo.agregarUbigeoDepartamento(this.formGroupValues);
 
   }
+  actualizarUbigeo(){
+    //this.webApiUbigeo.actulizaProvincia()
+    //this.webApiUbigeo.agregarProvincia('asd')
+    //this.webApiUbigeo.unosole()
+     
+    var algo = []
+    var otro
+    algo = this.webApiUbigeo.tmpDepartamentos[0].provincias
+    otro = algo.concat({distritos: Array(0), nombre_provincia: "yungay"})
+    this.webApiUbigeo.actulizaProvincia({distritos: Array(0), nombre_provincia: "carazzzz"}) 
+    
+  }
+  
+  actualizaOtraVez(){
+    
+    this.webApiUbigeo.departamentos.subscribe((val)=>{
+      this.webApiUbigeo.tmpDepartamentos = val
+    })
+    
+    
+
+  }
+ 
+
 
 }

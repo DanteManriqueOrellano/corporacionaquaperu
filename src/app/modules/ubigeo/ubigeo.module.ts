@@ -21,11 +21,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import { UbigeoRoutingModule } from './ubigeo-routing.module';
+import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
 
 
 
 @NgModule({
-  declarations: [BarrioComponent, CentroPobladoComponent, CacerioComponent, DistritoComponent, ProvinciaComponent, DepartamentoComponent, AnexoComponent],
+  declarations: [BarrioComponent, CentroPobladoComponent, CacerioComponent, DistritoComponent, ProvinciaComponent, DepartamentoComponent, AnexoComponent, MantenimientoComponent],
   imports: [
     CommonModule,
     FormsModule,

@@ -20,10 +20,6 @@ import { UbigeoModule } from '../modules/ubigeo/ubigeo.module';
 import { BienvenidoModule } from '../modules/bienvenido/bienvenido.module';
 import { GeneralidadesproyectoModule } from '../modules/generalidadesproyecto/generalidadesproyecto.module';
 
-
-
-
-
 @NgModule({
   declarations: [ShellComponent],
   imports: [
