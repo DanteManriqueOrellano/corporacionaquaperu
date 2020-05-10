@@ -16,9 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
-import { UbigeoModule } from '../modules/ubigeo/ubigeo.module';
-import { BienvenidoModule } from '../modules/bienvenido/bienvenido.module';
-import { GeneralidadesproyectoModule } from '../modules/generalidadesproyecto/generalidadesproyecto.module';
+
 
 @NgModule({
   declarations: [ShellComponent],
@@ -39,9 +37,7 @@ import { GeneralidadesproyectoModule } from '../modules/generalidadesproyecto/ge
     MatIconModule,
     MatDialogModule,
     MatTableModule,
-    UbigeoModule,
-    BienvenidoModule,
-    GeneralidadesproyectoModule,
+  
   ],
   exports:[ShellComponent]
 })

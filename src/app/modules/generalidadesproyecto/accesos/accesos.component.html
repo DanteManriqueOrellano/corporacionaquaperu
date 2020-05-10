@@ -1,8 +1,0 @@
-<fieldset [formGroup]="formGroup">
-    <legend>Vias de Acceso</legend>
-    <div [formArrayName]="formControlNames.accesos" *ngFor="let unAcceso of formGroupControls.accesos.controls; let i = index">
-        <app-viasacceso [formControl]='unAcceso'></app-viasacceso>
-        <button mat-button color='wran'(click)='eliminarAcceso(i)'>Eliminar Acceso</button>
-    </div>
-    <button mat-button color='primary' (click)='agregarAcceso()'>Agregar Acceso</button>
-</fieldset>

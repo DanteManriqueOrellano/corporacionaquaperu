@@ -1,0 +1,71 @@
+{
+    "authors": [
+      {
+        "name": "J K Rowling",
+        "gender": "Female",
+        "books": [
+          {
+            "bookTitle": "Harry Potter and the Philosopher's Stone",
+            "chapters": [
+              {
+                "chapterTitle": "The Boy Who Lived"
+              },
+              {
+                "chapterTitle": "The Vanishing Glass"
+              },
+              {
+                "chapterTitle": "The Letters from No One"
+              },
+              {
+                "chapterTitle": "The Keeper of Keys"
+              },
+              {
+                "chapterTitle": "Diagon Alley"
+              },
+              {
+                "chapterTitle": "The Journey from Platform Nine and Three-Quarters"
+              }
+            ]
+          },
+          {
+            "bookTitle": "Harry Potter and the Chamber of Secrets",
+            "chapters": [
+              {
+                "chapterTitle": "The Worst Birthday"
+              }
+            ]
+          },
+          {
+            "bookTitle": "Harry Potter and the Prisoner of Azkaban",
+            "chapters": []
+          },
+          {
+            "bookTitle": "Harry Potter and the Goblet of Fire",
+            "chapters": []
+          },
+          {
+            "bookTitle": "Harry Potter and the Order of the Phoenix",
+            "chapters": []
+          },
+          {
+            "bookTitle": "Harry Potter and the Half-Blood Prince",
+            "chapters": []
+          }
+        ]
+      },
+      {
+        "name": "George RR Martin",
+        "gender": "Male",
+        "books": [
+          {
+            "bookTitle": "A Game of Thrones",
+            "chapters": []
+          },
+          {
+            "bookTitle": "The Winds Of Winter",
+            "chapters": []
+          }
+        ]
+      }
+    ]
+  }
