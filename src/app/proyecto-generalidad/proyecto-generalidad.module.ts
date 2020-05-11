@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GeneralidadRoutingModule } from './app-routing.module';
 
 
 
@@ -39,8 +40,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatDialogModule,
     MatTableModule,
+    GeneralidadRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+
   ]
 })
 export class ProyectoGeneralidadModule { }
