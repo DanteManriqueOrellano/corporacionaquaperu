@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSubFormComponent, Controls } from 'ngx-sub-form';
-import { IGeneralidad } from './IGeneralidad';
+import { IGeneralidad } from '../generalidad-form/IGeneralidad';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-generalidad-form',
-  templateUrl: './generalidad-form.component.html',
-  styleUrls: ['./generalidad-form.component.css']
+  selector: 'app-proyecto-generalidad-form',
+  templateUrl: './proyecto-generalidad-root.component.html',
+  styleUrls: ['./proyecto-generalidad-root.component.css']
 })
-export class GeneralidadFormComponent extends NgxSubFormComponent<IGeneralidad> {
+export class ProyectoGeneralidadFormComponent extends NgxSubFormComponent<IGeneralidad>  {
 
   protected getFormControls():Controls<IGeneralidad>{
     return {
@@ -21,5 +21,4 @@ export class GeneralidadFormComponent extends NgxSubFormComponent<IGeneralidad> 
       snip: new FormControl(),
     }
   }
-
 }

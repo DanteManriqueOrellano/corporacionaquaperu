@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProyectoGeneralidadRootComponent } from './proyecto-generalidad-container/proyecto-generalidad-root.component';
-import { ProyectoGeneralidadFormComponent } from './proyecto-generalidad-container/proyecto-generalidad-form/proyecto-generalidad-form.component';
+import { ProyectoGeneralidadRootComponent } from './proyecto-generalidad-container/proyecto-generalidad-container.component';
+import { ProyectoGeneralidadFormComponent } from './proyecto-generalidad-container/proyecto-generalidad-root/proyecto-generalidad-root.component';
 import { GeneralidadFormComponent } from './proyecto-generalidad-container/generalidad-form/generalidad-form.component';
 import { HistorialDocumentarioFormComponent } from './proyecto-generalidad-container/historial-documentario-form/historial-documentario-form.component';
 import { UbigeoSeleccionadoFormComponent } from './proyecto-generalidad-container/ubigeo-seleccionado-form/ubigeo-seleccionado-form.component';

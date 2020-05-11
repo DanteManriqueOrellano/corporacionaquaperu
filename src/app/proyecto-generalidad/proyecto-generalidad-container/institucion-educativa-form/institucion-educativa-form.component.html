@@ -1,1 +1,31 @@
-<p>institucion-educativa-form works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Institucion Educativa</legend>
+        <mat-form-field>
+            <input matInput placeholder="Codigo Modular" [formControlName]='formControlNames.codigo_modular'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="direccion" [formControlName]='formControlNames.direccion'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="gestion dependencia" [formControlName]='formControlNames.gestion_dependencia'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="modalidad" [formControlName]='formControlNames.modalidad'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="niveles" [formControlName]='formControlNames.niveles'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="nombre" [formControlName]='formControlNames.nombre'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="nro_alumnos" [formControlName]='formControlNames.nro_alumnos'>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="nro_profesores" [formControlName]='formControlNames.nro_profesores'>
+        </mat-form-field>
+
+    </fieldset>
+
+</section>

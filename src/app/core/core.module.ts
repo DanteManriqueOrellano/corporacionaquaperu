@@ -40,6 +40,18 @@ import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-gene
     ProyectoGeneralidadModule,
   
   ],
-  exports:[ShellComponent]
+  exports:[
+    ShellComponent,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatStepperModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatTableModule,]
 })
 export class CoreModule { }

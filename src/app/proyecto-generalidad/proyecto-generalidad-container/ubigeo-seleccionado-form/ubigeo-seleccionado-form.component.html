@@ -1,1 +1,26 @@
-<p>ubigeo-seleccionado-form works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Ubigeo Seleccionado</legend>
+        <mat-form-field>
+            <input matInput placeholder="Anexos" [formArrayName]="formControlNames.anexos">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="barrios" [formArrayName]="formControlNames.barrios">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="cacerios" [formArrayName]="formControlNames.cacerios">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="centros_poblados" [formArrayName]="formControlNames.centros_poblados">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="departamento" [formControlName]="formControlNames.departamento">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="provincia" [formArrayName]="formControlNames.provincia">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="distrito" [formArrayName]="formControlNames.distrito">
+        </mat-form-field>
+    </fieldset>
+</section>

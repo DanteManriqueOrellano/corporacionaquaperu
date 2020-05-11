@@ -1,1 +1,9 @@
-<p>antecedente-intervencion-form works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Antecedentes Intervención</legend>
+        <mat-form-field>
+            <mat-label>Detalle</mat-label>
+            <textarea matInput placeholder="Detallar todas las Intervenciones, realizadas" [formControlName]='formControlNames.detalle_intervencion'></textarea>
+        </mat-form-field>
+    </fieldset>
+</section>

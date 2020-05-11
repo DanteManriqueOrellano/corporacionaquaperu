@@ -1,1 +1,24 @@
-<p>historial-documentario-form works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Historial Documentario</legend>
+
+        <mat-form-field>
+            <input matInput placeholder="anio_priorizacion" [formControlName]="formControlNames.anio_priorizacion">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="fecha_aprobacion " [formControlName]="formControlNames.fecha_aprobacion">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="inf_tecnico_nro " [formControlName]="formControlNames.inf_tecnico_nro">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder=" rep_und_ejecutora" [formControlName]="formControlNames.rep_und_ejecutora">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="rep_und_evaluadora " [formControlName]="formControlNames.rep_und_evaluadora">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder=" rep_und_formuladora" [formControlName]="formControlNames.rep_und_formuladora">
+        </mat-form-field>
+    </fieldset>
+</section>

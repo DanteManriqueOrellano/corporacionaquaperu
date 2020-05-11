@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import {NgxSubFormComponent,subformComponentProviders,Controls} from 'ngx-sub-form'
+import { IAntecedenteIntervencion } from './IAntecedente-intervencion';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-antecedente-intervencion-form',
   templateUrl: './antecedente-intervencion-form.component.html',
-  styleUrls: ['./antecedente-intervencion-form.component.css']
+  styleUrls: ['./antecedente-intervencion-form.component.css'],
+  providers: subformComponentProviders(AntecedenteIntervencionFormComponent)
 })
-export class AntecedenteIntervencionFormComponent implements OnInit {
+export class AntecedenteIntervencionFormComponent extends NgxSubFormComponent<IAntecedenteIntervencion>  {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getFormControls():Controls<IAntecedenteIntervencion>{
+    return {
+      detalle_intervencion: new FormControl()
+    }
   }
 
 }

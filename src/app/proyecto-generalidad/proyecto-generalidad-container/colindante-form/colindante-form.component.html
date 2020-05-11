@@ -1,1 +1,17 @@
-<p>colindante-form works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Colindante</legend>
+        <mat-form-field>
+            <input matInput placeholder="este" [formControlName]="formControlNames.este">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="norte" [formControlName]="formControlNames.norte">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="oeste" [formControlName]="formControlNames.oeste">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="sur" [formControlName]="formControlNames.sur">
+        </mat-form-field>
+    </fieldset>
+</section>
