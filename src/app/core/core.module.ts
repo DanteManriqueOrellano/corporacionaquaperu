@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-generalidad.module';
+import { UbigeoModule } from './custom/ubigeo/ubigeo.module';
 
 
 
@@ -38,6 +39,7 @@ import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-gene
     MatDialogModule,
     MatTableModule,
     ProyectoGeneralidadModule,
+    UbigeoModule
     
   
   ],

@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { IDepartamento } from './departamento-form/IDepartamento';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { IProvincia } from './provincia-form/IProvincia';
-import { Observable, BehaviorSubject } from 'rxjs';
 
-import { map, find } from 'rxjs/operators';
-import { SharedService } from '../shared.service';
+import { SharedService } from '../../shared.service';
+
 
 export interface DepartamentoId extends IDepartamento { id: string; }
 @Injectable({
