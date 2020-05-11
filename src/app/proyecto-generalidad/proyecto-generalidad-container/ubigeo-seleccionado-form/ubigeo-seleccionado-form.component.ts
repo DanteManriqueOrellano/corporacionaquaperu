@@ -11,6 +11,7 @@ import { FormControl, FormArray } from '@angular/forms';
 })
 export class UbigeoSeleccionadoFormComponent extends NgxSubFormComponent<IUbigeo_Seleccionado>  {
 
+  
   protected getFormControls():Controls<IUbigeo_Seleccionado>{
     return {
       anexos: new FormArray([]),
