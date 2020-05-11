@@ -17,6 +17,8 @@ import {MatTableModule} from '@angular/material/table';
 import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-generalidad.module';
 
 
+
+
 @NgModule({
   declarations: [ShellComponent],
   imports: [
@@ -36,6 +38,7 @@ import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-gene
     MatDialogModule,
     MatTableModule,
     ProyectoGeneralidadModule,
+    
   
   ],
   exports:[
