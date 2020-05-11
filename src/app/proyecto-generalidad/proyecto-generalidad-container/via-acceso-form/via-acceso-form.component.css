@@ -1,4 +1,4 @@
-.container-flex {
-    display: flex;
-    justify-content: space-around;
+
+mat-form-field {
+    margin-left: 10px;
 }
