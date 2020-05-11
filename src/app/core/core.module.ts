@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
+import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-generalidad.module';
 
 
 @NgModule({
@@ -25,7 +26,6 @@ import {MatTableModule} from '@angular/material/table';
     CoreRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-   
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
@@ -37,6 +37,7 @@ import {MatTableModule} from '@angular/material/table';
     MatIconModule,
     MatDialogModule,
     MatTableModule,
+    ProyectoGeneralidadModule,
   
   ],
   exports:[ShellComponent]
