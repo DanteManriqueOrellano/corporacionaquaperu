@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxSubFormComponent, Controls } from 'ngx-sub-form';
+import { NgxSubFormComponent, Controls, subformComponentProviders } from 'ngx-sub-form';
 import { IGeneralidad } from './IGeneralidad';
 import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-generalidad-form',
   templateUrl: './generalidad-form.component.html',
-  styleUrls: ['./generalidad-form.component.css']
+  styleUrls: ['./generalidad-form.component.css'],
+  providers:subformComponentProviders(GeneralidadFormComponent)
+  
 })
 export class GeneralidadFormComponent extends NgxSubFormComponent<IGeneralidad> {
 

@@ -10,7 +10,7 @@ import { FormControl } from '@angular/forms';
 })
 export class AntecedenteIntervencionFormComponent extends NgxSubFormComponent<IAntecedenteIntervencion>  {
 
-  getFormControls():Controls<IAntecedenteIntervencion>{
+  protected getFormControls():Controls<IAntecedenteIntervencion>{
     return {
       detalle_intervencion: new FormControl()
     }

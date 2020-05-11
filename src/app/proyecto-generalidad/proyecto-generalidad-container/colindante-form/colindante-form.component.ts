@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxSubFormComponent, Controls } from 'ngx-sub-form';
+import { NgxSubFormComponent, Controls, subformComponentProviders } from 'ngx-sub-form';
 import { IColindante } from './IColindante';
 import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-colindante-form',
   templateUrl: './colindante-form.component.html',
-  styleUrls: ['./colindante-form.component.css']
+  styleUrls: ['./colindante-form.component.css'],
+  providers:subformComponentProviders(ColindanteFormComponent )
 })
 export class ColindanteFormComponent extends NgxSubFormComponent<IColindante> {
 

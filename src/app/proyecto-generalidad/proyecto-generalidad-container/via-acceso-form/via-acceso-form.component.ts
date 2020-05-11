@@ -12,7 +12,7 @@ import { FormControl } from '@angular/forms';
 })
 export class ViaAccesoFormComponent extends NgxSubFormComponent<IVia_Acceso>  {
 
-  getFormControls():Controls<IVia_Acceso>{
+  protected getFormControls():Controls<IVia_Acceso>{
     return{
       distancia: new FormControl(),
       localidad: new FormControl(),
