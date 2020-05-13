@@ -1,26 +1,108 @@
 <section [formGroup]="formGroup">
     <fieldset>
         <legend>Ubigeo Seleccionado</legend>
+        
+
         <mat-form-field>
-            <input matInput placeholder="Anexos" [formArrayName]="formControlNames.anexos">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="barrios" [formArrayName]="formControlNames.barrios">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="cacerios" [formArrayName]="formControlNames.cacerios">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="centros_poblados" [formArrayName]="formControlNames.centros_poblados">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="departamento" [formControlName]="formControlNames.departamento">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="provincia" [formControlName]="formControlNames.provincia">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="distrito" [formControlName]="formControlNames.distrito">
-        </mat-form-field>
+            <mat-label>Departamento</mat-label>
+            
+            <mat-select  >
+              
+              <mat-option *ngFor="let departamento of departamentos$ | async; let i = index" [value]="departamento.nombre_dep">
+                <p (click)='setIndiceDepartamento(i)'>{{departamento.nombre_dep}}</p> 
+              </mat-option>
+            </mat-select>
+           
+            
+          </mat-form-field>
+          
+         
+        
+      
+         
+              <mat-form-field>
+            <mat-label>Provincia</mat-label>
+            
+            <mat-select >
+        
+                <mat-option *ngFor="let provincia of dataProvincia; let i= index" value ='provincia'>
+                    <p (click)='setIndiceProvincia(i)'>{{provincia.nombre_provincia}}</p> 
+                  </mat-option>
+              
+            </mat-select> 
+          </mat-form-field>
+              
+          <mat-form-field>
+            <mat-label>Distrito</mat-label>
+            
+            <mat-select >
+              
+              <mat-option *ngFor="let distrito of dataDistrito; let i= index" [value]="distrito.nombre_distrito">
+                <p (click)='setIndiceDistrito(i)'>{{distrito.nombre_distrito}}</p> 
+              </mat-option>
+            </mat-select> 
+          </mat-form-field>
+       
+         
+          <mat-form-field>
+            <mat-label>Cacerios</mat-label>
+            <mat-select  [formControlName]='formControlNames.cacerios' multiple>
+              <mat-option *ngFor="let cacerio of dataCaserio; let i = index" [value]="{nombre:cacerio.nombre_cacerio,id:i}">
+                  <p (click)='setIndiceCacerio(i)' >{{cacerio.nombre_cacerio}}</p> 
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        
+      
+      
+          <mat-form-field>
+            <mat-label>Centros Poblados</mat-label>
+            <mat-select  [formControlName]="formControlNames.centros_poblados" multiple>
+                <mat-optgroup *ngFor="let centro_poblado of dataCp" [label]="'Centro Poblado'">
+                    <mat-option *ngFor="let item of centro_poblado.cp; let i = index" [value]="{nombre:item.nombre_cp,id:i}">
+                        <p (click)= 'setIndiceCentroPoblado("")'>{{item.nombre_cp}}</p>  
+
+                    </mat-option>
+                  
+                </mat-optgroup>
+            </mat-select>
+          </mat-form-field>
+
+
+
+
+
+
+
+
+<!--
+    falta implementar
+          
+          <mat-form-field>
+            <mat-label>Anexos</mat-label>
+            <mat-select multiple>
+              <mat-option *ngFor="let anexo of dataAnexo; let i = index" [value]="anexo">
+                 <p (click)='setIndiceAnexo(i)'>{{anexo.nombre_anexo}}</p> 
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+      
+          <mat-form-field>
+            <mat-label>barrios</mat-label>
+            <mat-select multiple>
+              <mat-option *ngFor="let barrio of dataBar; let i= index " [value]="barrio">
+                  <p (click)='setIndiceBarrio(i)'> {{barrio.nombre_barrio}}</p>
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+-->
+
+
+                
+        
+
+          
+
+
     </fieldset>
 </section>
