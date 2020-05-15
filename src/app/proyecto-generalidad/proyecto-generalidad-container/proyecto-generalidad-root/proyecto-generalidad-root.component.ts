@@ -16,7 +16,7 @@ interface IProyectoGeneralidadesForm{
   colindante:IColindante;
   vias_accesos:IVia_Acceso[];
   instituciones_educativas:IIntitucion_educativa[];
-  antecedentes_intervencion:IAntecedenteIntervencion[];
+  antecedente_intervencion:IAntecedenteIntervencion;
 }
 @Component({
   selector: 'app-proyecto-generalidad-form',
@@ -39,13 +39,23 @@ export class ProyectoGeneralidadRootComponent extends NgxRootFormComponent<IProy
       historial_documentario: new FormControl(),
       ubigeo_seleccionado: new FormControl(),
       colindante: new FormControl(),
+      antecedente_intervencion: new FormControl(),
       vias_accesos: new FormArray([]),
-      antecedentes_intervencion: new FormArray([]),
       instituciones_educativas: new FormArray([])
     }
   }
-  todo(){
-    console.log(this.formGroupValues)
+  eliminarInstitucionEducativa(i){
+    this.formGroupControls.instituciones_educativas.removeAt(i)
+  }
+  eliminarViaAcceso(i){
+    this.formGroupControls.vias_accesos.removeAt(i)
+  }
+  
+  agregarInstitucionEducativa(){
+    this.formGroupControls.instituciones_educativas.push(new FormControl())
+  }
+  agregarViaAcceso(){
+    this.formGroupControls.vias_accesos.push(new FormControl())
   }
 
  

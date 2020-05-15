@@ -1,20 +1,25 @@
 <section [formGroup]="formGroup">
 
-    <div [formArrayName]='formControlNames.antecedentes_intervencion' *ngFor="let unAntecedente of formGroupControls.antecedentes_intervencion.controls">
-        <app-antecedente-intervencion-form [formControl] = 'unAntecedente'></app-antecedente-intervencion-form>
-    </div>
+    <app-antecedente-intervencion-form [formControlName] ='formControlNames.antecedente_intervencion'></app-antecedente-intervencion-form>
     <app-colindante-form [formControlName]='formControlNames.colindante'></app-colindante-form>
     <app-generalidad-form [formControlName]='formControlNames.generalidad'></app-generalidad-form>
     <app-historial-documentario-form [formControlName]='formControlNames.historial_documentario'></app-historial-documentario-form>
-    <div [formArrayName]="formControlNames.instituciones_educativas" *ngFor="let unaInstitucion_educativa of formGroupControls.instituciones_educativas.controls">
+    
+    <div [formArrayName]="formControlNames.instituciones_educativas" *ngFor="let unaInstitucion_educativa of formGroupControls.instituciones_educativas.controls; let i = index">
         <app-institucion-educativa-form [formControl]='unaInstitucion_educativa'></app-institucion-educativa-form>
+        <button mat-button color='warn'(click)='eliminarInstitucionEducativa(i)'>Eliminar Institucion Educativa</button>
     </div>
+    <button mat-button color='primary' (click)='agregarInstitucionEducativa()'>Agregar Institucion Educativa</button>
     
     <app-ubigeo-seleccionado-form [formControlName]='formControlNames.ubigeo_seleccionado'></app-ubigeo-seleccionado-form>
-    <div [formArrayName]='formControlNames.vias_accesos' *ngFor="let unaVia_acceso of formGroupControls.vias_accesos.controls">
+    <div [formArrayName]='formControlNames.vias_accesos' *ngFor="let unaVia_acceso of formGroupControls.vias_accesos.controls; let i = index">
         <app-via-acceso-form [formControl]='unaVia_acceso' ></app-via-acceso-form>
+        <button mat-button color='warn'(click)='eliminarViaAcceso(i)'>Eliminar Via Acceso</button>
     </div>
+    <button mat-button color='primary' (click)='agregarViaAcceso()'>Agregar Via Acceso</button>
+
+
     
 </section>
-<button (click)='todo()'>bg</button>
+
 <pre>{{formGroupValues | json}}</pre>

@@ -2,19 +2,20 @@
     <fieldset class="container-flex">
         <legend>Via de Acceso</legend>
         <mat-form-field>
-            <input matInput placeholder="Distancia" [formControlName]='formControlNames.distancia'>
+            <input matInput placeholder="Localidad" [formControlName]='formControlNames.localidad' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Localidad" [formControlName]='formControlNames.localidad'>
+            <input matInput placeholder="Tipo_via" [formControlName]='formControlNames.tipo_via' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Tiempo" [formControlName]='formControlNames.tiempo'>
+            <input matInput placeholder="Distancia" [formControlName]='formControlNames.distancia' autocomplete="off">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Tiempo" [formControlName]='formControlNames.tiempo' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Tipo_via" [formControlName]='formControlNames.tipo_via'>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Transporte" [formControlName]='formControlNames.transporte'>
+            <input matInput placeholder="Transporte" [formControlName]='formControlNames.transporte' autocomplete="off">
         </mat-form-field>
     </fieldset>
 
