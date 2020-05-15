@@ -17,6 +17,8 @@ import {MatTableModule} from '@angular/material/table';
 import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-generalidad.module';
 import { UbigeoModule } from './custom/ubigeo/ubigeo.module';
 import { ProyectoPoblacionModule } from '../proyecto-poblacion/proyecto-poblacion.module';
+import { ProyectoComponenteModule } from '../proyecto-componente/proyecto-componente.module';
+
 
 
 
@@ -41,7 +43,8 @@ import { ProyectoPoblacionModule } from '../proyecto-poblacion/proyecto-poblacio
     MatTableModule,
     ProyectoGeneralidadModule,
     UbigeoModule,
-    ProyectoPoblacionModule
+    ProyectoPoblacionModule,
+    ProyectoComponenteModule,
     
   
   ],
