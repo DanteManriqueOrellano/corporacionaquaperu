@@ -12,7 +12,7 @@ import { IColindante } from '../colindante-form/IColindante';
 interface IProyectoGeneralidadesForm{
   generalidad:IGeneralidad;
   historial_documentario:IHistorial_Documentario;
-  ubigeo_solicitado:IUbigeo_Seleccionado;
+  ubigeo_seleccionado:IUbigeo_Seleccionado;
   colindante:IColindante;
   vias_accesos:IVia_Acceso[];
   instituciones_educativas:IIntitucion_educativa[];
@@ -37,7 +37,7 @@ export class ProyectoGeneralidadRootComponent extends NgxRootFormComponent<IProy
     return{
       generalidad: new FormControl(),
       historial_documentario: new FormControl(),
-      ubigeo_solicitado: new FormControl(),
+      ubigeo_seleccionado: new FormControl(),
       colindante: new FormControl(),
       vias_accesos: new FormArray([]),
       antecedentes_intervencion: new FormArray([]),
@@ -45,7 +45,7 @@ export class ProyectoGeneralidadRootComponent extends NgxRootFormComponent<IProy
     }
   }
   todo(){
-    console.log(this.formGroupControls.generalidad.value)
+    console.log(this.formGroupValues)
   }
 
  

@@ -10,10 +10,11 @@
         <app-institucion-educativa-form [formControl]='unaInstitucion_educativa'></app-institucion-educativa-form>
     </div>
     
-    <app-ubigeo-seleccionado-form></app-ubigeo-seleccionado-form>
+    <app-ubigeo-seleccionado-form [formControlName]='formControlNames.ubigeo_seleccionado'></app-ubigeo-seleccionado-form>
     <div [formArrayName]='formControlNames.vias_accesos' *ngFor="let unaVia_acceso of formGroupControls.vias_accesos.controls">
         <app-via-acceso-form [formControl]='unaVia_acceso' ></app-via-acceso-form>
     </div>
     
 </section>
-
+<button (click)='todo()'>bg</button>
+<pre>{{formGroupValues | json}}</pre>

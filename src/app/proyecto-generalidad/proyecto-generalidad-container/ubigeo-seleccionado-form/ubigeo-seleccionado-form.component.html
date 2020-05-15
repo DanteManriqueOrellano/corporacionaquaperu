@@ -6,7 +6,7 @@
         <mat-form-field>
             <mat-label>Departamento</mat-label>
             
-            <mat-select  >
+            <mat-select [formControlName]='formControlNames.departamento' >
               
               <mat-option *ngFor="let departamento of departamentos$ | async; let i = index" [value]="departamento.nombre_dep">
                 <p (click)='setIndiceDepartamento(i)'>{{departamento.nombre_dep}}</p> 
@@ -23,9 +23,9 @@
               <mat-form-field>
             <mat-label>Provincia</mat-label>
             
-            <mat-select >
+            <mat-select [formControlName]='formControlNames.provincia' >
         
-                <mat-option *ngFor="let provincia of dataProvincia; let i= index" value ='provincia'>
+                <mat-option *ngFor="let provincia of dataProvincia; let i= index" [value] ="provincia.nombre_provincia">
                     <p (click)='setIndiceProvincia(i)'>{{provincia.nombre_provincia}}</p> 
                   </mat-option>
               
@@ -35,7 +35,7 @@
           <mat-form-field>
             <mat-label>Distrito</mat-label>
             
-            <mat-select >
+            <mat-select [formControlName]='formControlNames.distrito' >
               
               <mat-option *ngFor="let distrito of dataDistrito; let i= index" [value]="distrito.nombre_distrito">
                 <p (click)='setIndiceDistrito(i)'>{{distrito.nombre_distrito}}</p> 
