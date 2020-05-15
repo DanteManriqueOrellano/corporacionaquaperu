@@ -2,28 +2,29 @@
     <fieldset>
         <legend>Institucion Educativa</legend>
         <mat-form-field>
-            <input matInput placeholder="Codigo Modular" [formControlName]='formControlNames.codigo_modular'>
+            <input matInput placeholder="Nombre" [formControlName]='formControlNames.nombre' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="direccion" [formControlName]='formControlNames.direccion'>
+            <input matInput placeholder="Dirección" [formControlName]='formControlNames.direccion' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="gestion dependencia" [formControlName]='formControlNames.gestion_dependencia'>
+            <input matInput placeholder="Codigo Modular" [formControlName]='formControlNames.codigo_modular' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="modalidad" [formControlName]='formControlNames.modalidad'>
+            <input matInput placeholder="Gestion/Dependencia" [formControlName]='formControlNames.gestion_dependencia' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="niveles" [formControlName]='formControlNames.niveles'>
+            <input matInput placeholder="Modalidad" [formControlName]='formControlNames.modalidad' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="nombre" [formControlName]='formControlNames.nombre'>
+            <input matInput placeholder="Niveles" [formControlName]='formControlNames.niveles' autocomplete="off">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Nro. Alumnos" [formControlName]='formControlNames.nro_alumnos' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="nro_alumnos" [formControlName]='formControlNames.nro_alumnos'>
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="nro_profesores" [formControlName]='formControlNames.nro_profesores'>
+            <input matInput placeholder="Nro. Profesores" [formControlName]='formControlNames.nro_profesores' autocomplete="off">
         </mat-form-field>
 
     </fieldset>

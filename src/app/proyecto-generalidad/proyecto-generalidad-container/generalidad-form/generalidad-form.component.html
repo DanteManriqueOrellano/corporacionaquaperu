@@ -2,27 +2,25 @@
     <fieldset>
         <legend>Generalidades</legend>
         <mat-form-field>
-            <input matInput placeholder="Alias Proyecto" [formControlName]="formControlNames.alias_proyecto">
-        </mat-form-field>
-
-        <mat-form-field>
-            <input matInput placeholder="cliente" [formControlName]="formControlNames.cliente">
+            <input matInput placeholder="Nombre Proyecto" [formControlName]="formControlNames.nombre_proyecto" autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="modalidad_ejecucion" [formControlName]="formControlNames.modalidad_ejecucion">
+            <input matInput placeholder="Alias Proyecto" [formControlName]="formControlNames.alias_proyecto" autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="nombre_proyecto" [formControlName]="formControlNames.nombre_proyecto">
+            <input matInput placeholder="Cliente" [formControlName]="formControlNames.cliente" autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="plazo_ejecucion" [formControlName]="formControlNames.plazo_ejecucion">
+            <input matInput placeholder="SNIP" [formControlName]='formControlNames.snip' autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Sistema de Contratacion" [formControlName]='formControlNames.sist_contratacion'>
+            <input matInput placeholder="Modalidad de Ejecución" [formControlName]="formControlNames.modalidad_ejecucion" autocomplete="off">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="snip" [formControlName]='formControlNames.snip'>
+            <input matInput placeholder="Plazo de Ejecución" [formControlName]="formControlNames.plazo_ejecucion" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Sistema de Contratacion" [formControlName]='formControlNames.sist_contratacion' autocomplete="off">
         </mat-form-field>
     </fieldset>
-
 </section>
