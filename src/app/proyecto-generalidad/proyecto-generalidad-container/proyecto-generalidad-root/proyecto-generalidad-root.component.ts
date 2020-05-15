@@ -57,6 +57,9 @@ export class ProyectoGeneralidadRootComponent extends NgxRootFormComponent<IProy
   agregarViaAcceso(){
     this.formGroupControls.vias_accesos.push(new FormControl())
   }
+  outputRootToContainer(){
+    this.dataOutput.emit(this.formGroupValues)
+  }
 
  
 }

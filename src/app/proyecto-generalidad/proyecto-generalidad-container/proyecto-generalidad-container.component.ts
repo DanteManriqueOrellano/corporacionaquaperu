@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectoGeneralidadContainerComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-  todo(){
+  proyectoGeneralidadesOutput($event){
+    console.log($event)
     
   }
-
 }
