@@ -16,7 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-generalidad.module';
 import { UbigeoModule } from './custom/ubigeo/ubigeo.module';
-import { ProyectoPoblacionModule } from './proyecto-poblacion/proyecto-poblacion.module';
+import { ProyectoPoblacionModule } from '../proyecto-poblacion/proyecto-poblacion.module';
 
 
 
