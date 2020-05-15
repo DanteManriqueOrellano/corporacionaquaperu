@@ -11,5 +11,8 @@ export class ProyectoGeneralidadContainerComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  todo(){
+    
+  }
 
 }

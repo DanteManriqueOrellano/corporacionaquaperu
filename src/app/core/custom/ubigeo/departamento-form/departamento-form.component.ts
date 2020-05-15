@@ -4,14 +4,9 @@ import { IDepartamento } from './IDepartamento';
 import { FormControl, FormArray } from '@angular/forms';
 
 import { IProvincia } from '../provincia-form/IProvincia';
-import { UbigeoService } from '../ubigeo.service';
 
-interface depform {
-  departamento:IDepartamento[]
-}
-interface mainform {
-  provincias:IProvincia[]
-}
+
+
 @Component({
   selector: 'app-departamento-form',
   templateUrl: './departamento-form.component.html',
@@ -58,6 +53,7 @@ export class DepartamentoFormComponent extends NgxRootFormComponent<IProvincia[]
 
   }
   public ubigeoCreated(){
+    //console.log(this.formGroupValues)
     
     this.crearUbigeoOutput.emit(this.formGroupValues)
   }

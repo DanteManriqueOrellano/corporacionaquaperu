@@ -8,6 +8,7 @@ const routes: Routes = [
   {path:'bienvenido',loadChildren: () => import('../modules/bienvenido/bienvenido.module').then(m => m.BienvenidoModule)},
   {path:'referencia', loadChildren:()=> import('../modules/generalidadesproyecto/generalidadesproyecto.module').then(m=>m.GeneralidadesproyectoModule)}, */
   {path:'generalidad',component:ProyectoGeneralidadContainerComponent}
+  
  
 
  

@@ -7,14 +7,16 @@ import { IUbigeo_Seleccionado } from '../ubigeo-seleccionado-form/IUbigeo-selecc
 import { IVia_Acceso } from '../via-acceso-form/IVia-acceso';
 import { IIntitucion_educativa } from '../institucion-educativa-form/IInstitucion-educativa';
 import { IAntecedenteIntervencion } from '../antecedente-intervencion-form/IAntecedente-intervencion';
+import { IColindante } from '../colindante-form/IColindante';
 
 interface IProyectoGeneralidadesForm{
   generalidad:IGeneralidad;
   historial_documentario:IHistorial_Documentario;
   ubigeo_solicitado:IUbigeo_Seleccionado;
+  colindante:IColindante;
   vias_accesos:IVia_Acceso[];
-  instituciones_educativas:IIntitucion_educativa[]
-  antecedentes_intervencion:IAntecedenteIntervencion[]
+  instituciones_educativas:IIntitucion_educativa[];
+  antecedentes_intervencion:IAntecedenteIntervencion[];
 }
 @Component({
   selector: 'app-proyecto-generalidad-form',
@@ -25,23 +27,25 @@ interface IProyectoGeneralidadesForm{
 export class ProyectoGeneralidadRootComponent extends NgxRootFormComponent<IProyectoGeneralidadesForm>   {
   
   @DataInput()
-  @Input('ubigeo')
+  @Input('proyectoGeneralidadesInput')
   public dataInput: Required<IProyectoGeneralidadesForm>  | null | undefined;
 
-  @Output('listingUpdated')
+  @Output('proyectoGeneralidadesOutput')
   public dataOutput: EventEmitter<IProyectoGeneralidadesForm> = new EventEmitter();
-
-  
 
   protected getFormControls():Controls<IProyectoGeneralidadesForm>{
     return{
       generalidad: new FormControl(),
       historial_documentario: new FormControl(),
       ubigeo_solicitado: new FormControl(),
+      colindante: new FormControl(),
       vias_accesos: new FormArray([]),
       antecedentes_intervencion: new FormArray([]),
       instituciones_educativas: new FormArray([])
     }
+  }
+  todo(){
+    console.log(this.formGroupControls.generalidad.value)
   }
 
  

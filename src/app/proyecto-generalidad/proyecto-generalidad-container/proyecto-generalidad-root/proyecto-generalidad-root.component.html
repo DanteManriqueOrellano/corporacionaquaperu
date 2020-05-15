@@ -1,3 +1,19 @@
+<section [formGroup]="formGroup">
 
-
+    <div [formArrayName]='formControlNames.antecedentes_intervencion' *ngFor="let unAntecedente of formGroupControls.antecedentes_intervencion.controls">
+        <app-antecedente-intervencion-form [formControl] = 'unAntecedente'></app-antecedente-intervencion-form>
+    </div>
+    <app-colindante-form [formControlName]='formControlNames.colindante'></app-colindante-form>
+    <app-generalidad-form [formControlName]='formControlNames.generalidad'></app-generalidad-form>
+    <app-historial-documentario-form [formControlName]='formControlNames.historial_documentario'></app-historial-documentario-form>
+    <div [formArrayName]="formControlNames.instituciones_educativas" *ngFor="let unaInstitucion_educativa of formGroupControls.instituciones_educativas.controls">
+        <app-institucion-educativa-form [formControl]='unaInstitucion_educativa'></app-institucion-educativa-form>
+    </div>
+    
+    <app-ubigeo-seleccionado-form></app-ubigeo-seleccionado-form>
+    <div [formArrayName]='formControlNames.vias_accesos' *ngFor="let unaVia_acceso of formGroupControls.vias_accesos.controls">
+        <app-via-acceso-form [formControl]='unaVia_acceso' ></app-via-acceso-form>
+    </div>
+    
+</section>
 
