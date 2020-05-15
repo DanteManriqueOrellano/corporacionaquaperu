@@ -1,1 +1,9 @@
-<p>conexion-domiciliaria works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Conexión Domiciliaria</legend>
+        <mat-form-field>
+            <input matInput placeholder="Nro Conexiones" [formControlName]='formControlNames.nro_conexiones' autocomplete="off">
+        </mat-form-field>
+    </fieldset>
+
+</section>
