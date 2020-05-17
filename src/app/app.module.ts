@@ -11,9 +11,17 @@ import { environment } from '../environments/environment';
 import 'firebase/storage'
 import { CoreModule } from './core/core.module';
 
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -22,7 +30,13 @@ import { CoreModule } from './core/core.module';
     AngularFirestoreModule,
     AngularFireStorageModule,
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     { provide: BUCKET, useValue: 'corporacionaquaperu.appspot.com' }

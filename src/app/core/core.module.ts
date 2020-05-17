@@ -18,13 +18,19 @@ import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-gene
 import { UbigeoModule } from './custom/ubigeo/ubigeo.module';
 import { ProyectoPoblacionModule } from '../proyecto-poblacion/proyecto-poblacion.module';
 import { ProyectoComponenteModule } from '../proyecto-componente/proyecto-componente.module';
+import { BienvenidoComponent } from '../bienvenido/bienvenido.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 
 
 
 
 
 @NgModule({
-  declarations: [ShellComponent],
+  declarations: [ShellComponent, BienvenidoComponent],
   imports: [
     CommonModule,
     CoreRoutingModule,
@@ -45,6 +51,10 @@ import { ProyectoComponenteModule } from '../proyecto-componente/proyecto-compon
     UbigeoModule,
     ProyectoPoblacionModule,
     ProyectoComponenteModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
     
   
   ],
