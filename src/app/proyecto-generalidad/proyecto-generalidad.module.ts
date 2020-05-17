@@ -25,6 +25,7 @@ import { GeneralidadRoutingModule } from './generalidad-routing.module';
 
 
 
+
 @NgModule({
   declarations: [ProyectoGeneralidadRootComponent, ProyectoGeneralidadContainerComponent, GeneralidadFormComponent, HistorialDocumentarioFormComponent, UbigeoSeleccionadoFormComponent, InstitucionEducativaFormComponent, ViaAccesoFormComponent, ColindanteFormComponent, AntecedenteIntervencionFormComponent],
   imports: [

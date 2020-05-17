@@ -1,26 +1,34 @@
-<button (click)='outputRootToContainer()'>out</button>
-<section [formGroup]="formGroup">
 
-    <app-antecedente-intervencion-form [formControlName] ='formControlNames.antecedente_intervencion'></app-antecedente-intervencion-form>
-    <app-colindante-form [formControlName]='formControlNames.colindante'></app-colindante-form>
+<section [formGroup]="formGroup">
     <app-generalidad-form [formControlName]='formControlNames.generalidad'></app-generalidad-form>
     <app-historial-documentario-form [formControlName]='formControlNames.historial_documentario'></app-historial-documentario-form>
-    
-    <div [formArrayName]="formControlNames.instituciones_educativas" *ngFor="let unaInstitucion_educativa of formGroupControls.instituciones_educativas.controls; let i = index">
-        <app-institucion-educativa-form [formControl]='unaInstitucion_educativa'></app-institucion-educativa-form>
-        <button mat-button color='warn'(click)='eliminarInstitucionEducativa(i)'>Eliminar Institucion Educativa</button>
-    </div>
-    <button mat-button color='primary' (click)='agregarInstitucionEducativa()'>Agregar Institucion Educativa</button>
-    
     <app-ubigeo-seleccionado-form [formControlName]='formControlNames.ubigeo_seleccionado'></app-ubigeo-seleccionado-form>
-    <div [formArrayName]='formControlNames.vias_accesos' *ngFor="let unaVia_acceso of formGroupControls.vias_accesos.controls; let i = index">
-        <app-via-acceso-form [formControl]='unaVia_acceso' ></app-via-acceso-form>
-        <button mat-button color='warn'(click)='eliminarViaAcceso(i)'>Eliminar Via Acceso</button>
-    </div>
+    <app-colindante-form [formControlName]='formControlNames.colindante'></app-colindante-form>
+    <app-antecedente-intervencion-form [formControlName] ='formControlNames.antecedente_intervencion'></app-antecedente-intervencion-form>
+  
+    <ul style="position:relative">
+        <li [formArrayName]="formControlNames.instituciones_educativas" *ngFor="let unaInstitucion_educativa of formGroupControls.instituciones_educativas.controls; let i = index">
+            <app-institucion-educativa-form [formControl]='unaInstitucion_educativa'></app-institucion-educativa-form>
+            <span (click)='eliminarInstitucionEducativa(i)' class="close"><mat-icon>delete_forever</mat-icon></span> 
+        </li>
+
+    </ul>
+       
+    <ul style="position:relative">
+        <li [formArrayName]='formControlNames.vias_accesos' *ngFor="let unaVia_acceso of formGroupControls.vias_accesos.controls; let i = index">
+            <app-via-acceso-form [formControl]='unaVia_acceso' ></app-via-acceso-form>
+            <span (click)='eliminarViaAcceso(i)' class="close"> <mat-icon>delete_forever</mat-icon></span>
+        </li>
+
+    </ul>
+      
     <button mat-button color='primary' (click)='agregarViaAcceso()'>Agregar Via Acceso</button>
+    <button mat-button color='primary' (click)='agregarInstitucionEducativa()'>Agregar Institucion Educativa</button>
 
 
     
 </section>
 
+<!--
 <pre>{{formGroupValues | json}}</pre>
+-->
