@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgxSubFormComponent,subformComponentProviders, Controls } from 'ngx-sub-form';
 import { IUbigeo_Seleccionado } from './IUbigeo-seleccionado';
 import { FormControl, FormArray } from '@angular/forms';
-import { SharedService } from 'src/app/core/shared.service';
+import { SharedUbigeoService } from 'src/app/core/shared.ubigeo.service';
 import { IDepartamento } from 'src/app/core/custom/ubigeo/departamento-form/IDepartamento';
 import { DepartamentoId } from 'src/app/core/custom/ubigeo/ubigeo.service';
 import { Observable, of } from 'rxjs';
@@ -43,7 +43,7 @@ export class UbigeoSeleccionadoFormComponent extends NgxSubFormComponent<IUbigeo
   public selectedValue:string[]
 
 
-  constructor(private apiWebUbigeo:SharedService){
+  constructor(private apiWebUbigeo:SharedUbigeoService){
     super();
   }
 

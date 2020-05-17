@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IDepartamento } from './departamento-form/IDepartamento';
 
-import { SharedService } from '../../shared.service';
+import { SharedUbigeoService } from '../../shared.ubigeo.service';
 
 
 export interface DepartamentoId extends IDepartamento { id: string; }
@@ -14,7 +14,7 @@ export class UbigeoService {
   public id: string = null;
   
   
-  constructor(private webApiUbigeos:SharedService){ }
+  constructor(private webApiUbigeos:SharedUbigeoService){ }
   
   public crearUbigeo(departamento:IDepartamento){
     this.webApiUbigeos.crearUbigeo(departamento)

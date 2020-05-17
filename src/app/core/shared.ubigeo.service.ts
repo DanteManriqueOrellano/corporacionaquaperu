@@ -7,7 +7,7 @@ import { IDepartamento } from './custom/ubigeo/departamento-form/IDepartamento';
 @Injectable({
   providedIn: 'root'
 })
-export class SharedService {
+export class SharedUbigeoService {
 
   public departamentos: Observable<DepartamentoId[]>;
   public id: string = null;

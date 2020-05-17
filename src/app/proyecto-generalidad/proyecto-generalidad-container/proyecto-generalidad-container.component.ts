@@ -16,4 +16,5 @@ export class ProyectoGeneralidadContainerComponent implements OnInit {
     console.log($event)
     
   }
+  
 }
