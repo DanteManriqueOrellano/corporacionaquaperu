@@ -44,6 +44,7 @@ import { GeneralidadRoutingModule } from './generalidad-routing.module';
     FormsModule,
     ReactiveFormsModule,
 
-  ]
+  ],
+  exports:[ProyectoGeneralidadContainerComponent]
 })
 export class ProyectoGeneralidadModule { }
