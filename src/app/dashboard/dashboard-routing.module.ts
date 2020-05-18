@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { OverviewComponent } from './overview/overview.component';
 const routes: Routes = 
   [
-    {path:':id',component:OverviewComponent}
+    {path:':id/overview',component:OverviewComponent}
   ];
 
 @NgModule({

@@ -20,9 +20,9 @@ export class ProyectoGeneralidadContainerComponent implements OnInit {
   proyectoGeneralidadesOutput($event){
    
     const id =  this.webApiGeneralidad.crearGeneralidadToDocument($event)
-    this.router.navigate(['/heroes', { id: id }]);
-    
+    this.router.navigate([`proyecto/${id}/overview`]);
+    }
 
-  }
+  
   
 }

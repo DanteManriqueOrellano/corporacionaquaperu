@@ -10,14 +10,8 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./bienvenido.component.css']
 })
 export class BienvenidoComponent {
-  events: string[] = [];
-  opened: boolean;
-  mode = new FormControl('over');
-  showFiller = false;
  
 
   
-
-  constructor(private breakpointObserver: BreakpointObserver) {}
 
 }

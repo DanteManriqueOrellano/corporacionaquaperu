@@ -22,9 +22,7 @@ export class OverviewComponent implements OnInit {
     private route:ActivatedRoute
     ) {}
   ngOnInit(){
-    this.route.queryParams.subscribe(params => {
-      console.log(params)
-    } )
+    this.route.paramMap.subscribe((val)=>{console.log(val.get('id'))})
   }
 
 }
