@@ -14,16 +14,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OverviewComponent } from './overview/overview.component';
+import { OverviewComponent } from './overview-container/overview/overview.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { OverviewContainerComponent } from './overview-container/overview-container.component';
 
 
 
 @NgModule({
-  declarations: [OverviewComponent],
+  declarations: [OverviewComponent, OverviewContainerComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,

@@ -39,7 +39,7 @@ export class SharedGeneralidadService {
     return this.generalidades
   }
   public obtenerGeneralidad(docId: string) {
-    this.departamentoDocument = this.afs.collection('generalildades').doc(docId);
+    this.departamentoDocument = this.afs.collection('generalidades').doc(docId);
     return this.departamentoDocument.valueChanges();
   }
 
