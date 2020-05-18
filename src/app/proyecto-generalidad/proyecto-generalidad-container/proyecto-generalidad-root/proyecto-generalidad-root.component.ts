@@ -9,7 +9,7 @@ import { IIntitucion_educativa } from '../institucion-educativa-form/IInstitucio
 import { IAntecedenteIntervencion } from '../antecedente-intervencion-form/IAntecedente-intervencion';
 import { IColindante } from '../colindante-form/IColindante';
 
-interface IProyectoGeneralidadesForm{
+export interface IProyectoGeneralidadesForm{
   generalidad:IGeneralidad;
   historial_documentario:IHistorial_Documentario;
   ubigeo_seleccionado:IUbigeo_Seleccionado;

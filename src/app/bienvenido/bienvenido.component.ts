@@ -14,10 +14,7 @@ export class BienvenidoComponent {
   opened: boolean;
   mode = new FormControl('over');
   showFiller = false;
-  
-  drawer(){
-    
-  }
+ 
 
   
 

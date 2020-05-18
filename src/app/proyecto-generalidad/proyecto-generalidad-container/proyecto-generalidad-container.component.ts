@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedGeneralidadService } from 'src/app/core/shared-generalidad.service';
 
 @Component({
   selector: 'app-proyecto-generalidad-container',
@@ -8,13 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class ProyectoGeneralidadContainerComponent implements OnInit {
 
   
-  constructor() { }
+  constructor(
+    private webApiGeneralidad: SharedGeneralidadService,
+   // private route: Activate
+    ) { }
 
   ngOnInit(): void {
   }
   proyectoGeneralidadesOutput($event){
-    console.log($event)
+   
+    const id =  this.webApiGeneralidad.crearGeneralidadToDocument($event)
     
+
   }
   
 }
