@@ -4,10 +4,12 @@ import { map } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { IProyectoGeneralidadesForm } from '../proyecto-generalidad/proyecto-generalidad-container/proyecto-generalidad-root/proyecto-generalidad-root.component';
 
+export interface IProyectoGeneralidadesIdForm extends IProyectoGeneralidadesForm { id: string; }
 @Injectable({
   providedIn: 'root'
 })
 export class SharedGeneralidadService {
+  
 
   public generalidades: Observable<IProyectoGeneralidadesForm[]>;
  
@@ -15,6 +17,7 @@ export class SharedGeneralidadService {
   private departamentoDocument: AngularFirestoreDocument<IProyectoGeneralidadesForm>
 
   constructor(private readonly afs: AngularFirestore) {
+    
     this.generalidadCollection = this.afs.collection<IProyectoGeneralidadesForm>('generalidades');
     this.generalidades = this.generalidadCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -23,6 +26,7 @@ export class SharedGeneralidadService {
         return { id, ...data };
       }))
     );
+
   }
 
   public crearGeneralidadToDocument(data: IProyectoGeneralidadesForm):string{
@@ -38,10 +42,22 @@ export class SharedGeneralidadService {
   public ListarGeneralidades(): Observable<IProyectoGeneralidadesForm[]> {
     return this.generalidades
   }
+  
+  public obtenerGeneralidadId(docId: string):Observable<IProyectoGeneralidadesIdForm>{
+    return this.afs.collection<IProyectoGeneralidadesForm>('generalidades').doc(docId).snapshotChanges().pipe(
+      map(action => {
+        const data = action.payload.data() as IProyectoGeneralidadesIdForm;
+        const id = action.payload.id
+        return {id, ...data}
+      })
+    )
+  }
+
   public obtenerGeneralidad(docId: string) {
     this.departamentoDocument = this.afs.collection('generalidades').doc(docId);
     return this.departamentoDocument.valueChanges();
   }
+
 
   public actualizaUbigeo(ubigeo: IProyectoGeneralidadesForm, docId: string): void {
 

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { OverviewComponent } from './overview-container/overview/overview.component';
+import { OverviewContainerComponent } from './overview-container/overview-container.component';
 const routes: Routes = 
   [
-    {path:':id/overview',component:OverviewComponent}
+    {path:':id/overview',component:OverviewContainerComponent}
   ];
 
 @NgModule({

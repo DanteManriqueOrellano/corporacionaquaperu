@@ -1,17 +1,56 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay, mergeMap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
-import { SharedGeneralidadService } from 'src/app/core/shared-generalidad.service';
+import { SharedGeneralidadService, IProyectoGeneralidadesIdForm } from 'src/app/core/shared-generalidad.service';
+import { NgxRootFormComponent, DataInput, Controls } from 'ngx-sub-form';
 import { IProyectoGeneralidadesForm } from 'src/app/proyecto-generalidad/proyecto-generalidad-container/proyecto-generalidad-root/proyecto-generalidad-root.component';
+
+import { IGeneralidad } from 'src/app/proyecto-generalidad/proyecto-generalidad-container/generalidad-form/IGeneralidad';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.css']
 })
-export class OverviewComponent implements OnInit {
+export class OverviewComponent extends NgxRootFormComponent<IProyectoGeneralidadesForm ,IProyectoGeneralidadesIdForm> {
+  
+  
+  @DataInput()
+
+  @Input('generalidadData1')
+  public dataInput: Required<IProyectoGeneralidadesForm> | null | undefined
+ 
+  @Input('alias_proyecto')
+  public alias_proyecto:Observable<IProyectoGeneralidadesIdForm>
+
+  @Output('joder')
+  public dataOutput: EventEmitter<IProyectoGeneralidadesForm> = new EventEmitter()
+
+  protected getFormControls():Controls<IProyectoGeneralidadesIdForm>{
+    return {
+      antecedente_intervencion: new FormControl(),
+      ubigeo_seleccionado: new FormControl(),
+      colindante: new FormControl(),
+      generalidad: new FormControl(),
+      historial_documentario: new FormControl(),
+      id: new FormControl(),
+      instituciones_educativas: new FormControl(),
+      vias_accesos: new FormControl(),
+
+    }
+  }
+  alias_proyecto1:string=''
+ /* public generalidadData1$:Observable<IProyectoGeneralidadesIdForm> =this.route.paramMap.pipe(
+    map(
+      (param)=>param.get('id')),
+    mergeMap(
+      (id:string)=>{return this.webApiGeneralidad.obtenerGeneralidadId(id)}
+    )
+  )*/
+   
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -19,37 +58,29 @@ export class OverviewComponent implements OnInit {
       shareReplay()
     );
   
-  public generalidadData:IProyectoGeneralidadesForm = {
-    generalidad:{alias_proyecto:'',cliente:'',modalidad_ejecucion:'',nombre_proyecto:'',plazo_ejecucion:'',sist_contratacion:'',snip:''},
-    antecedente_intervencion:{detalle_intervencion:''},
-    colindante:{este:'',norte:'',oeste:'',sur:''},
-    vias_accesos:[],
-    historial_documentario:{anio_priorizacion:'',fecha_aprobacion:'',inf_tecnico_nro:'',rep_und_ejecutora:'',rep_und_evaluadora:'',rep_und_formuladora:''},
-    instituciones_educativas:[],
-    ubigeo_seleccionado:{departamento:'',provincia:'',distrito:'',cacerios:[],centros_poblados:[],anexos:[],barrios:[]}
-  };
+  
+  
   constructor(
+    
     private breakpointObserver: BreakpointObserver,
     private route:ActivatedRoute,
     private webApiGeneralidad:SharedGeneralidadService
-    ) {}
+    ) {
+      super();      
+    }
   ngOnInit(){
-    this.route.paramMap.pipe(
-      map(
-        (param)=>param.get('id')),
-      mergeMap(
-        (id:string)=>{return this.webApiGeneralidad.obtenerGeneralidad(id)}
-      )
-    ).subscribe((generalidadData:IProyectoGeneralidadesForm)=>{
-      this.generalidadData = generalidadData
-
-    })
+    //this.generalidadData1$.subscribe((val)=>{
+   //   this.alias_proyecto = val.generalidad.alias_proyecto
+    //})
       
-    
+   // this.alias_proyecto.subscribe((val)=>{this.alias_proyecto1 = val.generalidad.alias_proyecto})
+   console.log(this.dataInput)
   }
-  cargado(){
-    console.log(this.generalidadData)
+  go(){
+    console.log(this.formGroupValues) 
   }
+
+  
 
 
 }
