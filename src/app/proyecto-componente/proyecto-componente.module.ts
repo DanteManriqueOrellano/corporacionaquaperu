@@ -28,7 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [ComponenteContainerComponent, ComponenteRootComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, RedTuberiaComponent],
+  declarations: [ComponenteContainerComponent,ComponenteRootComponent , CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, RedTuberiaComponent],
   imports: [
     CommonModule,
     ProyectoComponenteRoutingModule,

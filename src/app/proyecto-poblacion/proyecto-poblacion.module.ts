@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProyectoPoblacionContainerComponent } from './proyecto-poblacion-container/proyecto-poblacion-container.component';
-import { ProyectoPoblacionRootComponent } from './proyecto-poblacion-root/proyecto-poblacion-root.component';
-import { PoblacionFormComponent } from './proyecto-poblacion-root/poblacion-form/poblacion-form.component';
+
 import { PoblacionRoutingModule } from './poblacion-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -16,6 +15,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProyectoPoblacionRootComponent } from './proyecto-poblacion-container/proyecto-poblacion-root/proyecto-poblacion-root.component';
+import { PoblacionFormComponent } from './proyecto-poblacion-container/proyecto-poblacion-root/poblacion-form/poblacion-form.component';
 
 
 

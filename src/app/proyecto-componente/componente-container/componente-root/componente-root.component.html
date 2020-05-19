@@ -1,1 +1,9 @@
-<p>componente-root works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Root</legend>
+        <app-red-tuberia [formControlName]='formControlNames.red_tuberia'></app-red-tuberia>
+        <app-captacion [formControlName]='formControlNames.captacion'></app-captacion>
+        <app-reservorio [formControlName]='formControlNames.reservorio'></app-reservorio>
+        <app-tecnologia-excreta [formControlName]='formControlNames.tecnologia_excreta'></app-tecnologia-excreta>
+    </fieldset>
+</section>

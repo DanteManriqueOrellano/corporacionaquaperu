@@ -3,7 +3,7 @@ import { IPoblacion } from './poblacion-form/IPoblacion';
 import { NgxRootFormComponent, Controls, subformComponentProviders } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
 
-interface poblacionForm{
+export interface IPoblacionForm{
   poblacion:IPoblacion
 }
 @Component({
@@ -12,14 +12,14 @@ interface poblacionForm{
   styleUrls: ['./proyecto-poblacion-root.component.css'],
   providers: subformComponentProviders(ProyectoPoblacionRootComponent)
 })
-export class ProyectoPoblacionRootComponent extends NgxRootFormComponent <poblacionForm> {
+export class ProyectoPoblacionRootComponent extends NgxRootFormComponent <IPoblacionForm> {
   
   @Input('poblacionInput')
-  dataInput: Required<poblacionForm>;
+  dataInput: Required<IPoblacionForm>;
   @Output('poblacionOutput')
-  dataOutput: EventEmitter<poblacionForm>= new EventEmitter();
+  dataOutput: EventEmitter<IPoblacionForm>= new EventEmitter();
 
-  protected getFormControls():Controls<poblacionForm>{
+  protected getFormControls():Controls<IPoblacionForm>{
     return{
       poblacion: new FormControl()
     }

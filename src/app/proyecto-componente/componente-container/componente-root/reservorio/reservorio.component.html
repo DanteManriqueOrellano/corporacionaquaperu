@@ -1,1 +1,19 @@
-<p>reservorio works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Reservorio</legend>
+        <mat-form-field>
+            <input matInput placeholder="antiguedad" [formControlName]='formControlNames.antiguedad' autocomplete="off" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="capacidad_almacenamiento" [formControlName]='formControlNames.capacidad_almacenamiento' autocomplete="off" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="forma_estructura" [formControlName]='formControlNames.forma_estructura' autocomplete="off" >
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="ubicacion" [formControlName]='formControlNames.ubicacion' autocomplete="off" >
+        </mat-form-field>
+        <mat-checkbox  [formControlName]='formControlNames.caceta_cloracion'>Caceta de Cloración</mat-checkbox>
+        <mat-checkbox  [formControlName]='formControlNames.cerco_perimetrico'>Cerco Perimetrico</mat-checkbox>
+    </fieldset>
+</section>
