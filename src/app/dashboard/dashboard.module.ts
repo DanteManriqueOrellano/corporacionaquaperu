@@ -20,11 +20,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { OverviewContainerComponent } from './overview-container/overview-container.component';
-
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
-  declarations: [OverviewComponent, OverviewContainerComponent],
+  declarations: [OverviewComponent, OverviewContainerComponent, ConfiguracionComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -44,7 +45,8 @@ import { OverviewContainerComponent } from './overview-container/overview-contai
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
   ]
 })
 export class DashboardModule { }
