@@ -5,11 +5,9 @@ import { ConfiguracionComponent } from './configuracion/configuracion.component'
 const routes: Routes = 
   [
     {path:':id/overview',component:OverviewContainerComponent,children:[
-      
       {path:'config',component:ConfiguracionComponent}
       ]
     },
-    
   ];
 
 @NgModule({
