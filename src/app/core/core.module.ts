@@ -19,6 +19,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { DashboardModule } from '../dashboard/dashboard.module';
+import { HomeModule } from '../home/home.module';
+import { GeneralidadModule } from '../generalidad/generalidad.module';
 
 @NgModule({
   declarations: [ShellComponent ],
@@ -43,6 +45,8 @@ import { DashboardModule } from '../dashboard/dashboard.module';
     MatSidenavModule,
     MatListModule,
     DashboardModule,
+    HomeModule,
+    GeneralidadModule,
   ],
   exports:[
     ShellComponent,
