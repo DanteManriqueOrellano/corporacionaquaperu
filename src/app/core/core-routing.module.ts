@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BienvenidoComponent } from '../bienvenido/bienvenido.component';
 
 
 const routes: Routes = [
@@ -9,8 +8,7 @@ const routes: Routes = [
   {path:'bienvenido',loadChildren: () => import('../modules/bienvenido/bienvenido.module').then(m => m.BienvenidoModule)},
   {path:'referencia', loadChildren:()=> import('../modules/generalidadesproyecto/generalidadesproyecto.module').then(m=>m.GeneralidadesproyectoModule)}, */
   
-  {path:'',component:BienvenidoComponent},
-  {path:'proyecto',loadChildren:()=>import('../dashboard/dashboard.module').then(m=>m.DashboardModule)}
+  
   
  
 
