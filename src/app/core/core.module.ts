@@ -14,24 +14,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
-import { ProyectoGeneralidadModule } from '../proyecto-generalidad/proyecto-generalidad.module';
-import { UbigeoModule } from './custom/ubigeo/ubigeo.module';
-import { ProyectoPoblacionModule } from '../proyecto-poblacion/proyecto-poblacion.module';
-import { ProyectoComponenteModule } from '../proyecto-componente/proyecto-componente.module';
-import { BienvenidoComponent } from '../bienvenido/bienvenido.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { ProyectoLocalidadModule } from '../proyecto-localidad/proyecto-localidad.module';
-
-
-
-
-
 
 @NgModule({
-  declarations: [ShellComponent, BienvenidoComponent],
+  declarations: [ShellComponent ],
   imports: [
     CommonModule,
     CoreRoutingModule,
@@ -48,17 +37,10 @@ import { ProyectoLocalidadModule } from '../proyecto-localidad/proyecto-localida
     MatIconModule,
     MatDialogModule,
     MatTableModule,
-    ProyectoGeneralidadModule,
-    UbigeoModule,
-    ProyectoPoblacionModule,
-    ProyectoComponenteModule,
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    ProyectoLocalidadModule,
-    
-  
   ],
   exports:[
     ShellComponent,
@@ -75,7 +57,6 @@ import { ProyectoLocalidadModule } from '../proyecto-localidad/proyecto-localida
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-  
   ]
 })
 export class CoreModule { }
