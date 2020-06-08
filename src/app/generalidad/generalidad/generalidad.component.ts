@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IGeneralidadRoot } from '../generalidad-root-form/generalidad-root-form.component';
 
 @Component({
   selector: 'app-generalidad',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./generalidad.component.css']
 })
 export class GeneralidadComponent implements OnInit {
-
+  generalidadData$:Observable<IGeneralidadRoot>
   constructor() { }
 
   ngOnInit(): void {
