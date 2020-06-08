@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GeneralidadRoutingModule } from './generalidad-routing.module';
-import { GeneralidadComponent } from './generalidad/generalidad.component';
+import { GeneralidadCComponent } from './generalidad/generalidadc.component';
 import { GeneralidadRootFormComponent } from './generalidad-root-form/generalidad-root-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -17,20 +17,37 @@ import { InstEduComponent } from './generalidad-root-form/inst-edu/inst-edu.comp
 import { ViasAccesosComponent } from './generalidad-root-form/vias-accesos/vias-accesos.component';
 import { InstsEdusComponent } from './generalidad-root-form/insts-edus/insts-edus.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { GeneralidadComponent } from './generalidad-root-form/generalidad/generalidad.component';
 
 
 @NgModule({
-  declarations: [GeneralidadComponent, GeneralidadRootFormComponent, HistDocComponent, UbigeoSelectComponent, ColindanteComponent, AntecedenteIntervencionComponent, ViaAccesoComponent, InstEduComponent, ViasAccesosComponent, InstsEdusComponent],
+  declarations: [GeneralidadCComponent, GeneralidadRootFormComponent, HistDocComponent, UbigeoSelectComponent, ColindanteComponent, AntecedenteIntervencionComponent, ViaAccesoComponent, InstEduComponent, ViasAccesosComponent, InstsEdusComponent,GeneralidadComponent],
   imports: [
     CommonModule,
     GeneralidadRoutingModule,
     MatFormFieldModule,
     MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatStepperModule,
+    MatCardModule,
     MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatTableModule,
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports :[GeneralidadComponent, GeneralidadRootFormComponent, HistDocComponent, UbigeoSelectComponent, ColindanteComponent, AntecedenteIntervencionComponent, ViaAccesoComponent, InstEduComponent, ViasAccesosComponent, InstsEdusComponent]
+  exports :[GeneralidadComponent, GeneralidadCComponent, GeneralidadRootFormComponent, HistDocComponent, UbigeoSelectComponent, ColindanteComponent, AntecedenteIntervencionComponent, ViaAccesoComponent, InstEduComponent, ViasAccesosComponent, InstsEdusComponent]
 
 })
 export class GeneralidadModule { }

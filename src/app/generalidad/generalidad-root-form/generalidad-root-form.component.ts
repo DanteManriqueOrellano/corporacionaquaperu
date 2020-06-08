@@ -1,4 +1,4 @@
-import { Component,EventEmitter, Input } from '@angular/core';
+import { Component,EventEmitter, Input, Output } from '@angular/core';
 import { NgxRootFormComponent, DataInput,Controls,subformComponentProviders } from 'ngx-sub-form';
 import { IGeneralidad } from './generalidad/generalidad.component';
 import { IHist_doc } from './hist-doc/hist-doc.component';
@@ -31,6 +31,7 @@ export class GeneralidadRootFormComponent extends NgxRootFormComponent<IGenerali
   @DataInput()
   @Input('generalidadData')
   dataInput: Required<IGeneralidadRoot>;
+  @Output('salida')
   dataOutput: EventEmitter<IGeneralidadRoot>;
   protected getFormControls(): Controls<IGeneralidadRoot> {
     return {

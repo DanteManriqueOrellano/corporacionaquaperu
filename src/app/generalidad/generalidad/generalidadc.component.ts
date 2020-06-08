@@ -3,11 +3,11 @@ import { Observable } from 'rxjs';
 import { IGeneralidadRoot } from '../generalidad-root-form/generalidad-root-form.component';
 
 @Component({
-  selector: 'app-generalidad',
-  templateUrl: './generalidad.component.html',
-  styleUrls: ['./generalidad.component.css']
+  selector: 'app-generalidadc',
+  templateUrl: './generalidadc.component.html',
+  styleUrls: ['./generalidadc.component.css']
 })
-export class GeneralidadComponent implements OnInit {
+export class GeneralidadCComponent implements OnInit {
   generalidadData$:Observable<IGeneralidadRoot>
   constructor() { }
 
