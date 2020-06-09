@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CompSanitarioComponent } from './dashboard/comp-sanitario/comp-sanitario.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CompSanitarioComponent } from './dashboard/comp-sanitario/comp-sanitari
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSidenavModule,
     ReactiveFormsModule,
     FormsModule
   ],
