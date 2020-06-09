@@ -8,7 +8,8 @@ const routes: Routes = [
   {path:'bienvenido',loadChildren: () => import('../modules/bienvenido/bienvenido.module').then(m => m.BienvenidoModule)},
   {path:'referencia', loadChildren:()=> import('../modules/generalidadesproyecto/generalidadesproyecto.module').then(m=>m.GeneralidadesproyectoModule)}, */
   
-  {path: "home",loadChildren:()=>import('../generalidad/generalidad.module').then(m=>m.GeneralidadModule)}
+  {path: "home",loadChildren:()=>import('../generalidad/generalidad.module').then(m=>m.GeneralidadModule)},
+  {path:"home1",loadChildren:()=>import('../home/home.module').then(m=>m.HomeModule)}
   
  
 
