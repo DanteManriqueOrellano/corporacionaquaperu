@@ -4,8 +4,9 @@ import { Observable, of } from 'rxjs';
 import { IDepartamento } from '../departamento-form/IDepartamento';
 
 import { map, switchMap } from 'rxjs/operators';
-import { UbigeoService, DepartamentoId } from '../ubigeo.service';
+
 import { ActivatedRoute } from '@angular/router';
+import { UbigeoService } from 'src/app/shared/ubigeo.service';
 
 @Component({
   selector: 'app-ubigeo-container',
@@ -13,18 +14,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./ubigeo-container.component.css'],
   providers: subformComponentProviders(UbigeoContainerComponent)
 })
-export class UbigeoContainerComponent implements AfterViewInit {
+export class UbigeoContainerComponent {
 
   constructor(
-    private apiUbigeo: UbigeoService,
+    private ubigeoService: UbigeoService,
     private route: ActivatedRoute,
 
   ) { }
-  ngAfterViewInit(): void {
-    console.log('ha')
-  }
+  public ubigeos$:Observable<IDepartamento[]> = this.ubigeoService.ListarUbigeos()
+  
 
-  public ubigeo$: Observable<NullableObject<IDepartamento>> = this.route.paramMap.pipe(
+  /*public ubigeo$: Observable<NullableObject<IDepartamento>> = this.route.paramMap.pipe(
     map(params => {
       const id = params.get('id');
       return id
@@ -40,9 +40,9 @@ export class UbigeoContainerComponent implements AfterViewInit {
     ),
     map((ubigeo) => ubigeo ? ubigeo : this.ubigeoVacio())
 
-  )
+  )*/
 
-  private ubigeoVacio(): NullableObject<IDepartamento> {
+  /*private ubigeoVacio(): NullableObject<IDepartamento> {
 
     return {
       nombre_dep: null,
@@ -62,7 +62,7 @@ export class UbigeoContainerComponent implements AfterViewInit {
 
   public crearUbigeoOutput(departamento: IDepartamento): void {
     this.apiUbigeo.crearUbigeo(departamento)
-  }
+  }*/
 
 
 }

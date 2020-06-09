@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSubFormComponent, Controls, subformComponentProviders } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { DepartamentoId } from 'src/app/ubigeo/ubigeo.service';
+
 import { IProvincia } from 'src/app/ubigeo/provincia-form/IProvincia';
 import { IDistrito } from 'src/app/ubigeo/distrito-form/IDistrito';
 import { ICacerio } from 'src/app/ubigeo/cacerio-form/ICacerio';
 import { ICp } from 'src/app/ubigeo/cp-form/ICp';
 import { IAnexo } from 'src/app/ubigeo/anexo-form/IAnexo';
 import { IBarrio } from 'src/app/ubigeo/barrio-form/IBarrio';
-import { UbigeoService } from 'src/app/shared/ubigeo.service';
+import { UbigeoService, DepartamentoId } from 'src/app/shared/ubigeo.service';
 export interface IUbigeo_seleccionado {
   depa_select:string;
   prov_select:string;

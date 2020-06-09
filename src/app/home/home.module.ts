@@ -25,6 +25,7 @@ import { GeneralidadModule } from '../generalidad/generalidad.module';
     MatInputModule,
     MatButtonModule,
     GeneralidadModule,
+    
     MatListModule,
     FormsModule,
     ReactiveFormsModule,

@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { GeneralidadComponent } from './generalidad-root-form/generalidad/generalidad.component';
+import { UbigeoModule } from '../ubigeo/ubigeo.module';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { GeneralidadComponent } from './generalidad-root-form/generalidad/genera
     MatIconModule,
     MatDialogModule,
     MatTableModule,
+    UbigeoModule,
     FormsModule,
     ReactiveFormsModule,
   ],

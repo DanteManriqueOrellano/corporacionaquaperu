@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { DepartamentoId } from '../ubigeo/ubigeo.service';
-import { IDepartamento } from '../ubigeo/departamento-form/IDepartamento';
 
+import { IDepartamento } from '../ubigeo/departamento-form/IDepartamento';
+export interface DepartamentoId extends IDepartamento {
+  id:string;
+}
 @Injectable({
   providedIn: 'root'
 })

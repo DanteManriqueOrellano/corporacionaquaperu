@@ -10,6 +10,7 @@ import { IInst_Edu } from './inst-edu/inst-edu.component';
 import { FormControl } from '@angular/forms';
 import { IVias_Accesos } from './vias-accesos/vias-accesos.component';
 import { IInsts_edus } from './insts-edus/insts-edus.component';
+import { IDepartamento } from 'src/app/ubigeo/departamento-form/IDepartamento';
 
 export interface IGeneralidadRoot{
   generalidad:IGeneralidad;
@@ -33,6 +34,7 @@ export class GeneralidadRootFormComponent extends NgxRootFormComponent<IGenerali
   @DataInput()
   @Input('generalidadData')
   dataInput: Required<IGeneralidadRoot>;
+  
   @Output('salida')
   dataOutput: EventEmitter<IGeneralidadRoot>;
   protected getFormControls(): Controls<IGeneralidadRoot> {
