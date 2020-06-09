@@ -10,6 +10,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatListModule} from '@angular/material/list';
+import { GeneralidadModule } from '../generalidad/generalidad.module';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    GeneralidadModule,
+    MatListModule,
     FormsModule,
     ReactiveFormsModule,
   ],

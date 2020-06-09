@@ -16,6 +16,9 @@ import { MatInputModule } from '@angular/material/input';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CompSanitarioComponent } from './dashboard/comp-sanitario/comp-sanitario.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -27,6 +30,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
     ReactiveFormsModule,
     FormsModule
   ],
