@@ -21,7 +21,7 @@ export const generalidadData:IGeneralidadRoot =
     "sur": "asd"
   },
   "generalidad": {
-    "alias_proyecto": "aasd",
+    "alias_proyecto": "asd",
     "cliente": "asd",
     "modalidad_ejecucion": "asd",
     "nombre_proyecto": "asd",
@@ -58,7 +58,7 @@ export const generalidadData:IGeneralidadRoot =
     "dist_select": "asd",
     "prov_select": "asd"
   },
-  "vias_accesos1": {
+  "vias_accesos": {
     "vias_accesos": [
       {
         "distancia": "asd",
@@ -69,4 +69,4 @@ export const generalidadData:IGeneralidadRoot =
       }
     ]
   }
-}*/
+}*/   

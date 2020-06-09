@@ -8,6 +8,8 @@ import { IAntecedente_intervencion } from './antecedente-intervencion/antecedent
 import { IVia_Acceso } from './via-acceso/via-acceso.component';
 import { IInst_Edu } from './inst-edu/inst-edu.component';
 import { FormControl } from '@angular/forms';
+import { IVias_Accesos } from './vias-accesos/vias-accesos.component';
+import { IInsts_edus } from './insts-edus/insts-edus.component';
 
 export interface IGeneralidadRoot{
   generalidad:IGeneralidad;
@@ -15,8 +17,8 @@ export interface IGeneralidadRoot{
   ubigeo_select:IUbigeo_seleccionado;
   colindante:IColindante;
   antecedente_intervencion:IAntecedente_intervencion;
-  vias_accesos:IVia_Acceso;
-  insts_edus:IInst_Edu;
+  vias_accesos:IVias_Accesos;
+  insts_edus:IInsts_edus;
 
 }
 

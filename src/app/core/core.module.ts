@@ -20,6 +20,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { HomeModule } from '../home/home.module';
+import { UbigeoModule } from '../ubigeo/ubigeo.module';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { HomeModule } from '../home/home.module';
     MatListModule,
     DashboardModule,
     HomeModule,
+    UbigeoModule,
     
   ],
   exports:[
