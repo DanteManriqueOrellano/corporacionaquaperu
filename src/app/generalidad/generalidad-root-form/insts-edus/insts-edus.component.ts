@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { IInst_Edu } from '../inst-edu/inst-edu.component';
-import { NgxSubFormComponent, Controls, subformComponentProviders } from 'ngx-sub-form';
+import { NgxSubFormComponent, Controls, subformComponentProviders, NgxRootFormComponent, DataInput } from 'ngx-sub-form';
 import { FormArray, FormControl } from '@angular/forms';
 
 export interface IInsts_edus {
@@ -13,7 +13,11 @@ export interface IInsts_edus {
   styleUrls: ['./insts-edus.component.css'],
   providers:subformComponentProviders(InstsEdusComponent)
 })
-export class InstsEdusComponent extends NgxSubFormComponent<IInsts_edus> {
+export class InstsEdusComponent extends NgxRootFormComponent<IInsts_edus> {
+  
+  @DataInput()
+  dataInput: Required<IInsts_edus>;
+  dataOutput: EventEmitter<IInsts_edus>;
 
   protected getFormControls():Controls<IInsts_edus>{
     return {

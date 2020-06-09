@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NgxSubFormComponent, Controls, subformComponentProviders } from 'ngx-sub-form';
+import { Component,EventEmitter } from '@angular/core';
+import { NgxSubFormComponent, Controls, subformComponentProviders, NgxRootFormComponent, DataInput } from 'ngx-sub-form';
 import { IVia_Acceso } from '../via-acceso/via-acceso.component';
 import { FormArray, FormControl } from '@angular/forms';
 
@@ -13,7 +13,14 @@ export interface IVias_Accesos {
   styleUrls: ['./vias-accesos.component.css'],
   providers:subformComponentProviders(ViasAccesosComponent)
 })
-export class ViasAccesosComponent extends NgxSubFormComponent<IVias_Accesos> {
+export class ViasAccesosComponent extends NgxRootFormComponent<IVias_Accesos> {
+  
+  @DataInput()
+  dataInput: Required<IVias_Accesos>;
+  dataOutput: EventEmitter<IVias_Accesos>;
+
+  
+  
 
   protected getFormControls():Controls<IVias_Accesos> {
     return {
