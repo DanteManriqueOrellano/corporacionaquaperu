@@ -15,8 +15,8 @@ export interface IGeneralidadRoot{
   ubigeo_select:IUbigeo_seleccionado;
   colindante:IColindante;
   antecedente_intervencion:IAntecedente_intervencion;
-  vias_accesos:IVia_Acceso;
-  insts_edus:IInst_Edu;
+  vias_accesos:IVia_Acceso[];
+  insts_edus:IInst_Edu[];
 
 }
 

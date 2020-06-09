@@ -1,5 +1,5 @@
 <section [formGroup]="formGroup">
-    <div formArrayName="formControlNames.vias_accesos" *ngFor="let unaVia of formGroupControls.vias_accesos.controls; let i = index">
+    <div [formArrayName]="formControlNames.vias_accesos" *ngFor="let unaVia of formGroupControls.vias_accesos.controls; let i = index">
         <app-via-acceso [formControl] = "unaVia"></app-via-acceso>
         <button mat-button color="warm" (click)="eliminarVia(i)">Eliminar Via</button>
     </div>
