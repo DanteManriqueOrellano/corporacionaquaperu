@@ -35,8 +35,8 @@ export class GeneralidadRootFormComponent extends NgxRootFormComponent<IGenerali
   @Input('generalidadData')
   dataInput: Required<IGeneralidadRoot>;
   
-  @Output('salida')
-  dataOutput: EventEmitter<IGeneralidadRoot>;
+  @Output('generalidadDataUpdated')
+  dataOutput: EventEmitter<IGeneralidadRoot> = new EventEmitter();
   protected getFormControls(): Controls<IGeneralidadRoot> {
     return {
       antecedente_intervencion: new FormControl(),

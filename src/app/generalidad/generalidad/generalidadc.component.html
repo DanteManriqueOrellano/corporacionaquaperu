@@ -1,4 +1,4 @@
 <app-generalidad-root-form
     [generalidadData] ="generalidadData$ | async"
-    
+    (generalidadDataUpdated)="upsertGeneralidad($event)"
 ></app-generalidad-root-form>

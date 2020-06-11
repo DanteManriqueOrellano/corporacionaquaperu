@@ -4,6 +4,7 @@ import { IGeneralidadRoot } from '../generalidad-root-form/generalidad-root-form
 import { IDepartamento } from 'src/app/ubigeo/departamento-form/IDepartamento';
 import { UbigeoService } from 'src/app/shared/ubigeo.service';
 import { GeneralidadService } from 'src/app/shared/generalidad.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-generalidadc',
@@ -11,8 +12,19 @@ import { GeneralidadService } from 'src/app/shared/generalidad.service';
   styleUrls: ['./generalidadc.component.css']
 })
 export class GeneralidadCComponent  {
-  generalidadData$:Observable<IGeneralidadRoot> = this.generalidadService.generalidadData$
+  generalidadData$:Observable<IGeneralidadRoot> = this.generalidadService.obtenUnaGeneralidad('')
   
   constructor(private generalidadService: GeneralidadService) { }
+  
+  public upsertGeneralidad(generalidad: IGeneralidadRoot): void {
+    //actualiza si se esta editando / crea si es nuevo
+    this.generalidadData$.subscribe((value)=>{
+      if(value === null){// es nuevo
+
+      }else{//actualiza
+
+      }
+    })
+  }
 
 }

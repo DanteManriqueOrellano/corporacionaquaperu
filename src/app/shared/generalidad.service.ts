@@ -1,19 +1,73 @@
 import { Injectable } from '@angular/core';
 import { IGeneralidadRoot } from '../generalidad/generalidad-root-form/generalidad-root-form.component';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
 
+interface IGeneralidadDataId extends IGeneralidadRoot {
+  id:string
+ 
+}
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralidadService {
+  
+  public generalidades: Observable<IGeneralidadDataId[]>;
+  private generalidadCollection: AngularFirestoreCollection<IGeneralidadDataId>;
+  private generalidadDocument: AngularFirestoreDocument<IGeneralidadDataId>
 
-  public generalidadData$:BehaviorSubject<IGeneralidadRoot> = new BehaviorSubject(generalidadData)
+  //public generalidadData$:BehaviorSubject<IGeneralidadRoot> = new BehaviorSubject(generalidadData)
 
-  constructor() { }
+  constructor(private firestore: AngularFirestore) {
+    this.generalidadCollection = this.firestore.collection<IGeneralidadDataId>('ubigeos');
+    this.generalidades = this.generalidadCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as IGeneralidadDataId;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+  }
+  public crearUUID(){
+    return this.firestore.createId()
+  }
+  public crearUnaGeneralidad(generalidad: IGeneralidadDataId) {
+    return this.generalidadCollection.doc(generalidad.id).set(generalidad)
+    .then(()=>{
+      console.log("Documento creado Satisfactoriamente");
+    })
+    .catch((error)=>{console.error("error al crear el domumento",error)})
+  }
+  public obtenGeneralidades(): Observable<IGeneralidadDataId[]> {
+    return this.generalidades
+  }
+  public obtenUnaGeneralidad(docId: string) {
+    this.generalidadDocument = this.firestore.collection('ubigeos').doc(docId);
+    return this.generalidadDocument.valueChanges();
+  }
+
+  public actualizaUnaGeneralidad(ubigeo: IGeneralidadDataId, docId: string): void {
+
+    this.generalidadCollection.doc(docId).set(ubigeo).then(function () {
+      console.log("Document successfully updated!");
+    }).catch(function (error) {
+      console.error("Error updating document: ", error);
+    });
+  }
+  public eliminaUnaGeneralidad(idUbigeo: string): void {
+    this.generalidadCollection.doc(idUbigeo).delete().then(function () {
+      console.log("Document successfully deleted!");
+    }).catch(function (error) {
+      console.error("Error removing document: ", error);
+    });
+  }
+
+
 }
 
-export const generalidadData:IGeneralidadRoot = 
-{
+export const generalidadData:IGeneralidadRoot = null
+/*{
   "antecedente_intervencion": {
     "detalle_intervencion": "asd"
   },
@@ -94,4 +148,4 @@ export const generalidadData:IGeneralidadRoot =
       }
     ]
   }
-}
+}*/
