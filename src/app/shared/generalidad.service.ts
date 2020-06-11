@@ -47,9 +47,9 @@ export class GeneralidadService {
     return this.generalidadDocument.valueChanges();
   }
 
-  public actualizaUnaGeneralidad(ubigeo: IGeneralidadDataId, docId: string): void {
+  public actualizaUnaGeneralidad(generalidadDataId: IGeneralidadDataId): void {
 
-    this.generalidadCollection.doc(docId).set(ubigeo).then(function () {
+    this.generalidadCollection.doc(generalidadDataId.id).set(generalidadDataId).then(function () {
       console.log("Document successfully updated!");
     }).catch(function (error) {
       console.error("Error updating document: ", error);

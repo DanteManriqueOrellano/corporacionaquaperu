@@ -16,12 +16,19 @@ export class GeneralidadCComponent  {
   
   constructor(private generalidadService: GeneralidadService) { }
   
-  public upsertGeneralidad(generalidad: IGeneralidadDataId): void {
+  public crear_actualizarGeneralidad(generalidad: IGeneralidadDataId): void {
+    
+    
+    
     //actualiza si se esta editando / crea si es nuevo
-    this.generalidadData$.subscribe((value)=>{
-      if(value === null){// es nuevo
-
+    this.generalidadData$.subscribe((generalidadDataId)=>{
+      
+      if(generalidadDataId === undefined){// crear
+        const uid = this.generalidadService.crearUUID
+        this.generalidadService.crearUnaGeneralidad({id:uid,...generalidad})
+        
       }else{//actualiza
+        this.generalidadService.actualizaUnaGeneralidad(generalidadDataId)
 
       }
     })
