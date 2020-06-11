@@ -3,16 +3,16 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-import { IDepartamento } from '../ubigeo/departamento-form/IDepartamento';
+/*import { IDepartamento } from '../ubigeo/departamento-form/IDepartamento';
 export interface DepartamentoId extends IDepartamento {
   id:string;
-}
+}*/
 @Injectable({
   providedIn: 'root'
 })
 export class UbigeoService {
 
-  public departamentos: Observable<DepartamentoId[]>;
+  /*public departamentos: Observable<DepartamentoId[]>;
   public id: string = null;
   private departamentoCollection: AngularFirestoreCollection<IDepartamento>;
   private departamentoDocument: AngularFirestoreDocument<IDepartamento>
@@ -52,5 +52,5 @@ export class UbigeoService {
     }).catch(function (error) {
       console.error("Error removing document: ", error);
     });
-  }
+  }*/
 }

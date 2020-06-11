@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IGeneralidadRoot } from '../generalidad-root-form/generalidad-root-form.component';
-import { IDepartamento } from 'src/app/ubigeo/departamento-form/IDepartamento';
+
 import { UbigeoService } from 'src/app/shared/ubigeo.service';
 import { GeneralidadService, IGeneralidadDataId } from 'src/app/shared/generalidad.service';
 import { map } from 'rxjs/operators';

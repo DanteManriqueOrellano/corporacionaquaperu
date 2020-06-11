@@ -22,6 +22,7 @@ import { DashboardModule } from '../dashboard/dashboard.module';
 import { HomeModule } from '../home/home.module';
 
 
+
 @NgModule({
   declarations: [ShellComponent ],
   imports: [
@@ -46,6 +47,7 @@ import { HomeModule } from '../home/home.module';
     MatListModule,
     DashboardModule,
     HomeModule,
+    
     
     
   ],
