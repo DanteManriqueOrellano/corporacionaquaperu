@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService, IProyecto } from 'src/app/shared/home.service';
 import { Observable } from 'rxjs';
 import { UbigeoService } from 'src/app/shared/ubigeo.service';
 import { IDepartamento } from 'src/app/ubigeo/departamento-form/IDepartamento';
+import { IGeneralidadDataId, GeneralidadService } from 'src/app/shared/generalidad.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +10,10 @@ import { IDepartamento } from 'src/app/ubigeo/departamento-form/IDepartamento';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  listaProyectos$:Observable<IProyecto[]> = this.homeService.listarProyectos()
+  //lista todos los documentos
+  listaProyectos$:Observable<IGeneralidadDataId[]> = this.generalidadService.obtenGeneralidades()
   
-  constructor(
-    private homeService:HomeService,
-  
-    ) { }
+  constructor(private generalidadService:GeneralidadService) { }
 
 
 }

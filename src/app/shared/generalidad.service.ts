@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 
-interface IGeneralidadDataId extends IGeneralidadRoot {
+export interface IGeneralidadDataId extends IGeneralidadRoot {
   id:string
  
 }

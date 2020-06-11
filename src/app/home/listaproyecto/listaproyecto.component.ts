@@ -1,20 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IProyecto } from 'src/app/shared/home.service';
-import { IDepartamento } from 'src/app/ubigeo/departamento-form/IDepartamento';
+import { IGeneralidadDataId } from 'src/app/shared/generalidad.service';
 
 @Component({
   selector: 'app-listaproyecto',
   templateUrl: './listaproyecto.component.html',
   styleUrls: ['./listaproyecto.component.css']
 })
-export class ListaproyectoComponent implements OnInit {
+export class ListaproyectoComponent {
 
   @Input('listaProyectos')
-  listaProyectos:IProyecto[]
-  constructor() { }
+  listaProyectos:IGeneralidadDataId[]
 
-  ngOnInit(): void {
-  }
 
 }
