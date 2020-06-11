@@ -10,12 +10,20 @@ import { ICp } from 'src/app/ubigeo/cp-form/ICp';
 import { IAnexo } from 'src/app/ubigeo/anexo-form/IAnexo';
 import { IBarrio } from 'src/app/ubigeo/barrio-form/IBarrio';
 import { UbigeoService, DepartamentoId } from 'src/app/shared/ubigeo.service';
+interface cacerio_select{
+  nombre:string;
+  id:number;
+}
+interface centro_poblado_select {
+  nombre:string;
+  id:number;
+}
 export interface IUbigeo_seleccionado {
   depa_select:string;
   prov_select:string;
   dist_select:string;
-  cacerios_select:string[];
-  centros_poblados_select:string[];
+  cacerios_select:cacerio_select[];
+  centros_poblados_select:centro_poblado_select[];
 }
 @Component({
   selector: 'app-ubigeo-select',

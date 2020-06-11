@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { IGeneralidadRoot } from '../generalidad/generalidad-root-form/generalidad-root-form.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeneralidadService {
 
+  public generalidadData$:BehaviorSubject<IGeneralidadRoot> = new BehaviorSubject(generalidadData)
+
   constructor() { }
 }
-/*
+
 export const generalidadData:IGeneralidadRoot = 
 {
   "antecedente_intervencion": {
@@ -32,7 +35,7 @@ export const generalidadData:IGeneralidadRoot =
   "hist_doc": {
     "anio_priorizacion": "asd",
     "fecha_aprovacion": "asd",
-    "inf_tec_nro": "asd",
+    "inf_tec_nro": "asdasd",
     "resp_und_ejecutora": "asd",
     "resp_und_evaluadora": "asd",
     "resp_und_formuladora": "asd"
@@ -52,11 +55,33 @@ export const generalidadData:IGeneralidadRoot =
     ]
   },
   "ubigeo_select": {
-    "anexos_select": "asd",
-    "cacerios_select": "asd",
-    "depa_select": "asd",
-    "dist_select": "asd",
-    "prov_select": "asd"
+    "centros_poblados_select": [
+      {
+        "nombre": "UCHPA",
+        "id": 0
+      },
+      {
+        "nombre": "pira",
+        "id": 1
+      },
+      {
+        "nombre": "vicos",
+        "id": 0
+      }
+    ],
+    "cacerios_select": [
+      {
+        "nombre": "PONGOR",
+        "id": 0
+      },
+      {
+        "nombre": "marian",
+        "id": 1
+      }
+    ],
+    "depa_select": "ANCASH",
+    "dist_select": "INDEPENDENCIA",
+    "prov_select": "HUARAZ"
   },
   "vias_accesos": {
     "vias_accesos": [
@@ -69,4 +94,4 @@ export const generalidadData:IGeneralidadRoot =
       }
     ]
   }
-}*/   
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IDepartamento } from '../departamento-form/IDepartamento';
-import { UbigeoService, DepartamentoId } from '../ubigeo.service';
+import { DepartamentoId } from 'src/app/shared/ubigeo.service';
+
 
 @Component({
   selector: 'app-main-ubigeo',

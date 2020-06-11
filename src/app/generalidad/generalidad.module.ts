@@ -45,7 +45,7 @@ import { UbigeoModule } from '../ubigeo/ubigeo.module';
     MatIconModule,
     MatDialogModule,
     MatTableModule,
-    UbigeoModule,
+    
     FormsModule,
     ReactiveFormsModule,
   ],

@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { IGeneralidadRoot } from '../generalidad-root-form/generalidad-root-form.component';
 import { IDepartamento } from 'src/app/ubigeo/departamento-form/IDepartamento';
 import { UbigeoService } from 'src/app/shared/ubigeo.service';
+import { GeneralidadService } from 'src/app/shared/generalidad.service';
 
 @Component({
   selector: 'app-generalidadc',
@@ -10,8 +11,8 @@ import { UbigeoService } from 'src/app/shared/ubigeo.service';
   styleUrls: ['./generalidadc.component.css']
 })
 export class GeneralidadCComponent  {
-  generalidadData$:Observable<IGeneralidadRoot>
+  generalidadData$:Observable<IGeneralidadRoot> = this.generalidadService.generalidadData$
   
-  constructor() { }
+  constructor(private generalidadService: GeneralidadService) { }
 
 }

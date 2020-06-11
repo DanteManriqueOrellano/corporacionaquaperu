@@ -21,7 +21,7 @@ export class UbigeoContainerComponent {
     private route: ActivatedRoute,
 
   ) { }
-  public ubigeos$:Observable<IDepartamento[]> = this.ubigeoService.ListarUbigeos()
+  public ubigeo$:Observable<IDepartamento[]> = this.ubigeoService.ListarUbigeos()
   
 
   /*public ubigeo$: Observable<NullableObject<IDepartamento>> = this.route.paramMap.pipe(
@@ -42,7 +42,7 @@ export class UbigeoContainerComponent {
 
   )*/
 
-  /*private ubigeoVacio(): NullableObject<IDepartamento> {
+  private ubigeoVacio(): NullableObject<IDepartamento> {
 
     return {
       nombre_dep: null,
@@ -51,18 +51,18 @@ export class UbigeoContainerComponent {
   }
   public upsertListing(ubigeo: IDepartamento): void {
   
-    this.apiUbigeo.actualizaUbigeo(ubigeo,this.apiUbigeo.id);
+    this.ubigeoService.actualizaUbigeo(ubigeo,this.ubigeoService.id);
 
   }
 
   public eliminaUbigeoOutput($evnt): void {
 
-    this.apiUbigeo.eliminarUnUbigeo(this.apiUbigeo.id)
+    this.ubigeoService.eliminarUnUbigeo(this.ubigeoService.id)
   }
 
   public crearUbigeoOutput(departamento: IDepartamento): void {
-    this.apiUbigeo.crearUbigeo(departamento)
-  }*/
+    this.ubigeoService.crearUbigeo(departamento)
+  }
 
 
 }

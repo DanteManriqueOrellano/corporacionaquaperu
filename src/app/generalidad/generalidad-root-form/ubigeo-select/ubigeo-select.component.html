@@ -13,7 +13,7 @@
         <mat-form-field>
             <mat-label>Provincia</mat-label>
             <mat-select [formControlName]='formControlNames.prov_select'>
-                <mat-option *ngFor="let provincia of dataProvincia; let i= index" [value]="provincia.nombre_provincia">
+                <mat-option *ngFor="let provincia of dataProvincia ; let i= index" [value]="provincia.nombre_provincia">
                     <p (click)='setIndiceProvincia(i)'>{{provincia.nombre_provincia}}</p>
                 </mat-option>
             </mat-select>
