@@ -1,0 +1,11 @@
+<section [formGroup]="formGroup">
+    <Fieldset>
+        <legend>PROVINCIA</legend>
+        <input [formControlName]="formControlNames.nombre_provincia">
+        <div [formArrayName]="formControlNames.distritos" *ngFor="let unDistrito of formGroupControls.distritos.controls; let i = index">
+            <app-distrito [formControl]="unDistrito"></app-distrito>
+            <button (click) ="eliminarDistrito(i)">Eliminar Distrito</button>
+        </div>
+        <button (click)="agregarDistrito()">Agregar Distrito</button>
+    </Fieldset>
+</section>

@@ -7,9 +7,7 @@ import { GeneralidadRootFormComponent } from './generalidad-root-form/generalida
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { HistDocComponent } from './generalidad-root-form/hist-doc/hist-doc.component';
-import { UbigeoSelectComponent } from './generalidad-root-form/ubigeo-select/ubigeo-select.component';
 import { ColindanteComponent } from './generalidad-root-form/colindante/colindante.component';
 import { AntecedenteIntervencionComponent } from './generalidad-root-form/antecedente-intervencion/antecedente-intervencion.component';
 import { ViaAccesoComponent } from './generalidad-root-form/via-acceso/via-acceso.component';
@@ -26,11 +24,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { GeneralidadComponent } from './generalidad-root-form/generalidad/generalidad.component';
+import { UbigeoModule } from '../ubigeo/ubigeo.module';
 
 
 
 @NgModule({
-  declarations: [GeneralidadCComponent, GeneralidadRootFormComponent, HistDocComponent, UbigeoSelectComponent, ColindanteComponent, AntecedenteIntervencionComponent, ViaAccesoComponent, InstEduComponent, ViasAccesosComponent, InstsEdusComponent,GeneralidadComponent],
+  declarations: [GeneralidadCComponent, GeneralidadRootFormComponent, HistDocComponent, ColindanteComponent, AntecedenteIntervencionComponent, ViaAccesoComponent, InstEduComponent, ViasAccesosComponent, InstsEdusComponent,GeneralidadComponent],
   imports: [
     CommonModule,
     GeneralidadRoutingModule,
@@ -45,11 +44,12 @@ import { GeneralidadComponent } from './generalidad-root-form/generalidad/genera
     MatIconModule,
     MatDialogModule,
     MatTableModule,
+    UbigeoModule, 
     
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports :[GeneralidadComponent, GeneralidadCComponent, GeneralidadRootFormComponent, HistDocComponent, UbigeoSelectComponent, ColindanteComponent, AntecedenteIntervencionComponent, ViaAccesoComponent, InstEduComponent, ViasAccesosComponent, InstsEdusComponent]
+  exports :[GeneralidadComponent, GeneralidadCComponent, GeneralidadRootFormComponent, HistDocComponent, ColindanteComponent, AntecedenteIntervencionComponent, ViaAccesoComponent, InstEduComponent, ViasAccesosComponent, InstsEdusComponent]
 
 })
 export class GeneralidadModule { }

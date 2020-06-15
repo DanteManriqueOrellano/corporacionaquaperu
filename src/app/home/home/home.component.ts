@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UbigeoService } from 'src/app/shared/ubigeo.service';
+
 
 import { IGeneralidadDataId, GeneralidadService } from 'src/app/shared/generalidad.service';
 
@@ -13,7 +13,10 @@ export class HomeComponent {
   //lista todos los documentos
   listaProyectos$:Observable<IGeneralidadDataId[]> = this.generalidadService.obtenGeneralidades()
   
-  constructor(private generalidadService:GeneralidadService) { }
+  constructor(
+    private generalidadService:GeneralidadService,
+    
+    ) { }
 
 
 }
