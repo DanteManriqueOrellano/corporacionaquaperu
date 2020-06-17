@@ -1,60 +1,61 @@
 <div style="display: flex; justify-content: center;">
-  
 
-    <mat-drawer-container class="example-container mat-elevation-z8" autosize>
+
+  <mat-drawer-container class="example-container mat-elevation-z8" autosize>
+    
+
+    <mat-drawer #drawer class="example-sidenav" mode="side">
       <h2>Generalidades del Proyecto</h2>
-  
-      <mat-drawer #drawer class="example-sidenav" mode="side">
-        <div class="body">
-    
-          <mat-card class="card-width mat-elevation-z8" >
-             
-              <mat-card-content>
-                  <div class="box">
-                      <div (click)='drawer.toggle()' class="box-items">
-                          <div class="box-body">
-                              <p>+</p>
-              
-                          </div>
-                          <div class="box-footer">
-                              <p>Agregar Proyecto</p>
-              
-                          </div>
+      <app-generalidadc></app-generalidadc>
       
-                      </div>
-                      <div class="box-items" *ngFor="let item of listaProyectos">
-                          <div class="box-body">
-                              <p>{{item.nombre_proyecto}}</p>
-              
-                          </div>
-                          <div class="box-footer">
-                              <p>Avance al 80%</p>
-              
-                          </div>
-              
-                      </div>
-              
-                  </div>
-                
-              </mat-card-content>
-             
-            </mat-card>
-         </div>
-    
-      </mat-drawer>
-    
-      <div class="example-sidenav-content">
-        <app-generalidadc></app-generalidadc>
-        <div >
-            
+
         <button type="button" mat-button color='primary' (click)="drawer.toggle()">
           Atraz
         </button>
-    
-        </div>
+
       
+
+
+
+
+    </mat-drawer>
+      <div class="example-sidenav-content">
+        
+
+        <div class="box">
+          <div (click)='drawer.toggle()' class="box-items">
+            <div class="box-body">
+              <p>+</p>
+
+            </div>
+            <div class="box-footer">
+              <p>Agregar Proyecto</p>
+
+            </div>
+
+          </div>
+          <div class="box-items" *ngFor="let item of listaProyectos">
+            <div class="box-body">
+              <p>{{item.nombre_proyecto}}</p>
+
+            </div>
+            <div class="box-footer">
+              <p>Avance al 80%</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
+
+
     
-    </mat-drawer-container>
+
     
-  </div>
+
+
+  </mat-drawer-container>
+
+</div>
