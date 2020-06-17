@@ -49,7 +49,10 @@
             <mat-label>Proyectos</mat-label>
             <mat-select>
               <mat-option *ngFor="let generalidad of listaGeneralidad">
-                <p [routerLink]="['/proyecto',generalidad.id,'overview']"  >{{generalidad.generalidad.alias_proyecto}}</p> 
+                <p [routerLink]="['/proyecto',generalidad.id,'overview']"  >{{generalidad.generalidad.alias_proyecto}}</p>
+              </mat-option>
+              <mat-option>
+                <p [routerLink]="['/']"  >Salir</p>
               </mat-option>
             </mat-select>
           </mat-form-field>

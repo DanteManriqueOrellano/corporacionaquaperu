@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit   {
   
   alias:string = "";
   listaGeneralidad:IGeneralidadRoot[]=[];
-  docId = "Lpguxved0YeuwflDojAf"
+  
   dataUnaGeneralidad$:Observable<IGeneralidadRoot> = this.route.paramMap.pipe(
     map(
       (param)=>param.get('docId')),
