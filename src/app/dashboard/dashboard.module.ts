@@ -21,10 +21,17 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { ConfigComponent } from './config/config.component';
 import { MatSelectModule } from '@angular/material/select';
-
+import { RedTuberiaComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/red-tuberia/red-tuberia.component';
+import { CaptacionComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/captacion/captacion.component';
+import { ReservorioComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/reservorio/reservorio.component';
+import { TecnologiaExcretaComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/tecnologia-excreta/tecnologia-excreta.component';
+import { LineaAduccionComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/red-tuberia/linea-aduccion/linea-aduccion.component';
+import { RedDistribucionComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/red-tuberia/red-distribucion/red-distribucion.component';
+import { ConexionDomiciliariaComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/red-tuberia/conexion-domiciliaria/conexion-domiciliaria.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
-  declarations: [MenulateralComponent, CuerpoComponent, OverviewComponent, CompSanitarioComponent, CompSanitarioRootFormComponent, PoblacionComponent, PoblacionRootFormComponent, DashboardComponent, ConfigComponent],
+  declarations: [MenulateralComponent, CuerpoComponent, OverviewComponent, CompSanitarioComponent, CompSanitarioRootFormComponent, PoblacionComponent, PoblacionRootFormComponent, DashboardComponent, ConfigComponent, RedTuberiaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -36,9 +43,10 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatListModule,
     MatSelectModule,
+    MatRadioModule,
     ReactiveFormsModule,
     FormsModule
   ],
-  exports:[MenulateralComponent, CuerpoComponent, OverviewComponent, CompSanitarioComponent, CompSanitarioRootFormComponent, PoblacionComponent, PoblacionRootFormComponent]
+  exports:[MenulateralComponent, CuerpoComponent, OverviewComponent, CompSanitarioComponent, CompSanitarioRootFormComponent, PoblacionComponent, PoblacionRootFormComponent, DashboardComponent, ConfigComponent, RedTuberiaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent]
 })
 export class DashboardModule { }
