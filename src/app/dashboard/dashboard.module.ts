@@ -30,7 +30,8 @@ import { RedDistribucionComponent } from './dashboard/comp-sanitario/comp-sanita
 import { ConexionDomiciliariaComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/red-tuberia/conexion-domiciliaria/conexion-domiciliaria.component';
 import { MatRadioModule} from '@angular/material/radio';
 import { LineaConduccionComponent } from './dashboard/comp-sanitario/comp-sanitario-root-form/red-tuberia/linea-conduccion/linea-conduccion.component';
-
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [MenulateralComponent, CuerpoComponent, OverviewComponent, CompSanitarioComponent, CompSanitarioRootFormComponent, PoblacionComponent, PoblacionRootFormComponent, DashboardComponent, ConfigComponent, RedTuberiaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent,LineaConduccionComponent],
   imports: [
@@ -45,6 +46,8 @@ import { LineaConduccionComponent } from './dashboard/comp-sanitario/comp-sanita
     MatListModule,
     MatSelectModule,
     MatRadioModule,
+    MatStepperModule,
+    MatMenuModule,
     ReactiveFormsModule,
     FormsModule
   ],

@@ -1,1 +1,15 @@
+<div style="display: flex;justify-content: center;">
+    <h1 >UBIGEO SELECCIONADO</h1>
+</div>
+
+<mat-horizontal-stepper #stepper>
+    <mat-step *ngFor="let localidad of ['LOCALIDAD A','LOCALIDAD B','LOCALIDAD C']" >
+    <ng-template matStepLabel>{{localidad}}</ng-template>
+    <a href="">Poblacion de {{localidad}}</a>
+      <br>  
+    <a href="">Componentes Sanitarios de {{localidad}}</a>
+      
+    </mat-step>
+  </mat-horizontal-stepper>
+
 <router-outlet></router-outlet>
