@@ -1,0 +1,34 @@
+<div style="display: flex; justify-content: center;">
+    <mat-drawer-container class="example-container mat-elevation-z8" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        <h2>Nuevo Proyecto</h2>
+        <app-home></app-home>
+          <button type="button" mat-button color='primary' (click)="drawer.toggle()">
+            Atraz
+          </button>
+      </mat-drawer>
+        <div class="example-sidenav-content">
+          <div class="box">
+            <div (click)='drawer.toggle()' class="box-items">
+              <div class="box-body">
+                <p>+</p>
+              </div>
+              <div class="box-footer">
+                <p>Crear Proyecto</p>
+              </div>
+            </div>
+            <div (click)="goTo(proyecto.docId)" class="box-items" *ngFor="let proyecto of proyectos$ | async">
+              <div class="box-body"  >
+                <p >{{proyecto.alias}}</p>
+                
+              </div>
+              <div class="box-footer">
+                <p>Avance al 80%</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+    </mat-drawer-container>
+  </div>
+  

@@ -1,1 +1,28 @@
-<p>home works!</p>
+<section [formGroup]="formGroup">
+    <mat-form-field>
+        <input matInput placeholder="alias" [formControlName]="formControlNames.alias" autocomplete="off">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Tipo de Proyecto</mat-label>
+        <mat-select [formControlName]="formControlNames.tipo_proyecto">
+          <mat-option *ngFor="let tipoProyecto of tipoProyectos" [value]="tipoProyecto">{{tipoProyecto}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="cliente" [formControlName]="formControlNames.cliente" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="fecha" [formControlName]="formControlNames.fecha" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="nombre_proyecto" [formControlName]="formControlNames.nombre_proyecto" autocomplete="off">
+    </mat-form-field>
+
+</section>
+
+
+    <button mat-button color ="primary"(click)="nuevoProyecto()">Crear Proyecto</button>
+
+
