@@ -9,8 +9,7 @@ const routes: Routes = [
   {path:'referencia', loadChildren:()=> import('../modules/generalidadesproyecto/generalidadesproyecto.module').then(m=>m.GeneralidadesproyectoModule)}, */
   
   //{path: "home",loadChildren:()=>import('../generalidad/generalidad.module').then(m=>m.GeneralidadModule)},
-  {path:"",loadChildren:()=>import('../home/home.module').then(m=>m.HomeModule)},
-  {path:"proyecto/:docId/overview",loadChildren:()=>import('../dashboard/dashboard.module').then(m=>m.DashboardModule)}
+  
 
 ];
 
