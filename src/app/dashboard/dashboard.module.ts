@@ -8,6 +8,16 @@ import { CuerpoComponent } from './dashboard/overview/cuerpo/cuerpo.component';
 import { FuncionalidadesModule } from '../funcionalidades/funcionalidades.module';
 import { EstadisticasModule } from '../estadisticas/estadisticas.module';
 import { FasesModule } from '../fases/fases.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -15,9 +25,20 @@ import { FasesModule } from '../fases/fases.module';
   declarations: [DashboardComponent, MenulateralComponent, ConfigComponent, OverviewComponent, CuerpoComponent],
   imports: [
     CommonModule,
+    MatSelectModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatListModule,
+    MatMenuModule,
     FuncionalidadesModule,
     EstadisticasModule,
-    FasesModule
-  ]
+    FasesModule,
+    DashboardRoutingModule
+  ],
+  exports:[DashboardComponent, MenulateralComponent, ConfigComponent, OverviewComponent, CuerpoComponent]
 })
 export class DashboardModule { }

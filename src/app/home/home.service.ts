@@ -22,7 +22,7 @@ export class HomeService {
 
   private proyectos: Observable<IProyectoDocId[]>;
   private proyectoCollection: AngularFirestoreCollection<IProyectoDocId>;
-  private proyectoDocument: AngularFirestoreDocument<IProyecto>
+  private proyectoDocument: AngularFirestoreDocument<IProyectoDocId>
   public tipoProyectos:string[] = tipoProyectos;
 
   constructor(private firestore: AngularFirestore) {
