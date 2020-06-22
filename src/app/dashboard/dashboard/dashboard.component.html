@@ -25,7 +25,7 @@
       <mat-nav-list style="border-top: 1px solid #64b5f6; border-bottom: 1px solid #64b5f6;">
         <!--MENU LATERAL-->
         <ng-container>
-          <app-menulateral></app-menulateral>
+          <app-menulateral [dataUnProyecto]="dataUnProyecto$ | async" ></app-menulateral>
         </ng-container>
         <!--FIN MENU LATERAL-->
       </mat-nav-list>
@@ -43,7 +43,7 @@
         <ng-container>
           <mat-toolbar-row class=" mat-elevation-z8">
             
-            <span>{{ alias }}</span>
+            <span>{{ dataUnProyecto.alias }}</span>
             <span class="example-spacer"></span>
             <mat-form-field>
               <mat-label>Proyectos</mat-label>

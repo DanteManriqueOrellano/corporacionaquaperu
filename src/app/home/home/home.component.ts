@@ -26,6 +26,7 @@ export class HomeComponent extends NgxSubFormComponent<IProyecto> {
       fecha: new FormControl(),
       nombre_proyecto: new FormControl(),
       tipo_proyecto: new FormControl(),
+      funcionalidadesInstaladas:new FormControl(),
     }
   }
 

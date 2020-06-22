@@ -5,7 +5,10 @@
 <div class="list-item-active">
     <button mat-menu-item [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon style="color: #ffffff; ">voicemail</mat-icon>
-        <span style="color: #ffffff; " >asdasd</span>
+      <ng-container *ngIf="dataUnProyecto">
+        <span style="color: #ffffff; " >{{ dataUnProyecto.alias}}</span>
+      </ng-container>
+    
       </button>
 </div>
 

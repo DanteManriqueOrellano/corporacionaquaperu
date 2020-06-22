@@ -3,29 +3,12 @@ import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 
-export interface IFuncionalidad {
-  nombreFuncionalidad:string;
-  id:string;
-}
-export interface IProyecto {
-  nombre_proyecto:string;
-  alias:string;
-  cliente:string;
-  fecha:string;
-  tipo_proyecto:string;
-  funcionalidadesInstaladas:IFuncionalidad[]
-}
-export interface IProyectoDocId extends IProyecto {
-  docId:string;
-}
-const tipoProyectos:string[]=["Saneamiento"];
-
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  private proyectos: Observable<IProyectoDocId[]>;
+/*  private proyectos: Observable<IProyectoDocId[]>;
   private proyectoCollection: AngularFirestoreCollection<IProyectoDocId>;
   private proyectoDocument: AngularFirestoreDocument<IProyectoDocId>
   public tipoProyectos:string[] = tipoProyectos;
@@ -74,5 +57,5 @@ export class HomeService {
     }).catch(function (error) {
       console.error("Error removing document: ", error);
     });
-  }
+  }*/
 }
