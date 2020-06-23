@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FuncionalidadesComponent } from './funcionalidades/funcionalidades.component';
-import { MemDesComponent } from './mem-des/mem-des.component';
-import { ExpTecComponent } from './exp-tec/exp-tec.component';
-import { ComMatComponent } from './com-mat/com-mat.component';
+
 import { GeneralidadesModule } from '../generalidades/generalidades.module';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
@@ -16,7 +14,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { FuncinalidadesRoutingModule } from './funcionalidades-routing.module';
 
 @NgModule({
-  declarations: [FuncionalidadesComponent, MemDesComponent, ExpTecComponent, ComMatComponent],
+  declarations: [FuncionalidadesComponent],
   imports: [
     CommonModule,
     MatDividerModule,
@@ -28,9 +26,9 @@ import { FuncinalidadesRoutingModule } from './funcionalidades-routing.module';
     MatTabsModule,
     FormsModule,
     ReactiveFormsModule,
-    GeneralidadesModule,
+    
     FuncinalidadesRoutingModule,
   ],
-  exports: [FuncionalidadesComponent, MemDesComponent, ExpTecComponent, ComMatComponent]
+  exports: [FuncionalidadesComponent]
 })
 export class FuncionalidadesModule { }
