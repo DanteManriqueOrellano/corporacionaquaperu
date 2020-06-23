@@ -1,1 +1,7 @@
-<p>overview works!</p>
+<ng-container *ngIf="dataUnProyecto">
+    <div *ngFor="let item of dataUnProyecto.funcionalidadesInstaladas">
+         {{item}}
+    </div>
+      
+ </ng-container>
+ 

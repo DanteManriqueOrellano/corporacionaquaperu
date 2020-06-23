@@ -1,1 +1,15 @@
-<p>generalidad-form-root works!</p>
+<section [formGroup]="formGroup">
+    <app-generalidad [formControlName]="formControlNames.generalidad"></app-generalidad>
+    <app-hist-doc [formControlName]="formControlNames.hist_doc"></app-hist-doc>
+    <app-seleccionado [formControlName]="formControlNames.ubigeo_selecionado"></app-seleccionado>
+    <app-colindante [formControlName]="formControlNames.colindante"></app-colindante>
+    <app-antecedente-intervencion [formControlName]="formControlNames.antecedente_intervencion"></app-antecedente-intervencion>
+    <app-vias-accesos [formControlName]="formControlNames.vias_accesos"></app-vias-accesos>
+    <app-insts-edus [formControlName]="formControlNames.insts_edus"></app-insts-edus>
+</section>
+<!--
+
+<pre>{{formGroupValues | json}}</pre> 
+
+-->
+<button mat-raised-button color="primary"  (click)="manualSave()" > Guardar </button>

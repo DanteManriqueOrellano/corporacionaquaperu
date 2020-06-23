@@ -1,74 +1,76 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav style="background-color:  #11293f;" #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-      <mat-toolbar style="display: flex; justify-content: center; background-color: #051e34;">
-        <img width="100px" height="50px" mat-card-image src="https://i.ibb.co/k48cDGm/aquaweb.png" alt="LOGO-AQUA-1">
-  
-        <!--
+  <mat-sidenav style="background-color:  #11293f;" #drawer class="sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="display: flex; justify-content: center; background-color: #051e34;">
+      <img width="100px" height="50px" mat-card-image src="https://i.ibb.co/k48cDGm/aquaweb.png" alt="LOGO-AQUA-1">
+
+      <!--
                //fondo
           64b5f6 letras y divisores
         b8bfc6
         243a4e
         
         -->
-      </mat-toolbar>
-      <mat-nav-list style="display: flex; border-top: 1px solid #64b5f6; " class="lista">
-        <p style="display: flex; justify-content: center; align-items: center  ; color: #64b5f6; width: 80%">
-          <mat-icon>home</mat-icon>Dashboard
-        </p>
-        <p style="display: flex; align-items: center; justify-content: center; width: 20%"><a style="color: #64b5f6;"
-            mat-list-item [routerLink]="['config']">
-            <mat-icon>settings</mat-icon>
-          </a></p>
-      </mat-nav-list>
-      <mat-nav-list style="border-top: 1px solid #64b5f6; border-bottom: 1px solid #64b5f6;">
-        <!--MENU LATERAL-->
-        <ng-container>
-          <app-menulateral [dataUnProyecto]="dataUnProyecto$ | async" ></app-menulateral>
-        </ng-container>
-        <!--FIN MENU LATERAL-->
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-  
-      <mat-toolbar color="primary">
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+    </mat-toolbar>
+    <mat-nav-list style="display: flex; border-top: 1px solid #64b5f6; " class="lista">
+      <p style="display: flex; justify-content: center; align-items: center  ; color: #64b5f6; width: 80%">
+        <mat-icon>home</mat-icon>Dashboard
+      </p>
+      <p style="display: flex; align-items: center; justify-content: center; width: 20%"><a style="color: #64b5f6;"
+          mat-list-item [routerLink]="['config']">
+          <mat-icon>settings</mat-icon>
+        </a></p>
+    </mat-nav-list>
+    <mat-nav-list style="border-top: 1px solid #64b5f6; border-bottom: 1px solid #64b5f6;">
+      <!--MENU LATERAL-->
+      <ng-container>
+        <app-menulateral [dataUnProyecto]="dataUnProyecto$ | async"></app-menulateral>
+      </ng-container>
+      <!--FIN MENU LATERAL-->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-       
-  
-        <!--TOOL BAR-->
-        <ng-container>
-          <mat-toolbar-row class=" mat-elevation-z8">
-            
-            <span>{{ dataUnProyecto.alias }}</span>
-            <span class="example-spacer"></span>
-            <mat-form-field>
-              <mat-label>Proyectos</mat-label>
-              <mat-select>
-                <mat-option *ngFor="let proyecto of listaProyectos$ | async">
-                  <p [routerLink]="['/proyecto',proyecto.docId,'overview']"  >{{proyecto.alias}}</p>
-                </mat-option>
-                <mat-option>
-                  <p [routerLink]="['/']"  >Salir</p>
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-            
-          </mat-toolbar-row>
-        </ng-container>
-        <!--FIN TOOL BAR-->
-      </mat-toolbar>
-  
-      <!-- INICIO CUERPO -->
+
+
+      <!--TOOL BAR-->
       <ng-container>
-  
-        <app-cuerpo></app-cuerpo>
-  
+        <mat-toolbar-row class=" mat-elevation-z8">
+
+          <ng-container *ngIf="dataUnProyecto$ | async as dataUnProyecto">
+            <span>{{ dataUnProyecto.alias }}</span>
+          </ng-container>
+          
+          <span class="example-spacer"></span>
+          <mat-form-field>
+            <mat-label>Proyectos</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let proyecto of listaProyectos$ | async">
+                <p [routerLink]="['/proyecto',proyecto.docId,'overview']">{{proyecto.alias}}</p>
+              </mat-option>
+              <mat-option>
+                <p [routerLink]="['/']">Salir</p>
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        </mat-toolbar-row>
       </ng-container>
-      <!--FIN CUERPO-->
-  
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+      <!--FIN TOOL BAR-->
+    </mat-toolbar>
+    <!-- INICIO OVERVIEW -->
+    <ng-container>
+      <!--
+          <app-overview [dataUnProyecto]="dataUnProyecto$ | async"></app-overview>
+    -->
+      <router-outlet></router-outlet>
+    </ng-container>
+    <!--FIN OVERVIEW-->
+  </mat-sidenav-content>
+</mat-sidenav-container>

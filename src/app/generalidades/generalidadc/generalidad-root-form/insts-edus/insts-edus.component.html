@@ -1,0 +1,9 @@
+<section [formGroup]="formGroup">
+    <div [formArrayName]="formControlNames.insts_edus" *ngFor="let unColegio of formGroupControls.insts_edus.controls; let i = index">
+        <app-inst-edu [formControl]="unColegio"></app-inst-edu>
+        <button mat-button color ="warm" (click)="eliminarCentroEducativo(i)">Eliminar Centro Educativo</button>
+    </div>
+    <button mat-button color="primary" (click)="agregarCentroEducativo()">Agregar Centro Educativo</button>
+
+</section>
+

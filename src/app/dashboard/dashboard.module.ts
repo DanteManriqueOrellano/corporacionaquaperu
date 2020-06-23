@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenulateralComponent } from './dashboard/menulateral/menulateral.component';
 import { ConfigComponent } from './dashboard/config/config.component';
 import { OverviewComponent } from './dashboard/overview/overview.component';
-import { CuerpoComponent } from './dashboard/overview/cuerpo/cuerpo.component';
+
 import { FuncionalidadesModule } from '../funcionalidades/funcionalidades.module';
 import { EstadisticasModule } from '../estadisticas/estadisticas.module';
 import { FasesModule } from '../fases/fases.module';
@@ -22,7 +22,7 @@ import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
-  declarations: [DashboardComponent, MenulateralComponent, ConfigComponent, OverviewComponent, CuerpoComponent],
+  declarations: [DashboardComponent, MenulateralComponent, ConfigComponent, OverviewComponent],
   imports: [
     CommonModule,
     MatSelectModule,
@@ -39,6 +39,6 @@ import {MatMenuModule} from '@angular/material/menu';
     FasesModule,
     DashboardRoutingModule
   ],
-  exports:[DashboardComponent, MenulateralComponent, ConfigComponent, OverviewComponent, CuerpoComponent]
+  exports:[DashboardComponent, MenulateralComponent, ConfigComponent, OverviewComponent]
 })
 export class DashboardModule { }

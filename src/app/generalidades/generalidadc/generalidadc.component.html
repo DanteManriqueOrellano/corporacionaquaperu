@@ -1,1 +1,4 @@
-<p>generalidadc works!</p>
+<app-generalidad-root-form
+    [generalidadData] ="generalidadData$ | async"
+    (generalidadDataUpdated)="crearGeneralidad($event)"
+></app-generalidad-root-form>

@@ -1,0 +1,22 @@
+.contenedorflex {
+display:flex;
+justify-content: space-around;
+margin-bottom: 15px;
+}
+
+.itemflex{
+    border: 2px solid red transparent;
+    cursor: pointer;
+    background: linear-gradient(160deg, #f0f1f4 0%, #e4e6eb 100%);
+    box-shadow: -3px -3px 6px 2px #ffffff, 5px 5px 8px 0px rgba(0, 0, 0, 0.17), 1px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    transition: 0.1s;
+    font-size: 14px;
+    padding: 1%;
+    
+
+}
+.itemflex:hover{
+    box-shadow: inset -3px -3px 5px 0px #ffffff, -1px -1px 4px 0px #ffffff, inset 5px 5px 10px 0px rgba(0, 0, 0, 0.12), inset 2px 2px 3px 0px rgba(0, 0, 0, 0.07), 1px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    color: #34aadc;
+    font-size: 13.5px;
+}

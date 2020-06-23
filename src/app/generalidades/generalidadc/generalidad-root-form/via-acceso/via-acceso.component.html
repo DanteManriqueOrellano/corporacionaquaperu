@@ -1,0 +1,21 @@
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Via de Acceso</legend>
+        <mat-form-field>
+            <input matInput placeholder="distancia" [formControlName]="formControlNames.distancia" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="localidad" [formControlName]="formControlNames.localidad" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="tiempo" [formControlName]="formControlNames.tiempo" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="tipo_via" [formControlName]="formControlNames.tipo_via" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="transporte" [formControlName]="formControlNames.transporte" autocomplete="off">
+        </mat-form-field>
+    </fieldset>
+
+</section>

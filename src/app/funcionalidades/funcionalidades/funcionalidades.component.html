@@ -1,1 +1,22 @@
-<h1>Añade Funcionalidades a tu Proyecto</h1>
+<mat-list>
+    <mat-list-item style="display: flex; justify-content: center;"><h1>Añade Funcionalidades a tu Proyecto</h1>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    
+        <h2>Elaboracion del Proyecto</h2>
+        <div class="contenedorflex">
+            <div [routerLink]="['../exptec']"  class="itemflex">
+                <p>Expediente Técnico</p>
+            </div>
+            <div (click)="dialogMemDes()" class="itemflex">
+                <p>Memoria Descriptiva</p>
+
+            </div>
+            <div class="itemflex">
+                <p>PRESET</p>
+            </div>
+        </div>
+    
+    <mat-divider></mat-divider>
+    
+  </mat-list>
