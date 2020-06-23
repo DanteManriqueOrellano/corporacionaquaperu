@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FuncionalidadesComponent } from './funcionalidades/funcionalidades.component';
 
-import { GeneralidadesModule } from '../generalidades/generalidades.module';
+
 import {MatDividerModule} from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GeneralidadcComponent } from './generalidadc/generalidadc.component';
 import { GeneralidadRootFormComponent } from './generalidadc/generalidad-root-form/generalidad-root-form.component';
-import { UbigeoModule } from '../ubigeo/ubigeo.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,6 +22,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
 import { GeneralidadComponent } from './generalidadc/generalidad-root-form/generalidad/generalidad.component';
+import { UbigeoModule } from 'src/app/ubigeo/ubigeo.module';
 
 @NgModule({
   declarations: [GeneralidadcComponent, GeneralidadRootFormComponent,AntecedenteIntervencionComponent,ColindanteComponent,HistDocComponent,InstEduComponent,InstsEdusComponent,ViaAccesoComponent,ViasAccesosComponent,GeneralidadComponent],
@@ -39,7 +39,6 @@ import { GeneralidadComponent } from './generalidadc/generalidad-root-form/gener
     MatIconModule,
     MatDialogModule,
     MatTableModule,
-    UbigeoModule, 
     FormsModule,
     ReactiveFormsModule,
     UbigeoModule
