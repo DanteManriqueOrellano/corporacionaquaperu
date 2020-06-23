@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-import { IGeneralidadRoot } from './generalidadc/generalidad-root-form/generalidad-root-form.component';
+
 import { DocidService } from 'src/app/shared/docid.service';
+import { IGeneralidadRoot } from './mem-des/generalidadc/generalidad-root-form/generalidad-root-form.component';
 
 
 export interface IGeneralidadDataId extends IGeneralidadRoot {

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IGeneralidadDataId, GeneralidadService } from '../generalidad.service';
+
 import { Router } from '@angular/router';
+import { IGeneralidadDataId, GeneralidadService } from '../../generalidad.service';
 
 @Component({
   selector: 'app-generalidadc',
