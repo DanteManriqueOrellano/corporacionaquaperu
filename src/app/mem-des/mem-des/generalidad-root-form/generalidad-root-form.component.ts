@@ -18,10 +18,14 @@ export interface IGeneralidadRoot{
   vias_accesos:IVias_Accesos;
   insts_edus:IInsts_edus;
   /*
-  
+  agregando el componente "componente sanitario"
+  cada localidad puede tener muchos componentes sanitarios
   */
   
+  
   /*
+  agregando el componte poblacion, cada localidad tiene una sola caracteristica
+  de poblacion 
   
   */ 
 

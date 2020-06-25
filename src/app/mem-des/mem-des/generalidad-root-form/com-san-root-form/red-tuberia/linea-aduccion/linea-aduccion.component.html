@@ -1,0 +1,19 @@
+<section [formGroup]="formGroup">
+    <mat-form-field>
+        <input matInput placeholder="Cantidad en M.L" [formControlName]="formControlNames.cantidad_ML">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Describa el Estado de Conservacion"
+            [formControlName]="formControlNames.estado_conservacion">
+    </mat-form-field>
+    <mat-radio-group [formControlName]="formControlNames.obras_arte">
+        <mat-radio-button  [value]="true">
+            <p>Posee Obras de Arte?</p> 
+        </mat-radio-button>
+    </mat-radio-group>
+    <mat-radio-group [formControlName]="formControlNames.pase_aereo">
+        <mat-radio-button  [value]="true">
+            <p>Posee Pase Aereo?</p> 
+        </mat-radio-button>
+    </mat-radio-group>
+</section>
