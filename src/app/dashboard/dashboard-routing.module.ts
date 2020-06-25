@@ -4,7 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ConfigComponent } from './dashboard/config/config.component';
 import { EstadisticasComponent } from '../estadisticas/estadisticas/estadisticas.component';
 import { FuncionalidadesComponent } from '../funcionalidades/funcionalidades/funcionalidades.component';
-import { FaceElaboracionComponent } from '../fases/face-elaboracion/face-elaboracion.component';
+import { MemDesComponent } from '../mem-des/mem-des/mem-des.component';
+
 
 
 
@@ -14,8 +15,10 @@ const routes: Routes = [
         {path:"",component:EstadisticasComponent},
         {path:"config",component:ConfigComponent},
         {path:"funcionalidades",component:FuncionalidadesComponent},
+        {path:"memoria",component:MemDesComponent}
+
         
-        {path:"elaboracion",component:FaceElaboracionComponent}
+       
       ]
     },
     

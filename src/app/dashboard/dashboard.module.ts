@@ -7,7 +7,7 @@ import { OverviewComponent } from './dashboard/overview/overview.component';
 
 import { FuncionalidadesModule } from '../funcionalidades/funcionalidades.module';
 import { EstadisticasModule } from '../estadisticas/estadisticas.module';
-import { FasesModule } from '../fases/fases.module';
+
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIconModule } from '@angular/material/icon';
@@ -36,7 +36,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatMenuModule,
     FuncionalidadesModule,
     EstadisticasModule,
-    FasesModule,
+    
     DashboardRoutingModule
   ],
   exports:[DashboardComponent, MenulateralComponent, ConfigComponent, OverviewComponent]

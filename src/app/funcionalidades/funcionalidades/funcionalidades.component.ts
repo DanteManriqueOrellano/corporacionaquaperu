@@ -11,12 +11,6 @@ export class FuncionalidadesComponent {
 
   constructor() {}
 
-  dialogExpTec():void{
-    
 
-  }
-  dialogMemDes():void{
-   
-  }
 
 }
