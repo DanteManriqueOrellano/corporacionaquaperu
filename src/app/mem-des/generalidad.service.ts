@@ -5,7 +5,8 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { map } from 'rxjs/operators';
 
 import { DocidService } from 'src/app/shared/docid.service';
-import { IGeneralidadRoot } from './mem-des/generalidadc/generalidad-root-form/generalidad-root-form.component';
+import { IGeneralidadRoot } from './mem-des/generalidad-root-form/generalidad-root-form.component';
+
 
 
 export interface IGeneralidadDataId extends IGeneralidadRoot {

@@ -17,6 +17,13 @@ export interface IGeneralidadRoot{
   antecedente_intervencion:IAntecedente_intervencion;
   vias_accesos:IVias_Accesos;
   insts_edus:IInsts_edus;
+  /*
+  
+  */
+  
+  /*
+  
+  */ 
 
 }
 @Component({

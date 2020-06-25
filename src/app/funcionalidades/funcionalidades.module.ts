@@ -12,6 +12,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FuncinalidadesRoutingModule } from './funcionalidades-routing.module';
+import { MemDesModule } from '../mem-des/mem-des.module';
 
 @NgModule({
   declarations: [FuncionalidadesComponent],
@@ -25,8 +26,8 @@ import { FuncinalidadesRoutingModule } from './funcionalidades-routing.module';
     MatDialogModule,
     MatTabsModule,
     FormsModule,
+    MemDesModule,
     ReactiveFormsModule,
-    
     FuncinalidadesRoutingModule,
   ],
   exports: [FuncionalidadesComponent]

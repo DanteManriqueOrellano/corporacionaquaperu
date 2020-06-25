@@ -8,14 +8,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UbigeoModule } from '../ubigeo/ubigeo.module';
 import {MatTabsModule} from '@angular/material/tabs';
-import { PoblacionComponent } from './mem-des/generalidad-root-form/poblacion/poblacion.component';
-import { PoblacionRootFormComponent } from './mem-des/generalidad-root-form/poblacion/poblacion-root-form/poblacion-root-form.component';
-import { ComSanComponent } from './mem-des/generalidad-root-form/com-san/com-san.component';
-import { ComSanRootFormComponent } from './mem-des/generalidad-root-form/com-san/com-san-root-form/com-san-root-form.component';
+
 import {MatDividerModule} from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { PoblacionRootFormComponent } from './mem-des/generalidad-root-form/poblacion-root-form/poblacion-root-form.component';
+import { ComSanRootFormComponent } from './mem-des/generalidad-root-form/com-san-root-form/com-san-root-form.component';
 @NgModule({
-  declarations: [MemDesComponent, PoblacionComponent, PoblacionRootFormComponent, ComSanComponent, ComSanRootFormComponent],
+  declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanRootFormComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -29,6 +28,6 @@ import { MatListModule } from '@angular/material/list';
     ReactiveFormsModule,
     UbigeoModule,
   ],
-  exports:[MemDesComponent, PoblacionComponent, PoblacionRootFormComponent, ComSanComponent, ComSanRootFormComponent]
+  exports:[MemDesComponent, PoblacionRootFormComponent, ComSanRootFormComponent]
 })
 export class MemDesModule { }
