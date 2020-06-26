@@ -1,4 +1,8 @@
 <section [formGroup]="formGroup">
+
+    <fieldset>
+        <legend>Linea Aduccion</legend>
+        
     <mat-form-field>
         <input matInput placeholder="Cantidad en M.L" [formControlName]="formControlNames.cantidad_ML">
     </mat-form-field>
@@ -16,4 +20,6 @@
             <p>Posee Pase Aereo?</p> 
         </mat-radio-button>
     </mat-radio-group>
+
+    </fieldset>
 </section>

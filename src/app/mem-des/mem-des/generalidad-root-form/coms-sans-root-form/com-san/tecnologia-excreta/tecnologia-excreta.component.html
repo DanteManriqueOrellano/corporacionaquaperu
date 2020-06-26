@@ -1,1 +1,9 @@
-<p>tecnologia-excreta works!</p>
+<section [formGroup]="formGroup">
+    <Fieldset>
+        <legend>Tecnologia de Excreta</legend>
+        <mat-form-field>
+            <input matInput placeholder="Describe la tecnologia aplicada" [formControlName]="formControlNames.tecnologia">
+        </mat-form-field>
+
+    </Fieldset>
+</section>

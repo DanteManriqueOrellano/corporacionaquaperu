@@ -1,4 +1,7 @@
 <section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Reservorio</legend>
+        
     <mat-form-field>
         <input matInput placeholder="antiguedad" [formControlName]="formControlNames.antiguedad">
     </mat-form-field>
@@ -17,4 +20,6 @@
     <mat-form-field>
         <input matInput placeholder="cerco_perimetrico" [formControlName]="formControlNames.cerco_perimetrico">
     </mat-form-field>
+
+    </fieldset>
 </section>

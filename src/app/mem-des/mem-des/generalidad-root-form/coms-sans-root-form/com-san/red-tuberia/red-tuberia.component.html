@@ -1,1 +1,10 @@
-<p>red-tuberia works!</p>
+<section [formGroup]="formGroup">
+    <fieldset>
+        <legend>Red de Tuberia</legend>
+        <app-linea-conduccion [formControlName]="formControlNames.linea_conduccion"></app-linea-conduccion>
+        <app-linea-aduccion [formControlName]="formControlNames.linea_aduccion"></app-linea-aduccion>
+        <app-red-distribucion [formControlName]="formControlNames.red_dictribucion"></app-red-distribucion>
+        <app-conexion-domiciliaria [formControlName]="formControlNames.conexion_domiciliaria"></app-conexion-domiciliaria>
+    </fieldset>
+</section>
+

@@ -2,5 +2,6 @@
     <div [formArrayName]="formControlNames.comsSans" *ngFor="let unComponenteSanitario of formGroupControls.comsSans.controls">
         <app-com-san [formControl]="unComponenteSanitario" ></app-com-san>
     </div>
+    <button (click)="agregarComponenteSanitario()"> add componetne sanitario</button>
 </section>
 
