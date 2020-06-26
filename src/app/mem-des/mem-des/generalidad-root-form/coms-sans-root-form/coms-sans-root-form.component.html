@@ -1,1 +1,6 @@
-<p>coms-sans-root-form works!</p>
+<section [formGroup]="formGroup">
+    <div [formArrayName]="formControlNames.comsSans" *ngFor="let unComponenteSanitario of formGroupControls.comsSans.controls">
+        <app-com-san [formControl]="unComponenteSanitario" ></app-com-san>
+    </div>
+</section>
+

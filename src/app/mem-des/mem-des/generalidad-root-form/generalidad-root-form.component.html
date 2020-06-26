@@ -6,10 +6,8 @@
     <app-antecedente-intervencion [formControlName]="formControlNames.antecedente_intervencion"></app-antecedente-intervencion>
     <app-vias-accesos [formControlName]="formControlNames.vias_accesos"></app-vias-accesos>
     <app-insts-edus [formControlName]="formControlNames.insts_edus"></app-insts-edus>
-    <div [formArrayName]="formControlNames.compsSans" *ngFor="let unComponenteSanitario of formGroupControls.compsSans.controls">
-        <app-com-san [formControl]="unComponenteSanitario"></app-com-san>
-        <button mat-button color ="primary" (click)="agregarComponenteSanitario()">agregarComponenteSanitario</button>
-    </div>
+    <app-coms-sans-root-form [formControlName]="formControlNames.compsSans"></app-coms-sans-root-form>
+    <app-poblacion-root-form [formControlName]="formControlNames.poblacion"></app-poblacion-root-form>
 </section>
 <!--
 

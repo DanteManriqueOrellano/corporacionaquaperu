@@ -58,12 +58,9 @@ export class GeneralidadRootFormComponent  extends NgxRootFormComponent<IGeneral
       insts_edus: new FormControl(),
       ubigeo_selecionado: new FormControl(),
       vias_accesos: new FormControl(),
-      compsSans:new FormArray([]),
+      compsSans:new FormControl(),
       poblacion: new FormControl()
     }
-  }
-  agregarComponenteSanitario(){
-    this.formGroupControls.compsSans.push(new FormControl())
   }
 
 }
