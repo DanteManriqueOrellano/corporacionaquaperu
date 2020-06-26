@@ -24,8 +24,17 @@ import { CaptacionComponent } from './mem-des/generalidad-root-form/coms-sans-ro
 import { ReservorioComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/reservorio/reservorio.component';
 import { TecnologiaExcretaComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/tecnologia-excreta/tecnologia-excreta.component';
 import { ComsSansRootFormComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/coms-sans-root-form.component';
+import { GeneralidadComponent } from './mem-des/generalidad-root-form/generalidad/generalidad.component';
+import { HistDocComponent } from './mem-des/generalidad-root-form/hist-doc/hist-doc.component';
+import { ColindanteComponent } from './mem-des/generalidad-root-form/colindante/colindante.component';
+import { AntecedenteIntervencionComponent } from './mem-des/generalidad-root-form/antecedente-intervencion/antecedente-intervencion.component';
+import { ViaAccesoComponent } from './mem-des/generalidad-root-form/via-acceso/via-acceso.component';
+import { ViasAccesosComponent } from './mem-des/generalidad-root-form/vias-accesos/vias-accesos.component';
+import { InstEduComponent } from './mem-des/generalidad-root-form/inst-edu/inst-edu.component';
+import { InstsEdusComponent } from './mem-des/generalidad-root-form/insts-edus/insts-edus.component';
+import { GeneralidadRootFormComponent } from './mem-des/generalidad-root-form/generalidad-root-form.component';
 @NgModule({
-  declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent],
+  declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -40,6 +49,6 @@ import { ComsSansRootFormComponent } from './mem-des/generalidad-root-form/coms-
     ReactiveFormsModule,
     UbigeoModule,
   ],
-  exports:[MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent]
+  exports: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent]
 })
 export class MemDesModule { }
