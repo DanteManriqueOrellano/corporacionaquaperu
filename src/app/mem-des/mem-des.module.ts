@@ -12,18 +12,20 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { PoblacionRootFormComponent } from './mem-des/generalidad-root-form/poblacion-root-form/poblacion-root-form.component';
-import { ComSanRootFormComponent } from './mem-des/generalidad-root-form/com-san-root-form/com-san-root-form.component';
-import { RedTuberiaComponent } from './mem-des/generalidad-root-form/com-san-root-form/red-tuberia/red-tuberia.component';
-import { LineaConduccionComponent } from './mem-des/generalidad-root-form/com-san-root-form/red-tuberia/linea-conduccion/linea-conduccion.component';
-import { LineaAduccionComponent } from './mem-des/generalidad-root-form/com-san-root-form/red-tuberia/linea-aduccion/linea-aduccion.component';
-import { RedDistribucionComponent } from './mem-des/generalidad-root-form/com-san-root-form/red-tuberia/red-distribucion/red-distribucion.component';
-import { ConexionDomiciliariaComponent } from './mem-des/generalidad-root-form/com-san-root-form/red-tuberia/conexion-domiciliaria/conexion-domiciliaria.component';
-import { CaptacionComponent } from './mem-des/generalidad-root-form/com-san-root-form/captacion/captacion.component';
-import { ReservorioComponent } from './mem-des/generalidad-root-form/com-san-root-form/reservorio/reservorio.component';
-import { TecnologiaExcretaComponent } from './mem-des/generalidad-root-form/com-san-root-form/tecnologia-excreta/tecnologia-excreta.component';
+
 import { MatRadioModule } from '@angular/material/radio';
+import { ComSanComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/com-san.component';
+import { RedTuberiaComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/red-tuberia/red-tuberia.component';
+import { LineaConduccionComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/red-tuberia/linea-conduccion/linea-conduccion.component';
+import { LineaAduccionComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/red-tuberia/linea-aduccion/linea-aduccion.component';
+import { RedDistribucionComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/red-tuberia/red-distribucion/red-distribucion.component';
+import { ConexionDomiciliariaComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/red-tuberia/conexion-domiciliaria/conexion-domiciliaria.component';
+import { CaptacionComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/captacion/captacion.component';
+import { ReservorioComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/reservorio/reservorio.component';
+import { TecnologiaExcretaComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/com-san/tecnologia-excreta/tecnologia-excreta.component';
+import { ComsSansRootFormComponent } from './mem-des/generalidad-root-form/coms-sans-root-form/coms-sans-root-form.component';
 @NgModule({
-  declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanRootFormComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent],
+  declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -38,6 +40,6 @@ import { MatRadioModule } from '@angular/material/radio';
     ReactiveFormsModule,
     UbigeoModule,
   ],
-  exports:[MemDesComponent, PoblacionRootFormComponent, ComSanRootFormComponent]
+  exports:[MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent]
 })
 export class MemDesModule { }

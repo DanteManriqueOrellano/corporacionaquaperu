@@ -12,12 +12,12 @@ export interface IComSan{
   redTuberia:IRedTuberia
 }
 @Component({
-  selector: 'app-com-san-root-form',
-  templateUrl: './com-san-root-form.component.html',
-  styleUrls: ['./com-san-root-form.component.css'],
-  providers:subformComponentProviders(ComSanRootFormComponent)
+  selector: 'app-com-san',
+  templateUrl: './com-san.component.html',
+  styleUrls: ['./com-san.component.css'],
+  providers:subformComponentProviders(ComSanComponent)
 })
-export class ComSanRootFormComponent extends NgxSubFormComponent<IComSan> {
+export class ComSanComponent extends NgxSubFormComponent<IComSan> {
 
   protected getFormControls():Controls<IComSan>{
     return {

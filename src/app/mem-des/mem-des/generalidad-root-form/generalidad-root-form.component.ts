@@ -6,8 +6,10 @@ import { IColindante } from './colindante/colindante.component';
 import { IAntecedente_intervencion } from './antecedente-intervencion/antecedente-intervencion.component';
 import { IVias_Accesos } from './vias-accesos/vias-accesos.component';
 import { IInsts_edus } from './insts-edus/insts-edus.component';
-import { NgxRootFormComponent, DataInput, Controls } from 'ngx-sub-form';
-import { FormControl } from '@angular/forms';
+import { NgxRootFormComponent, DataInput, Controls, subformComponentProviders } from 'ngx-sub-form';
+import { FormControl, FormArray } from '@angular/forms';
+import { IComSan } from './com-san-root-form/com-san-root-form.component';
+import { IPoblacion } from './poblacion-root-form/poblacion-root-form.component';
 
 export interface IGeneralidadRoot{
   generalidad:IGeneralidad;
@@ -21,19 +23,21 @@ export interface IGeneralidadRoot{
   agregando el componente "componente sanitario"
   cada localidad puede tener muchos componentes sanitarios
   */
+  compSan:IComSan[];
   
   
   /*
   agregando el componte poblacion, cada localidad tiene una sola caracteristica
   de poblacion 
-  
   */ 
+  poblacion:IPoblacion
 
 }
 @Component({
   selector: 'app-generalidad-root-form',
   templateUrl: './generalidad-root-form.component.html',
-  styleUrls: ['./generalidad-root-form.component.css']
+  styleUrls: ['./generalidad-root-form.component.css'],
+  providers:subformComponentProviders(GeneralidadRootFormComponent)
 })
 export class GeneralidadRootFormComponent  extends NgxRootFormComponent<IGeneralidadRoot> {
 
@@ -53,6 +57,8 @@ export class GeneralidadRootFormComponent  extends NgxRootFormComponent<IGeneral
       insts_edus: new FormControl(),
       ubigeo_selecionado: new FormControl(),
       vias_accesos: new FormControl(),
+      compSan:new FormArray([]),
+      poblacion: new FormControl()
     }
   }
 
