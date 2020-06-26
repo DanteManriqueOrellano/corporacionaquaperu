@@ -34,6 +34,7 @@ export interface IGeneralidadRoot{
   poblacion:IPoblacion
 
 }
+
 @Component({
   selector: 'app-generalidad-root-form',
   templateUrl: './generalidad-root-form.component.html',

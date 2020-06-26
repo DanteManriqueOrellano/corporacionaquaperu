@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
@@ -34,6 +35,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
+    MatTabsModule,
     FuncionalidadesModule,
     EstadisticasModule,
     

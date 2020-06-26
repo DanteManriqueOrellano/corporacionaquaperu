@@ -12,7 +12,15 @@ export interface IComSanForm {
   styleUrls: ['./coms-sans-root-form.component.css'],
   providers:subformComponentProviders(ComsSansRootFormComponent)
 })
-export class ComsSansRootFormComponent extends NgxSubFormComponent<IComSanForm>{
+export class ComsSansRootFormComponent extends NgxSubFormComponent<IComSanForm> implements OnInit {
+  ngOnInit(): void {
+    const array = [1,2]
+    array.forEach(element => {
+      this.agregarComponenteSanitario()
+      
+    });
+    
+  }
 
   protected getFormControls():Controls<IComSanForm>{
     return{
@@ -22,6 +30,9 @@ export class ComsSansRootFormComponent extends NgxSubFormComponent<IComSanForm>{
 
   agregarComponenteSanitario(){
     this.formGroupControls.comsSans.push(new FormControl())
+  }
+  quitarComponenteSanitario(i = 0){
+    this.formGroupControls.comsSans.removeAt(i)
   }
 
 

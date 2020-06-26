@@ -110,7 +110,8 @@ export class SeleccionadoComponent extends NgxSubFormComponent<IUbigeo_seleccion
         return arreglo.findIndex(valorDelArreglo => JSON.stringify(valorDelArreglo) === JSON.stringify(valorActual)) === indiceActual
       });
 
-      this.dataCp.shift()
+      const localidades = this.dataCp.shift()
+      console.log(this.dataCp)
     })
 
 

@@ -5,6 +5,7 @@ import { ConfigComponent } from './dashboard/config/config.component';
 import { EstadisticasComponent } from '../estadisticas/estadisticas/estadisticas.component';
 import { FuncionalidadesComponent } from '../funcionalidades/funcionalidades/funcionalidades.component';
 import { MemDesComponent } from '../mem-des/mem-des/mem-des.component';
+import { UbigeoComponent } from '../ubigeo/ubigeo/ubigeo.component';
 
 
 
@@ -13,7 +14,9 @@ const routes: Routes = [
     {path:"proyecto/:docId/overview",component:DashboardComponent,
       children:[
         {path:"",component:EstadisticasComponent},
-        {path:"config",component:ConfigComponent},
+        {path:"config",component:ConfigComponent,children:[
+          {path:"",component:UbigeoComponent}
+        ]},
         {path:"funcionalidades",component:FuncionalidadesComponent},
         {path:"memoria",component:MemDesComponent}
 

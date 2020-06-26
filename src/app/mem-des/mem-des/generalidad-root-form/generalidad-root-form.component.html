@@ -6,12 +6,14 @@
     <app-antecedente-intervencion [formControlName]="formControlNames.antecedente_intervencion"></app-antecedente-intervencion>
     <app-vias-accesos [formControlName]="formControlNames.vias_accesos"></app-vias-accesos>
     <app-insts-edus [formControlName]="formControlNames.insts_edus"></app-insts-edus>
-    <app-coms-sans-root-form [formControlName]="formControlNames.compsSans"></app-coms-sans-root-form>
-    <app-poblacion-root-form [formControlName]="formControlNames.poblacion"></app-poblacion-root-form>
+    
 </section>
-<!--
 
 <pre>{{formGroupValues | json}}</pre> 
 
--->
 <button mat-raised-button color="primary"  (click)="manualSave()" > Guardar </button>
+
+<section [formGroup]="formGroup">
+    <app-coms-sans-root-form [formControlName]="formControlNames.compsSans"></app-coms-sans-root-form>
+    <app-poblacion-root-form [formControlName]="formControlNames.poblacion"></app-poblacion-root-form>
+</section>
