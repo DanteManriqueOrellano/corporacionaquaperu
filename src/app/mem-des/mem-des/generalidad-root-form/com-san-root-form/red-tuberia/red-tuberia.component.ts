@@ -11,7 +11,7 @@ export interface IRedTuberiaBase{
   obras_arte:boolean;
   pase_aereo:boolean;
 }
-export interface IRedTuberiaForm{
+export interface IRedTuberia{
   linea_conduccion:ILineaConduccion;
   linea_aduccion:ILineaAduccion;
   red_dictribucion:IRedDistribucion;
@@ -23,13 +23,13 @@ export interface IRedTuberiaForm{
   styleUrls: ['./red-tuberia.component.css'],
   providers:subformComponentProviders(RedTuberiaComponent)
 })
-export class RedTuberiaComponent extends NgxRootFormComponent<IRedTuberiaForm> {
+export class RedTuberiaComponent extends NgxRootFormComponent<IRedTuberia> {
 
   @DataInput()
-  dataInput: Required<IRedTuberiaForm>;
-  dataOutput: EventEmitter<IRedTuberiaForm>;
+  dataInput: Required<IRedTuberia>;
+  dataOutput: EventEmitter<IRedTuberia>;
 
-  protected getFormControls():Controls<IRedTuberiaForm>{
+  protected getFormControls():Controls<IRedTuberia>{
     return {
       conexion_domiciliaria: new FormControl(),
       linea_aduccion: new FormControl(),

@@ -1,1 +1,6 @@
-<p>com-san-root-form works!</p>
+<section [formGroup]="formGroup">
+    <app-captacion [formControlName]="formControlNames.captacion"></app-captacion>
+    <app-reservorio [formControlName]="formControlNames.reservorio"></app-reservorio>
+    <app-tecnologia-excreta [formControlName]="formControlNames.tecnologiaExcreta"></app-tecnologia-excreta>
+    <app-red-tuberia [formControlName]="formControlNames.redTuberia"></app-red-tuberia>
+</section>

@@ -21,6 +21,7 @@ import { ConexionDomiciliariaComponent } from './mem-des/generalidad-root-form/c
 import { CaptacionComponent } from './mem-des/generalidad-root-form/com-san-root-form/captacion/captacion.component';
 import { ReservorioComponent } from './mem-des/generalidad-root-form/com-san-root-form/reservorio/reservorio.component';
 import { TecnologiaExcretaComponent } from './mem-des/generalidad-root-form/com-san-root-form/tecnologia-excreta/tecnologia-excreta.component';
+import { MatRadioModule } from '@angular/material/radio';
 @NgModule({
   declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanRootFormComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent],
   imports: [
@@ -32,6 +33,7 @@ import { TecnologiaExcretaComponent } from './mem-des/generalidad-root-form/com-
     MatTabsModule,
     MatDividerModule,
     MatListModule,
+    MatRadioModule,
     FormsModule,
     ReactiveFormsModule,
     UbigeoModule,
