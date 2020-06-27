@@ -10,15 +10,14 @@
         <input matInput placeholder="Describa el Estado de Conservacion"
             [formControlName]="formControlNames.estado_conservacion">
     </mat-form-field>
-    <mat-radio-group [formControlName]="formControlNames.obras_arte">
-        <mat-radio-button  [value]="true">
-            <p>Posee Obras de Arte?</p> 
-        </mat-radio-button>
-    </mat-radio-group>
-    <mat-radio-group [formControlName]="formControlNames.pase_aereo">
-        <mat-radio-button  [value]="true">
-            <p>Posee Pase Aereo?</p> 
-        </mat-radio-button>
-    </mat-radio-group>
+    <mat-checkbox [checked]="checkedObrasArte" [formControlName]="formControlNames.obras_arte">
+        Posee Obras de Arte?
+
+    </mat-checkbox>
+
+    <mat-checkbox [checked]="checkedPaseAereo" [formControlName]="formControlNames.pase_aereo">
+        Posee Pase Aereo?
+
+    </mat-checkbox>
     </fieldset>
 </section>

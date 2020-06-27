@@ -35,6 +35,7 @@ import { InstsEdusComponent } from './mem-des/generalidad-root-form/insts-edus/i
 import { GeneralidadRootFormComponent } from './mem-des/generalidad-root-form/generalidad-root-form.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent],
@@ -50,6 +51,7 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatExpansionModule,
     MatCardModule,
+    MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
     UbigeoModule,

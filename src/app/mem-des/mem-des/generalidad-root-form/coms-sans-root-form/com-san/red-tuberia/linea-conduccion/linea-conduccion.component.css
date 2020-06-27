@@ -4,6 +4,10 @@ mat-form-field{
 section {
    margin-top: 10px;
 } 
+
+mat-checkbox {
+   margin: 0 10px;
+}
 fieldset {
     background-color: white;
     border: solid thin #aaaaaa;
