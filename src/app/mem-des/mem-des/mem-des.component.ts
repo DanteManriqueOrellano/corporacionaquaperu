@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IGeneralidadRoot } from './generalidad-root-form/generalidad-root-form.component';
+
 import { MemDesService, IMemoriaDescriptiva } from '../mem.des.service';
 import { DocidService } from 'src/app/shared/docid.service';
 

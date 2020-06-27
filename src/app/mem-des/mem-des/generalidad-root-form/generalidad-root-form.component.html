@@ -1,19 +1,68 @@
-<section [formGroup]="formGroup">
-    <app-generalidad [formControlName]="formControlNames.generalidad"></app-generalidad>
-    <app-hist-doc [formControlName]="formControlNames.hist_doc"></app-hist-doc>
-    <app-seleccionado [formControlName]="formControlNames.ubigeo_selecionado"></app-seleccionado>
-    <app-colindante [formControlName]="formControlNames.colindante"></app-colindante>
-    <app-antecedente-intervencion [formControlName]="formControlNames.antecedente_intervencion"></app-antecedente-intervencion>
-    <app-vias-accesos [formControlName]="formControlNames.vias_accesos"></app-vias-accesos>
-    <app-insts-edus [formControlName]="formControlNames.insts_edus"></app-insts-edus>
+<!--
+    <pre>{{formGroupValues | json}}</pre>
+
+-->
+<div style="display: flex; justify-content: center;">
+    <h1 style="margin-top: 30px;">Inicializa la Memoria Descriptiva</h1>
+
+</div>
+<div style="display: flex; justify-content: center; margin-top: 15px;">
+    <mat-card class="card">
+
+        <mat-card-content>
     
-</section>
-
-<pre>{{formGroupValues | json}}</pre> 
-
-<button mat-raised-button color="primary"  (click)="manualSave()" > Guardar </button>
-
-<section [formGroup]="formGroup">
-    <app-coms-sans-root-form [formControlName]="formControlNames.compsSans"></app-coms-sans-root-form>
-    <app-poblacion-root-form [formControlName]="formControlNames.poblacion"></app-poblacion-root-form>
-</section>
+            <mat-accordion class="example-headers-align" multi>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header style="background: #007aff;">
+                        <mat-panel-title style="color:#fff">
+                            Generalidades
+                        </mat-panel-title>
+                        <mat-panel-descripcion>
+                            
+                        </mat-panel-descripcion>
+                    </mat-expansion-panel-header>
+                    <ng-container  matExpansionPanelContent [formGroup]="formGroup">
+                        <app-generalidad [formControlName]="formControlNames.generalidad"></app-generalidad>
+                        <app-hist-doc [formControlName]="formControlNames.hist_doc"></app-hist-doc>
+                        <app-seleccionado [formControlName]="formControlNames.ubigeo_selecionado"></app-seleccionado>
+                        <app-colindante [formControlName]="formControlNames.colindante"></app-colindante>
+                        <app-antecedente-intervencion [formControlName]="formControlNames.antecedente_intervencion">
+                        </app-antecedente-intervencion>
+                        <app-vias-accesos [formControlName]="formControlNames.vias_accesos"></app-vias-accesos>
+                        <app-insts-edus [formControlName]="formControlNames.insts_edus"></app-insts-edus>
+                    </ng-container>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header style="background: #007aff;">
+                        <mat-panel-title style="color:#fff">
+                            Componentes Sanitarios
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <ng-container  matExpansionPanelContent [formGroup]="formGroup">
+                        <app-coms-sans-root-form [formControlName]="formControlNames.compsSans"></app-coms-sans-root-form>
+                    </ng-container>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header style="background: #007aff;">
+                        <mat-panel-title style="color:#fff">
+                            Población
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <ng-container  matExpansionPanelContent [formGroup]="formGroup">
+                        <app-poblacion-root-form [formControlName]="formControlNames.poblacion"></app-poblacion-root-form>
+                    </ng-container>
+                </mat-expansion-panel>
+            </mat-accordion>
+    
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary" (click)="manualSave()"> Guardar </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

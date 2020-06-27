@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { IGeneralidad } from './generalidad/generalidad.component';
 import { IHist_doc } from './hist-doc/hist-doc.component';
 import { IUbigeo_seleccionado } from 'src/app/ubigeo/seleccionado/seleccionado.component';
@@ -11,6 +11,7 @@ import { FormControl, FormArray } from '@angular/forms';
 
 import { IPoblacion } from './poblacion-root-form/poblacion-root-form.component';
 import { IComSan } from './coms-sans-root-form/com-san/com-san.component';
+import { MatAccordion } from '@angular/material/expansion';
 
 export interface IGeneralidadRoot{
   generalidad:IGeneralidad;
@@ -42,6 +43,8 @@ export interface IGeneralidadRoot{
   providers:subformComponentProviders(GeneralidadRootFormComponent)
 })
 export class GeneralidadRootFormComponent  extends NgxRootFormComponent<IGeneralidadRoot> {
+
+  @ViewChild(MatAccordion) accordion: MatAccordion;
 
   @DataInput()
   @Input('generalidadData')

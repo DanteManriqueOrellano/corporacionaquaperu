@@ -1,0 +1,36 @@
+.example-action-buttons {
+    padding-bottom: 20px;
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-title,
+  .example-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+    
+  }
+  
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  .card{
+    width: 96%;
+    animation: popIn 600ms ease-in both;
+  }
+  @keyframes popIn {
+    from {
+       opacity: 0;
+       transform: scale(.4);
+    }
+    60% {
+       opacity: 1;
+       transform: scale(1.05);
+    }
+    to {
+       opacity: 1;
+       transform: scale(1)
+    }
+ }

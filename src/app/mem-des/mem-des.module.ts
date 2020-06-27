@@ -33,6 +33,9 @@ import { ViasAccesosComponent } from './mem-des/generalidad-root-form/vias-acces
 import { InstEduComponent } from './mem-des/generalidad-root-form/inst-edu/inst-edu.component';
 import { InstsEdusComponent } from './mem-des/generalidad-root-form/insts-edus/insts-edus.component';
 import { GeneralidadRootFormComponent } from './mem-des/generalidad-root-form/generalidad-root-form.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent],
   imports: [
@@ -45,6 +48,8 @@ import { GeneralidadRootFormComponent } from './mem-des/generalidad-root-form/ge
     MatDividerModule,
     MatListModule,
     MatRadioModule,
+    MatExpansionModule,
+    MatCardModule,
     FormsModule,
     ReactiveFormsModule,
     UbigeoModule,
