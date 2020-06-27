@@ -17,9 +17,7 @@
                         <mat-panel-title style="color:#fff">
                             Generalidades
                         </mat-panel-title>
-                        <mat-panel-descripcion>
-                            
-                        </mat-panel-descripcion>
+                       
                     </mat-expansion-panel-header>
                     <ng-container  matExpansionPanelContent [formGroup]="formGroup">
                         <app-generalidad [formControlName]="formControlNames.generalidad"></app-generalidad>
@@ -33,13 +31,11 @@
                     </ng-container>
                 </mat-expansion-panel>
                 <mat-expansion-panel>
-                    <mat-expansion-panel-header style="background: #007aff;">
+                    <mat-expansion-panel-header style="background: #5ac8fa;">
                         <mat-panel-title style="color:#fff">
                             Componentes Sanitarios
                         </mat-panel-title>
-                        <mat-panel-description>
-                            
-                        </mat-panel-description>
+                        
                     </mat-expansion-panel-header>
                     <ng-container  matExpansionPanelContent [formGroup]="formGroup">
                         <app-coms-sans-root-form [formControlName]="formControlNames.compsSans"></app-coms-sans-root-form>
@@ -50,9 +46,7 @@
                         <mat-panel-title style="color:#fff">
                             Población
                         </mat-panel-title>
-                        <mat-panel-description>
-                            
-                        </mat-panel-description>
+                        
                     </mat-expansion-panel-header>
                     <ng-container  matExpansionPanelContent [formGroup]="formGroup">
                         <app-poblacion-root-form [formControlName]="formControlNames.poblacion"></app-poblacion-root-form>
