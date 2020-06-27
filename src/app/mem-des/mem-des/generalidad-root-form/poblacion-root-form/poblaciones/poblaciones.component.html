@@ -1,0 +1,8 @@
+<section [formGroup]="formGroup">
+    <div [formArrayName]="formControlNames.poblaciones" *ngFor="let unaPoblacion of formGroupControls.poblaciones.controls; let i = index">
+        
+        <app-poblacion [formControl]="unaPoblacion"></app-poblacion>
+
+    </div>
+    
+</section>

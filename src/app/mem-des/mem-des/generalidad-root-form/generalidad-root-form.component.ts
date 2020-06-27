@@ -9,9 +9,10 @@ import { IInsts_edus } from './insts-edus/insts-edus.component';
 import { NgxRootFormComponent, DataInput, Controls, subformComponentProviders } from 'ngx-sub-form';
 import { FormControl, FormArray } from '@angular/forms';
 
-import { IPoblacion } from './poblacion-root-form/poblacion-root-form.component';
+
 import { IComSan } from './coms-sans-root-form/com-san/com-san.component';
 import { MatAccordion } from '@angular/material/expansion';
+import { IPoblacionRootForm } from './poblacion-root-form/poblacion-root-form.component';
 
 export interface IGeneralidadRoot{
   generalidad:IGeneralidad;
@@ -25,14 +26,14 @@ export interface IGeneralidadRoot{
   agregando el componente "componente sanitario"
   cada localidad puede tener muchos componentes sanitarios
   */
-  compsSans:IComSan[];
+  compsSans:IComSan;
   
   
   /*
   agregando el componte poblacion, cada localidad tiene una sola caracteristica
   de poblacion 
   */ 
-  poblacion:IPoblacion
+  poblacion:IPoblacionRootForm
 
 }
 

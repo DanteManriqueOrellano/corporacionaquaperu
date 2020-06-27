@@ -37,8 +37,11 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
+import { PoblacionesComponent } from './mem-des/generalidad-root-form/poblacion-root-form/poblaciones/poblaciones.component';
+import { PoblacionComponent } from './mem-des/generalidad-root-form/poblacion-root-form/poblaciones/poblacion/poblacion.component';
+
 @NgModule({
-  declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent],
+  declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent, PoblacionComponent, PoblacionesComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -56,6 +59,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReactiveFormsModule,
     UbigeoModule,
   ],
-  exports: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent]
+  exports: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent, PoblacionComponent, PoblacionesComponent]
 })
 export class MemDesModule { }

@@ -1,14 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxSubFormComponent, Controls, subformComponentProviders } from 'ngx-sub-form';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgxSubFormComponent, Controls, subformComponentProviders, NgxRootFormComponent, DataInput } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
-export interface IPoblacion{
-  total_familias_beneficiadas:number;
-  total_beneficiarios:number;
-  tasa_crecimiento:number;
-  concentracion_miembros_x_familia:number;
-  dencidad_poblacional:number;
-  poblacion_actual:number;
-  poblacion_futura:number;
+import { IPoblacionForm } from './poblaciones/poblaciones.component';
+
+export interface IPoblacionRootForm {
+  poblacion:IPoblacionForm;
 }
 @Component({
   selector: 'app-poblacion-root-form',
@@ -16,17 +12,17 @@ export interface IPoblacion{
   styleUrls: ['./poblacion-root-form.component.css'],
   providers:subformComponentProviders(PoblacionRootFormComponent),
 })
-export class PoblacionRootFormComponent extends NgxSubFormComponent<IPoblacion> {
+export class PoblacionRootFormComponent extends NgxRootFormComponent<IPoblacionRootForm> {
+  
+  @DataInput()
+ 
+  dataInput: Required<IPoblacionRootForm>;
+ 
+  dataOutput: EventEmitter<IPoblacionRootForm>;
 
-  protected getFormControls():Controls<IPoblacion>{
+  protected getFormControls():Controls<IPoblacionRootForm>{
     return{
-      concentracion_miembros_x_familia: new FormControl(),
-      dencidad_poblacional: new FormControl(),
-      poblacion_actual: new FormControl(),
-      poblacion_futura: new FormControl(),
-      tasa_crecimiento: new FormControl(),
-      total_beneficiarios: new FormControl(),
-      total_familias_beneficiadas: new FormControl()
+      poblacion: new FormControl()
     }
   }
 }
