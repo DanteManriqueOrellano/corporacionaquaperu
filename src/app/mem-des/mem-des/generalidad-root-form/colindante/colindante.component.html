@@ -1,17 +1,20 @@
 <section [formGroup]="formGroup">
-    <fieldset>
+    <fieldset >
         <legend>Colindante</legend>
-        <mat-form-field>
-            <input matInput placeholder="este" [formControlName]="formControlNames.este" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="norte" [formControlName]="formControlNames.norte" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="oeste" [formControlName]="formControlNames.oeste" autocomplete="off">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="sur" [formControlName]="formControlNames.sur" autocomplete="off">
-        </mat-form-field>
+
+        
+            <mat-form-field style="width: 95%;">
+                <input matInput placeholder="este" [formControlName]="formControlNames.este" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field style="width: 95%;">
+                <input matInput placeholder="norte" [formControlName]="formControlNames.norte" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field style="width: 95%;">
+                <input matInput placeholder="oeste" [formControlName]="formControlNames.oeste" autocomplete="off">
+            </mat-form-field>
+            <mat-form-field style="width: 95%;">
+                <input matInput placeholder="sur" [formControlName]="formControlNames.sur" autocomplete="off">
+            </mat-form-field>
+        
     </fieldset>
 </section>

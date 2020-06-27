@@ -1,23 +1,26 @@
 <section [formGroup]="formGroup">
-    <fieldset>
+    <fieldset >
         <legend>Conexion Domiciliaria</legend>
+
         
-    <mat-form-field>
-        <input matInput placeholder="Cantidad en M.L" [formControlName]="formControlNames.cantidad_ML">
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="Describa el Estado de Conservacion"
-            [formControlName]="formControlNames.estado_conservacion">
-    </mat-form-field>
-    <mat-checkbox [checked]="checkedObrasArte" [formControlName]="formControlNames.obras_arte">
-        Posee Obras de Arte?
-
-    </mat-checkbox>
-
-    <mat-checkbox [checked]="checkedPaseAereo" [formControlName]="formControlNames.pase_aereo">
-        Posee Pase Aereo?
-
-    </mat-checkbox>
+            <mat-form-field>
+                <input matInput placeholder="Cantidad en M.L" [formControlName]="formControlNames.cantidad_ML">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Describa el Estado de Conservacion"
+                    [formControlName]="formControlNames.estado_conservacion">
+            </mat-form-field>
+            <mat-checkbox [checked]="checkedObrasArte" [formControlName]="formControlNames.obras_arte">
+                Posee Obras de Arte?
+        
+            </mat-checkbox>
+        
+            <mat-checkbox [checked]="checkedPaseAereo" [formControlName]="formControlNames.pase_aereo">
+                Posee Pase Aereo?
+        
+            </mat-checkbox>
+        
+    
     </fieldset>
 
 </section>

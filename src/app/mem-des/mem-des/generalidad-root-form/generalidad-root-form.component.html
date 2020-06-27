@@ -19,16 +19,33 @@
                         </mat-panel-title>
                        
                     </mat-expansion-panel-header>
+                    
+                    
+                        <ng-container  matExpansionPanelContent [formGroup]="formGroup" >
+                            <div style="display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(12rem,1fr));
+                    ">
+
+                            <app-generalidad [formControlName]="formControlNames.generalidad"></app-generalidad>
+                            <app-hist-doc [formControlName]="formControlNames.hist_doc"></app-hist-doc>
+                            <app-seleccionado [formControlName]="formControlNames.ubigeo_selecionado"></app-seleccionado>
+                            <app-colindante [formControlName]="formControlNames.colindante"></app-colindante>
+                            <app-antecedente-intervencion [formControlName]="formControlNames.antecedente_intervencion">
+                            </app-antecedente-intervencion>
+                        </div>
+                            
+                        </ng-container >
+
+                    
+                        
+                    
+
+                    
                     <ng-container  matExpansionPanelContent [formGroup]="formGroup">
-                        <app-generalidad [formControlName]="formControlNames.generalidad"></app-generalidad>
-                        <app-hist-doc [formControlName]="formControlNames.hist_doc"></app-hist-doc>
-                        <app-seleccionado [formControlName]="formControlNames.ubigeo_selecionado"></app-seleccionado>
-                        <app-colindante [formControlName]="formControlNames.colindante"></app-colindante>
-                        <app-antecedente-intervencion [formControlName]="formControlNames.antecedente_intervencion">
-                        </app-antecedente-intervencion>
                         <app-vias-accesos [formControlName]="formControlNames.vias_accesos"></app-vias-accesos>
                         <app-insts-edus [formControlName]="formControlNames.insts_edus"></app-insts-edus>
                     </ng-container>
+                   
                 </mat-expansion-panel>
                 <mat-expansion-panel>
                     <mat-expansion-panel-header style="background: #5ac8fa;">
@@ -37,9 +54,11 @@
                         </mat-panel-title>
                         
                     </mat-expansion-panel-header>
+                  
                     <ng-container  matExpansionPanelContent [formGroup]="formGroup">
                         <app-coms-sans-root-form [formControlName]="formControlNames.compsSans"></app-coms-sans-root-form>
                     </ng-container>
+               
                 </mat-expansion-panel>
                 <mat-expansion-panel>
                     <mat-expansion-panel-header style="background: #007aff;">

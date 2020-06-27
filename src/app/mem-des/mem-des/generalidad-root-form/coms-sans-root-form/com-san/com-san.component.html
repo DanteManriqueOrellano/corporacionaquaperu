@@ -1,10 +1,13 @@
 <section [formGroup]="formGroup">
     <fieldset>
         <legend>Componentes Sanitarios - localidad "ACHASPAMPA"</legend>
-        
-    <app-captacion [formControlName]="formControlNames.captacion"></app-captacion>
-    <app-reservorio [formControlName]="formControlNames.reservorio"></app-reservorio>
-    <app-tecnologia-excreta [formControlName]="formControlNames.tecnologiaExcreta"></app-tecnologia-excreta>
+     <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));">
+        <app-captacion [formControlName]="formControlNames.captacion"></app-captacion>
+        <app-reservorio [formControlName]="formControlNames.reservorio"></app-reservorio>
+        <app-tecnologia-excreta [formControlName]="formControlNames.tecnologiaExcreta"></app-tecnologia-excreta>
+     </div>   
+   
+    
     <app-red-tuberia [formControlName]="formControlNames.redTuberia"></app-red-tuberia>
 
     </fieldset>

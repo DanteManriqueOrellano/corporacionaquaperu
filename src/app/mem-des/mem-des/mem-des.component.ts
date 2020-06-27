@@ -20,5 +20,7 @@ export class MemDesComponent {
 
   }
 
-  generalidadDataUpdated($event) { }
+  generalidadDataUpdated($event) {
+    console.log($event)
+   }
 }

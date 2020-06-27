@@ -1,10 +1,16 @@
 <section [formGroup]="formGroup">
     <fieldset>
-        <legend>Red de Tuberia</legend>
-        <app-linea-conduccion [formControlName]="formControlNames.linea_conduccion"></app-linea-conduccion>
-        <app-linea-aduccion [formControlName]="formControlNames.linea_aduccion"></app-linea-aduccion>
-        <app-red-distribucion [formControlName]="formControlNames.red_dictribucion"></app-red-distribucion>
-        <app-conexion-domiciliaria [formControlName]="formControlNames.conexion_domiciliaria"></app-conexion-domiciliaria>
+        <legend>Red de Tubería</legend>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));">
+            <app-linea-conduccion [formControlName]="formControlNames.linea_conduccion"></app-linea-conduccion>
+            <app-linea-aduccion [formControlName]="formControlNames.linea_aduccion"></app-linea-aduccion>
+            <app-red-distribucion [formControlName]="formControlNames.red_dictribucion"></app-red-distribucion>
+            <app-conexion-domiciliaria [formControlName]="formControlNames.conexion_domiciliaria"></app-conexion-domiciliaria>
+
+        </div>
+       
+       
+      
     </fieldset>
 </section>
 
