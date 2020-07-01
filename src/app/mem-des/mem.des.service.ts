@@ -13,12 +13,18 @@ export interface IMemoriaDescriptiva extends IGeneralidadRoot {
   docIdGeneralidad:string
   
 }
+//interface que que provee el tipo a las localidades seleccionadas
+interface localidadSeleccionada{
+  nombre:string;
+  id:number;
+
+}
 @Injectable({
   providedIn: 'root'
 })
 export class MemDesService {
   
-  public localidades:string[];
+  public localidadesSeleccionadas:Array<any> = new Array();
   public docId:string;
   
   private memoriasDescriptivas: Observable<IMemoriaDescriptiva[]>;

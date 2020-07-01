@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { subformComponentProviders, NgxSubFormComponent, Controls } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
+import { MemDesService } from 'src/app/mem-des/mem.des.service';
 export interface IPoblacion{
   total_familias_beneficiadas:number;
   total_beneficiarios:number;
@@ -17,6 +18,10 @@ export interface IPoblacion{
   providers: subformComponentProviders(PoblacionComponent)
 })
 export class PoblacionComponent extends NgxSubFormComponent<IPoblacion> {
+
+  @Input('nombreLocalidad') public nombreLocalidad;
+  localidad = this.memDesService.localidadesSeleccionadas;
+  constructor (private memDesService:MemDesService){super()}
 
   protected getFormControls():Controls<IPoblacion>{
     return{

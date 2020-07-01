@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
+import { UbigeoModule } from '../ubigeo/ubigeo.module';
 
 
 
@@ -38,7 +39,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatTabsModule,
     FuncionalidadesModule,
     EstadisticasModule,
-    
+    UbigeoModule,
     DashboardRoutingModule
   ],
   exports:[DashboardComponent, MenulateralComponent, ConfigComponent, OverviewComponent]

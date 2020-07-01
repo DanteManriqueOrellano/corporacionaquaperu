@@ -17,7 +17,7 @@ import { IPoblacionRootForm } from './poblacion-root-form/poblacion-root-form.co
 export interface IGeneralidadRoot{
   generalidad:IGeneralidad;
   hist_doc:IHist_doc;
-  ubigeo_selecionado:IUbigeo_seleccionado;
+  //ubigeo_selecionado:IUbigeo_seleccionado;
   colindante:IColindante;
   antecedente_intervencion:IAntecedente_intervencion;
   vias_accesos:IVias_Accesos;
@@ -61,7 +61,7 @@ export class GeneralidadRootFormComponent  extends NgxRootFormComponent<IGeneral
       generalidad: new FormControl(),
       hist_doc: new FormControl(),
       insts_edus: new FormControl(),
-      ubigeo_selecionado: new FormControl(),
+    //  ubigeo_selecionado: new FormControl(),
       vias_accesos: new FormControl(),
       compsSans:new FormControl(),
       poblacion: new FormControl()

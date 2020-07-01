@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSubFormComponent, subformComponentProviders, Controls } from 'ngx-sub-form';
 import { FormArray, FormControl } from '@angular/forms';
 import { IPoblacion } from './poblacion/poblacion.component';
+import { MemDesService } from 'src/app/mem-des/mem.des.service';
 
 export interface IPoblacionForm {
   poblaciones:IPoblacion[]
@@ -14,8 +15,16 @@ export interface IPoblacionForm {
 })
 export class PoblacionesComponent extends NgxSubFormComponent<IPoblacionForm> implements OnInit {
 
+  constructor(private memDesService:MemDesService){
+    super();
+
+  }
+  
+  public nombreLocalidad  = this.memDesService.localidadesSeleccionadas
   ngOnInit():void{
-    const array = [1,2]
+    const array = this.memDesService.localidadesSeleccionadas
+   console.log(array);
+    if (!array) return null
     array.forEach(element => {
       this.agregarPoblacion()
     });

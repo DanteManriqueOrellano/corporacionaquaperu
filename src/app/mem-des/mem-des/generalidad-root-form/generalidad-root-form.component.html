@@ -28,7 +28,7 @@
 
                             <app-generalidad [formControlName]="formControlNames.generalidad"></app-generalidad>
                             <app-hist-doc [formControlName]="formControlNames.hist_doc"></app-hist-doc>
-                            <app-seleccionado [formControlName]="formControlNames.ubigeo_selecionado"></app-seleccionado>
+                           <!-- <app-seleccionado [formControlName]="formControlNames.ubigeo_selecionado"></app-seleccionado>-->
                             <app-colindante [formControlName]="formControlNames.colindante"></app-colindante>
                             <app-antecedente-intervencion [formControlName]="formControlNames.antecedente_intervencion">
                             </app-antecedente-intervencion>
@@ -79,5 +79,7 @@
         </mat-card-actions>
     </mat-card>
 </div>
+<!--|
+    <pre>{{formGroupValues | json}}</pre>
 
-<pre>{{formGroupValues | json}}</pre>
+-->

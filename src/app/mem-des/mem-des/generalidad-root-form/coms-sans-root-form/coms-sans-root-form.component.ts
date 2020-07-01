@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSubFormComponent, subformComponentProviders, Controls } from 'ngx-sub-form';
 import { IComSan } from './com-san/com-san.component';
 import { FormArray, FormControl } from '@angular/forms';
+import { MemDesService } from 'src/app/mem-des/mem.des.service';
 
 export interface IComSanForm {
   comsSans:IComSan[]
@@ -13,9 +14,17 @@ export interface IComSanForm {
   providers:subformComponentProviders(ComsSansRootFormComponent)
 })
 export class ComsSansRootFormComponent extends NgxSubFormComponent<IComSanForm> implements OnInit {
-  ngOnInit(): void {
-    const array = [1,2]
+
+  public nombreLocalidad  = this.memDesService.localidadesSeleccionadas
+ 
+  constructor(
+    private memDesService:MemDesService,
+    ){super();}
+ 
+    ngOnInit(): void {
+    const array = this.memDesService.localidadesSeleccionadas
     array.forEach(element => {
+      console.log(element)
       this.agregarComponenteSanitario()
       
     });

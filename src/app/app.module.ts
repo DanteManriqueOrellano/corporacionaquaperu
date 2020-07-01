@@ -17,10 +17,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { PdfMakeWrapper } from "pdfmake-wrapper";
+import pdfFonts from '../assets/custom-fonts.js';
+import { EliminarPDFComponent } from './eliminar-pdf/eliminar-pdf.component';
+
+// Configuring custom fonts
+/*PdfMakeWrapper.setFonts(pdfFonts, {
+  roboto: {
+      normal: 'Roboto-Black.ttf',
+      bold: 'Roboto-Bold.ttf',
+      italics: 'Roboto-Italic.ttf',
+      bolditalics: 'Roboto-BoldItalic.ttf'
+  }
+});
+
+PdfMakeWrapper.useFont('roboto');*/
 
 @NgModule({
   declarations: [
     AppComponent,
+    EliminarPDFComponent,
     
   ],
   imports: [

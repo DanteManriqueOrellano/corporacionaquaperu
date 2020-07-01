@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { MemDesService, IMemoriaDescriptiva } from '../mem.des.service';
 import { DocidService } from 'src/app/shared/docid.service';
+import { IGeneralidadRoot } from './generalidad-root-form/generalidad-root-form.component';
 
 @Component({
   selector: 'app-mem-des',
@@ -12,15 +13,16 @@ import { DocidService } from 'src/app/shared/docid.service';
 export class MemDesComponent {
 
 
-  generalidadData$: Observable<IMemoriaDescriptiva> = this.memDes.obtenUnaMemoriaDescriptiva(this.docIdService.DocId)
+  generalidadData$: Observable<IMemoriaDescriptiva> = this.memDesService.obtenUnaMemoriaDescriptiva(this.docIdService.DocId)
   constructor(
-    private memDes: MemDesService,
+    private memDesService: MemDesService,
     private docIdService: DocidService
   ) {
 
   }
 
-  generalidadDataUpdated($event) {
-    console.log($event)
+  generalidadDataUpdated(event:IGeneralidadRoot) {
+    console.log(event)
+    
    }
 }

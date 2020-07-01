@@ -9,6 +9,10 @@ import { IDistrito } from '../editor/distrito/distrito.component';
 import { ICacerio } from '../editor/cacerio/cacerio.component';
 import { ICentroPoblado } from '../editor/centro-poblado/centro-poblado.component';
 import { IDepartamento } from '../editor/departamento/departamento.component';
+import { MemDesService } from 'src/app/mem-des/mem.des.service';
+import { LocalidadesService } from '../localidades.service';
+import { Router } from '@angular/router';
+import { DocidService } from 'src/app/shared/docid.service';
 export interface IUbigeo_seleccionado {
   cacerios: string[]
   centros_poblados: string[]
@@ -36,13 +40,20 @@ export class SeleccionadoComponent extends NgxSubFormComponent<IUbigeo_seleccion
   public dataDistrito:IDistrito[];
   public dataCaserio:ICacerio[];
   public dataCp:ICentroPoblado[];
+  public dataBar:any[];
   public selectedValue:string[]
   
 
   
  
   public departamentos$:Observable<IUbigeo[]> = this.ubigeoService.obtenUbigeos()
-  constructor(private ubigeoService:UbigeoService) { super()}
+  constructor(
+    private ubigeoService:UbigeoService,
+    private memDesService:MemDesService,
+    private localidaesService:LocalidadesService,
+    private docIdservice:DocidService,
+    private router:Router,
+    ) { super()}
   protected getFormControls():Controls<IUbigeo_seleccionado>{
     return {
       cacerios: new FormControl(),
@@ -110,8 +121,8 @@ export class SeleccionadoComponent extends NgxSubFormComponent<IUbigeo_seleccion
         return arreglo.findIndex(valorDelArreglo => JSON.stringify(valorDelArreglo) === JSON.stringify(valorActual)) === indiceActual
       });
 
-      const localidades = this.dataCp.shift()
-      console.log(this.dataCp)
+      this.dataCp.shift()
+      
     })
 
 
@@ -119,12 +130,58 @@ export class SeleccionadoComponent extends NgxSubFormComponent<IUbigeo_seleccion
   }
   setIndiceCentroPoblado(cpId){
     this.cpId = cpId
-    
-    
-    this.departamentos$.subscribe((val)=>
-    {
+
+    this.departamentos$.subscribe((val) => {
+      let Arreglo: number[] = [97]
+      let index: any[] = this.formGroupControls.centros_poblados.value
+      //busca un elemento segun el index
+      if (index !== null) {
+        
+      index.map((val) => {
+        Arreglo.map((elemento) => {
+          if (elemento === val.id) {//existe, por lo tanto elimina al elemento del arreglo
+            Arreglo.slice[val.id, val.id]
+          }
+          else {//agrega al arreglo
+            Arreglo.push(val.id)
+          }
+        })
+      })
+
+
+      }
+     
+
+      let sinRepetidos = [...new Set(Arreglo)]//elimina elelentos repetidos de tipos primitivos
       
-      //this.dataAnexo =val[this.depId].provincias[this.proId].distritos[this.disId].cacerios[this.disId].cps[cpId].anexos
+      let cas: any[] = [{ 'cp': 'nada', 'id': 97 }]
+
+      for (let index = 1; index < sinRepetidos.length; index++) {
+        const element = sinRepetidos[index];
+        cas.map((elemento) => {
+          if (elemento === sinRepetidos[index]) {
+            cas.slice[sinRepetidos[index], sinRepetidos[index]]
+          }
+          else {
+            cas.push({ 'cp': val[this.depId].departamento.provincias[this.proId].distritos[this.disId].cacerios[element].centros_poblados, 'id': element })
+          }
+        })
+      }
+
+      this.dataBar = cas.filter((valorActual, indiceActual, arreglo) => {
+        //Podríamos omitir el return y hacerlo en una línea, pero se vería menos legible
+        return arreglo.findIndex(valorDelArreglo => JSON.stringify(valorDelArreglo) === JSON.stringify(valorActual)) === indiceActual
+      });
+
+      this.dataBar.shift()
+     
+
+
+     
+
+
+      
+      
     })
   }/*
   setIndiceAnexo(aneId){
@@ -135,6 +192,22 @@ export class SeleccionadoComponent extends NgxSubFormComponent<IUbigeo_seleccion
     //this.departamentos$.subscribe((val)=>{this.dataBar =val[this.depId].provincias[this.proId].distritos[this.proId].cacerios[this.disId].cps[this.casId].anexos[this.aneId].barrios[barId]})
 
   }*/
+
+  public guardarLocalidades():void{
+
+    this.localidaesService.creaLocalidades(this.dataBar)
+    
+    this.memDesService.localidadesSeleccionadas = this.dataBar
+
+    console.log(this.memDesService.localidadesSeleccionadas)
+
+  }
+  public atras(){
+    
+    
+    this.router.navigate(['proyecto',this.docIdservice.DocId,'overview','funcionalidades'])
+
+  }
 
   
 

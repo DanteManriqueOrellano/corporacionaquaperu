@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EliminarPDFComponent } from '../eliminar-pdf/eliminar-pdf.component';
 
 
 const routes: Routes = [
-  /*{path:'ubigeo',loadChildren:  '../modules/ubigeo/ubigeo.module#UbigeoModule'},*/
-  /* {path:'ubigeo',loadChildren: () => import('../modules/ubigeo/ubigeo.module').then(m => m.UbigeoModule)},
-  {path:'bienvenido',loadChildren: () => import('../modules/bienvenido/bienvenido.module').then(m => m.BienvenidoModule)},
-  {path:'referencia', loadChildren:()=> import('../modules/generalidadesproyecto/generalidadesproyecto.module').then(m=>m.GeneralidadesproyectoModule)}, */
   
-  {path: "",loadChildren:()=>import('../home/home.module').then(m=>m.HomeModule)},
-//  {path:"proyecto/:docId/overview",loadChildren:()=>import('../dashboard/dashboard.module').then(m=>m.DashboardModule)}
-  
+//  {path: "",loadChildren:()=>import('../home/home.module').then(m=>m.HomeModule)},
+  {path:'',component:EliminarPDFComponent}
 ];
 
 @NgModule({

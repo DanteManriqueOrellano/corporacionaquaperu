@@ -6,6 +6,7 @@ import { EstadisticasComponent } from '../estadisticas/estadisticas/estadisticas
 import { FuncionalidadesComponent } from '../funcionalidades/funcionalidades/funcionalidades.component';
 import { MemDesComponent } from '../mem-des/mem-des/mem-des.component';
 import { UbigeoComponent } from '../ubigeo/ubigeo/ubigeo.component';
+import { SeleccionadoComponent } from '../ubigeo/seleccionado/seleccionado.component';
 
 
 
@@ -15,7 +16,7 @@ const routes: Routes = [
       children:[
         {path:"",component:EstadisticasComponent},
         {path:"config",component:ConfigComponent,children:[
-          {path:"",component:UbigeoComponent}
+          {path:"",component:SeleccionadoComponent}
         ]},
         {path:"funcionalidades",component:FuncionalidadesComponent},
         {path:"memoria",component:MemDesComponent}

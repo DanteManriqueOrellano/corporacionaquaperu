@@ -57,7 +57,7 @@ import { PoblacionComponent } from './mem-des/generalidad-root-form/poblacion-ro
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    UbigeoModule,
+   // UbigeoModule,
   ],
   exports: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent, PoblacionComponent, PoblacionesComponent]
 })

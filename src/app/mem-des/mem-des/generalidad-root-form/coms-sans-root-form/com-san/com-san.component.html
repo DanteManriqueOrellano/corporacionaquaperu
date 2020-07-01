@@ -1,6 +1,6 @@
 <section [formGroup]="formGroup">
     <fieldset>
-        <legend>Componentes Sanitarios - localidad "ACHASPAMPA"</legend>
+        <legend>Componentes Sanitarios - localidad "{{localidad[0].cp[nombreLocalidad].nombre_centro_poblado }}"</legend>
      <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));">
         <app-captacion [formControlName]="formControlNames.captacion"></app-captacion>
         <app-reservorio [formControlName]="formControlNames.reservorio"></app-reservorio>

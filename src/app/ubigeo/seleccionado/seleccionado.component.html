@@ -8,7 +8,8 @@
                 <mat-label>Departamento</mat-label>
                 <mat-select [formControlName]='formControlNames.departamento'>
                     <mat-option *ngFor="let ubigeo of departamentos$ | async ; let i = index" [value]="ubigeo.departamento.nombre_departamento">
-                        <p (click)='setIndiceDepartamento(i)'>{{ubigeo.departamento.nombre_departamento}}</p>
+                        
+                        <div (click)='setIndiceDepartamento(i)'>{{ubigeo.departamento.nombre_departamento}}</div>
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -16,7 +17,7 @@
                 <mat-label>Provincia</mat-label>
                 <mat-select [formControlName]='formControlNames.provincia'>
                     <mat-option *ngFor="let provincia of dataProvincias ; let i= index" [value]="provincia.nombre_provincia">
-                        <p (click)='setIndiceProvincia(i)'>{{provincia.nombre_provincia}}</p>
+                        <div (click)='setIndiceProvincia(i)'>{{provincia.nombre_provincia}}</div> 
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -24,7 +25,8 @@
                 <mat-label>Distrito</mat-label>
                 <mat-select [formControlName]='formControlNames.distrito'>
                     <mat-option *ngFor="let distrito of dataDistrito; let i= index" [value]="distrito.nombre_distrito">
-                        <p (click)='setIndiceDistrito(i)'>{{distrito.nombre_distrito}}</p>
+                        <div (click)='setIndiceDistrito(i)'>{{distrito.nombre_distrito}}</div>
+                        
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -33,7 +35,7 @@
                 <mat-select [formControlName]='formControlNames.cacerios' multiple>
                     <mat-option *ngFor="let cacerio of dataCaserio; let i = index"
                         [value]="{nombre:cacerio.nombre_cacerio,id:i}">
-                        <p (click)='setIndiceCacerio({nombre:cacerio.nombre_cacerio,id:i})'>{{cacerio.nombre_cacerio}}</p>
+                        <div (click)='setIndiceCacerio({nombre:cacerio.nombre_cacerio,id:i})'>{{cacerio.nombre_cacerio}}</div>
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -43,8 +45,7 @@
                     <mat-optgroup *ngFor="let centro_poblado of dataCp" [label]="'Centro Poblado'">
                         <mat-option *ngFor="let item of centro_poblado.cp; let i = index"
                             [value]="{nombre:item.nombre_centro_poblado,id:i}">
-                            <p (click)='setIndiceCentroPoblado("")'>{{item.nombre_centro_poblado}}</p>
-    
+                            <div (click)='setIndiceCentroPoblado("")'>{{item.nombre_centro_poblado}}</div> 
                         </mat-option>
     
                     </mat-optgroup>
@@ -56,7 +57,6 @@
     </fieldset>
 </section>
 
-<!--
 
-<button (click)="setIndiceDepartamento($event)">ss</button>
--->
+<button mat-button color="primary" (click)="guardarLocalidades()">Registra Localidades</button>
+<button mat-button color="primary" (click)="atras()">Atraz</button>

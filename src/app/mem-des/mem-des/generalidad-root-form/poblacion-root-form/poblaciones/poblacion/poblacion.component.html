@@ -1,36 +1,37 @@
 <section [formGroup]="formGroup">
     <fieldset>
-        <legend>Poblacion - Localidad "ACHASPAMPA"</legend>
+        <legend> Localidad "{{localidad[0].cp[nombreLocalidad].nombre_centro_poblado }}"</legend>
+        
 
         <div style="display: grid;
         grid-template-columns: repeat(auto-fit, minmax(6rem,2fr));
         ">
             <mat-form-field>
-                <input matInput placeholder="concentracion_miembros_x_familia" autocomplete="off"
+                <input matInput placeholder="concentración x familia" autocomplete="off"
                     [formControlName]='formControlNames.concentracion_miembros_x_familia'>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="dencidad_poblacional" autocomplete="off"
+                <input matInput placeholder="Dencidad Poblacional" autocomplete="off"
                     [formControlName]='formControlNames.dencidad_poblacional'>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="poblacion_actual" autocomplete="off"
+                <input matInput placeholder="Población Actual" autocomplete="off"
                     [formControlName]='formControlNames.poblacion_actual'>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="poblacion_futura" autocomplete="off"
+                <input matInput placeholder="Poblacion Futura" autocomplete="off"
                     [formControlName]='formControlNames.poblacion_futura'>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="tasa_crecimiento" autocomplete="off"
+                <input matInput placeholder="Tasa Crecimiento" autocomplete="off"
                     [formControlName]='formControlNames.tasa_crecimiento'>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="total_beneficiarios" autocomplete="off"
+                <input matInput placeholder="tot.Beneficiarios" autocomplete="off"
                     [formControlName]='formControlNames.total_beneficiarios'>
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="total_familias_beneficiadas" autocomplete="off"
+                <input matInput placeholder="Tot.Fam.Beneficiadas" autocomplete="off"
                     [formControlName]='formControlNames.total_familias_beneficiadas'>
             </mat-form-field>
 
