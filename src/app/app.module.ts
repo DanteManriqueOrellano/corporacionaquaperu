@@ -22,16 +22,16 @@ import pdfFonts from '../assets/custom-fonts.js';
 import { EliminarPDFComponent } from './eliminar-pdf/eliminar-pdf.component';
 
 // Configuring custom fonts
-/*PdfMakeWrapper.setFonts(pdfFonts, {
+PdfMakeWrapper.setFonts(pdfFonts, {
   roboto: {
-      normal: 'Roboto-Black.ttf',
+      normal: 'Roboto-Light.ttf',
       bold: 'Roboto-Bold.ttf',
       italics: 'Roboto-Italic.ttf',
       bolditalics: 'Roboto-BoldItalic.ttf'
   }
 });
 
-PdfMakeWrapper.useFont('roboto');*/
+PdfMakeWrapper.useFont('roboto');
 
 @NgModule({
   declarations: [
