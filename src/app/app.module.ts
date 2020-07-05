@@ -19,7 +19,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { PdfMakeWrapper } from "pdfmake-wrapper";
 import pdfFonts from '../assets/custom-fonts.js';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 import { EliminarPDFComponent } from './eliminar-pdf/eliminar-pdf.component';
+
+import { FileUploadModule } from '@iplab/ngx-file-upload';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Configuring custom fonts
 PdfMakeWrapper.setFonts(pdfFonts, {
@@ -38,6 +43,7 @@ PdfMakeWrapper.useFont('roboto');
     AppComponent,
     EliminarPDFComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -45,6 +51,7 @@ PdfMakeWrapper.useFont('roboto');
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    FileUploadModule,
     CoreModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -52,11 +59,15 @@ PdfMakeWrapper.useFont('roboto');
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    NgxDropzoneModule,
+    NgbModule
+
   ],
   providers: [
     { provide: BUCKET, useValue: 'corporacionaquaperu.appspot.com' }
   ],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
