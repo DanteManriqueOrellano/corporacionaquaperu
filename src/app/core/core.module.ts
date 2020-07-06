@@ -20,6 +20,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { HomeModule } from '../home/home.module';
+import { UploadModule } from '../upload/upload.module';
+
 
 
 
@@ -49,6 +51,8 @@ import { HomeModule } from '../home/home.module';
     MatListModule,
     DashboardModule,
     HomeModule,
+    UploadModule,
+ 
 
     
     

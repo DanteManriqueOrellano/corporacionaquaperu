@@ -19,7 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { PdfMakeWrapper } from "pdfmake-wrapper";
 import pdfFonts from '../assets/custom-fonts.js';
-import { NgxDropzoneModule } from 'ngx-dropzone';
+
 import { EliminarPDFComponent } from './eliminar-pdf/eliminar-pdf.component';
 
 import { FileUploadModule } from '@iplab/ngx-file-upload';
@@ -60,7 +60,7 @@ PdfMakeWrapper.useFont('roboto');
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    NgxDropzoneModule,
+   
     NgbModule
 
   ],

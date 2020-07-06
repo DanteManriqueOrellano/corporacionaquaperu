@@ -1,8 +1,9 @@
 import { Component, OnInit, IterableDiffers } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PdfMakeWrapper, Txt, Ol, Ul, Item, Table, Toc, TocItem, Columns, Cell } from 'pdfmake-wrapper';
+import { PdfMakeWrapper, Txt, Ol, Ul, Item, Table, Toc, TocItem, Columns, Cell, Img } from 'pdfmake-wrapper';
 import { IOl, IItem, IText } from 'pdfmake-wrapper/lib/interfaces';
 import { element } from 'protractor';
+import { async } from '@angular/core/testing';
 
 
 
@@ -18,7 +19,7 @@ export class EliminarPDFComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  generarMemoriaDescriptiva() {
+  async generarMemoriaDescriptiva() {
     const pdf = new PdfMakeWrapper()
 
     pdf.header('This is a header');
@@ -116,16 +117,18 @@ export class EliminarPDFComponent implements OnInit {
     pdf.add(
       new Table(table(dataAlumno,['nombre','apellido','edad'])).end
     )
-    
+    //https://firebasestorage.googleapis.com/v0/b/corporacionaquaperu.appspot.com/o/test%2F1593985802870_logocascapara%20cabecera.png?alt=media&token=3a717189-e6d7-42d5-849c-ae36bc5520ae
  
+   
+    pdf.add( await new Img('https://firebasestorage.googleapis.com/v0/b/corporacionaquaperu.appspot.com/o/test%2F1593985802870_logocascapara%20cabecera.png?alt=media&token=3a717189-e6d7-42d5-849c-ae36bc5520ae').build() );
 
- 
     
     
     pdf.create().open()
     
 
   }
+ 
 
 
 }
@@ -180,4 +183,12 @@ export function table(data:any[],nombreColumnas:string[]){
   
 return tb.reverse()
 
+}
+
+export async function imagenes(){
+  return {
+    picture1: await new Img('https://firebasestorage.googleapis.com/v0/b/corporacionaquaperu.appspot.com/o/test%2F1593985802870_logocascapara%20cabecera.png?alt=media&token=3a717189-e6d7-42d5-849c-ae36bc5520ae').build(),
+    
+}
+ 
 }
