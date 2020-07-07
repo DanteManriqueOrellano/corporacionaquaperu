@@ -4,7 +4,7 @@ import { titulo } from '../mem-des/generaDoc/titulo_1.1';
 import { imagenes } from '../mem-des/generaDoc/imagenes';
 import { cabecera_pagina } from '../mem-des/generaDoc/cabecera_pagina';
 import { pie_pagina } from '../mem-des/generaDoc/pie_pagina';
-import { indice } from '../mem-des/generaDoc/indice';
+import { indice_manual } from '../mem-des/generaDoc/indice';
 import { item, OrderingList, table } from '../mem-des/generaDoc/herramientas/funciones';
 import { generalidades_antecedetes } from '../mem-des/generaDoc/generalidades_antecedentes';
 import { objetivos_proyecto } from '../mem-des/generaDoc/objetivos_proyecto';
@@ -50,17 +50,17 @@ export class EliminarPDFComponent implements OnInit {
     // pdf.add(new Columns([ await new Img('cover1', true).build(), await new Img('cover1', true).build() ]).alignment('center').columnGap(10).bold().end)
     pdf.add(new Txt('2020').alignment('right').pageBreak('after').bold().end)
     pdf.add(pdf.ln(2))
+    
+   
+    pdf.add(indice_manual());
+    pdf.add(new Txt('').alignment('right').pageBreak('after').bold().end)
+    pdf.add(pdf.ln(2))
 
 
 
     pdf.add(
       [
-        new Ol([//lista ordenada principal
-
-          [
-            item({title:'INDICE',detail:''}),//primer item
-            
-            [
+        
               new Ol([
                 
                 item({title:'NOMBRE DEL PROYECTO',detail:''}),
@@ -85,10 +85,7 @@ export class EliminarPDFComponent implements OnInit {
                 item({title:'MODALIDAD DE EJECUCION',detail:''}),
                 item({title:'PLAZO DE EJECUCION DEL PROYECTO',detail:''}),
               ]).separator(['1.', '.']).end
-            ]
-          ],
-
-        ]).end
+     
       ]
 
     );
