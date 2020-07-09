@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakeWrapper, Txt, Ol, Ul, Item, Table, Cell, Img, Stack, Columns } from 'pdfmake-wrapper';
-import { titulo } from '../mem-des/generaDoc/titulo_1.1';
+import { nombre_proyecto } from '../mem-des/generaDoc/nombre_proyecto';
 import { imagenes } from '../mem-des/generaDoc/imagenes';
 import { cabecera_pagina } from '../mem-des/generaDoc/cabecera_pagina';
 import { pie_pagina } from '../mem-des/generaDoc/pie_pagina';
@@ -19,8 +19,11 @@ import { plan_gestion_saneamiento } from '../mem-des/generaDoc/plan_gestion_sane
 import { metas_fisicas } from '../mem-des/generaDoc/metas_fisicas';
 import { ejecucion_proyecto } from '../mem-des/generaDoc/ejecucion_proyecto';
 import { memoria_costos } from '../mem-des/generaDoc/memoria_costos';
+import { MemDesService } from '../mem-des/mem.des.service';
 
-
+const cliente ='Municipalidad Distrital de Cascapara';
+const localidades = ['Pucap','Pampahuasi'];
+const distrito = 'Cascapara'
 @Component({
   selector: 'app-eliminar-pdf',
   templateUrl: './eliminar-pdf.component.html',
@@ -28,9 +31,13 @@ import { memoria_costos } from '../mem-des/generaDoc/memoria_costos';
 })
 export class EliminarPDFComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private memdesService:MemDesService
+  ) { }
+  
 
   ngOnInit(): void {
+    console.log(this.memdesService.localidadesSeleccionadas)
   }
 
   async generarMemoriaDescriptiva() {
@@ -43,12 +50,12 @@ export class EliminarPDFComponent implements OnInit {
 
     pdf.add(new Txt('PROYECTO').alignment('center').bold().end);
     pdf.add(pdf.ln(2))
-    pdf.add(titulo())
+    pdf.add(new Txt(nombre_proyecto()).alignment('center').bold().end )
     pdf.add(pdf.ln(2))
     pdf.add(new Txt('MEMORIA DESCRIPTIVA').alignment('center').bold().end);
     pdf.add(pdf.ln(2))
     // pdf.add(new Columns([ await new Img('cover1', true).build(), await new Img('cover1', true).build() ]).alignment('center').columnGap(10).bold().end)
-    pdf.add(new Txt('2020').alignment('right').pageBreak('after').bold().end)
+    pdf.add(new Txt('2020').alignment('center').pageBreak('after').bold().end)
     pdf.add(pdf.ln(2))
     
    
@@ -60,32 +67,47 @@ export class EliminarPDFComponent implements OnInit {
 
     pdf.add(
       [
-        
-              new Ol([
-                
-                item({title:'NOMBRE DEL PROYECTO',detail:''}),
-                generalidades_antecedetes(),
-                objetivos_proyecto(),
-                item({title:'PROPIETARIO DE LA OBRA',detail:''}),
-                caracteristicas_localidad(),
-                /** LOS DIAGNOSTICOS SE REALIZARAN SEGUN SE TENGA LA CANTIDAD DE LOCALIDADES BENEFICIADAS*/
-                diagnostico_servicios_saneamiento(),
-                parametros_disenio_calculo(),
-                item({title:'FUENTES DE AGUA IDENTIFICADAS PARA EL PROYECTO',detail:''}),
-                descripcion_obras_proyectadas(),
-                descripcion_obras_proyectadas_hidraulico(),
-                plan_mitigacion_ambiental(),
-                plan_capacitacion(),
-                plan_gestion_saneamiento(),  
-                item({title:'CAPACIDAD OPERATIVA DEL OPERADOR',detail:''}),
-                /**LAS METAS FISICAS DEL PROYECTO SE TIENE QUE RALIZAR POR CADA LOCALIDAD */
-                metas_fisicas(),
-                ejecucion_proyecto(),
-                memoria_costos(),
-                item({title:'MODALIDAD DE EJECUCION',detail:''}),
-                item({title:'PLAZO DE EJECUCION DEL PROYECTO',detail:''}),
-              ]).separator(['1.', '.']).end
-     
+
+        new Ol([
+
+          item({ title: 'NOMBRE DEL PROYECTO', detail: nombre_proyecto() }),
+          generalidades_antecedetes(),
+          objetivos_proyecto(),
+          [
+            new Item({text:`PROPIETARIO DE LA OBRA
+            `}).alignment('justify').end,
+            [
+              new Item({text:`El propietario de la Obra es la ${cliente}, que luego la transferirá a la JASS de estas comunidad localidades. El propietario final de la obra serán los caseríos de ${localidades} del distrito de ${distrito}. La población beneficiaria de la infraestructura de servicios de agua potable y saneamiento proyectados.
+            `}).alignment('justify').end,
+            new Item({text:`La Junta Administradora de los Servicios de Saneamiento (JASS) es la que se encuentra debidamente inscrita y reconocida por la ${cliente}, con el compromiso de asumir la responsabilidad de administrar, operar y mantener el servicio proyectado.
+            `}).alignment('justify').end,
+            new Item({text:`El financiamiento de los costos de administración, operación y mantenimiento, serán cubiertos con las cuotas que pagarán los usuarios por cada uno de los servicios prestados, cubriendo éstos satisfactoriamente dichos costos
+            `}).alignment('justify').end,
+
+            ]
+
+          ],
+          
+          //item({ title: 'PROPIETARIO DE LA OBRA', detail: '' }),
+          caracteristicas_localidad(),
+          /** LOS DIAGNOSTICOS SE REALIZARAN SEGUN SE TENGA LA CANTIDAD DE LOCALIDADES BENEFICIADAS*/
+          diagnostico_servicios_saneamiento(),
+          parametros_disenio_calculo(),
+          item({ title: 'FUENTES DE AGUA IDENTIFICADAS PARA EL PROYECTO', detail: '' }),
+          descripcion_obras_proyectadas(),
+          descripcion_obras_proyectadas_hidraulico(),
+          plan_mitigacion_ambiental(),
+          plan_capacitacion(),
+          plan_gestion_saneamiento(),
+          item({ title: 'CAPACIDAD OPERATIVA DEL OPERADOR', detail: '' }),
+          /**LAS METAS FISICAS DEL PROYECTO SE TIENE QUE RALIZAR POR CADA LOCALIDAD */
+          metas_fisicas(),
+          ejecucion_proyecto(),
+          memoria_costos(),
+          item({ title: 'MODALIDAD DE EJECUCION', detail: '' }),
+          item({ title: 'PLAZO DE EJECUCION DEL PROYECTO', detail: '' }),
+        ]).separator(['1.', '.']).end
+
       ]
 
     );
@@ -138,3 +160,5 @@ export function repeat(){
   
 
 }
+
+//export const stilos  
