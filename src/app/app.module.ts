@@ -33,7 +33,9 @@ PdfMakeWrapper.setFonts(pdfFonts, {
       bold: 'Roboto-Bold.ttf',
       italics: 'Roboto-Italic.ttf',
       bolditalics: 'Roboto-BoldItalic.ttf'
-  }
+  },
+ 
+
 });
 
 PdfMakeWrapper.useFont('roboto');

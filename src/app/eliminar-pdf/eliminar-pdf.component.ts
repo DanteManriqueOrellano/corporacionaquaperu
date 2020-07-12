@@ -48,7 +48,7 @@ export class EliminarPDFComponent implements OnInit {
     // pdf.footer(await pie_pagina());
     pdf.add(pdf.ln(4))
 
-    pdf.add(new Txt('PROYECTO').alignment('center').bold().end);
+    pdf.add(new Txt('PROYECTO').alignment('center').font('Roboto-BoldItalic').end);
     pdf.add(pdf.ln(2))
     pdf.add(new Txt(nombre_proyecto()).alignment('center').bold().end )
     pdf.add(pdf.ln(2))
@@ -124,13 +124,67 @@ export class EliminarPDFComponent implements OnInit {
 
     pdf.add(
       new Table(table(dataAlumno, ['nombre', 'apellido', 'edad'])).end
-    )
+    );
     //https://firebasestorage.googleapis.com/v0/b/corporacionaquaperu.appspot.com/o/test%2F1593985802870_logocascapara%20cabecera.png?alt=media&token=3a717189-e6d7-42d5-849c-ae36bc5520ae
 
 
     //pdf.add( await new Img('https://firebasestorage.googleapis.com/v0/b/corporacionaquaperu.appspot.com/o/test%2F1593991742352_logo%20carhuaz.jpg?alt=media&token=63e08acb-04a2-406a-837c-a3bc11e91729').build() );
 
+    pdf.add(new Txt(`ANEXOS
+    `).alignment('center') .end);
+    pdf.add(new Txt(`ANEXO 1
+    `).end)  
+    pdf.add(
+        new Txt( `PROYECCIÓN DE LA DEMANDA DE AGUA - ANEXO - CURANCO`).alignment('center').bold().pageOrientationAndBreak("landscape","before").end,
+                   
+      );
+      
 
+
+
+
+
+      pdf.add(
+        new Table([
+          [{text:'Per',rowSpan:2},//1
+          {text:'Año',rowSpan:2},//2
+          {text:'Pob.Tot',rowSpan:2},//3
+          {text:'Cober.%',rowSpan:2},//4
+          {text:'Pob.Serv',rowSpan:2},//5
+          {text:'Nº de viv.Serv',colSpan:3},//6--divicion 3
+          {},{},//se agrega un corchete menos del colspan
+          {text:'Nº Conex.',rowSpan:2},//7
+          {text:'Cons Total',colSpan:4},//8--divicion 4
+          {},{},{},
+          {text:'Cons.(L/d)',rowSpan:2},//9
+          {text:'Qm(L/s)',rowSpan:2},//10
+          {text:'Dem.(m3/año)',rowSpan:2},//11
+          {text:'Qmd(L/s)',rowSpan:2},//12
+          {text:'Qmh(L/s)',rowSpan:2},//13
+          {text:'Vol.de Regu.(m3/d)',rowSpan:2},//14
+          {text:'Vol.de Alma.',rowSpan:2}],//15
+          //segunda fila
+          [{},{},{},{},{},
+          {text:'Ant.'},{text:'Nue.'},{text:'tot.'},//en la segunda fila se agregan los dos corchetes de que se agrego debido al colSpan
+          {text:''},//el otro colSpan
+          {text:  new Txt(['Viv.','(L/d)']).end},{text:'Tot.(L/d)'},{text:'Tot.(L/s)'},{text:'Tot.(m3/año)'},{text:''},
+          {text:''},{text:''},{text:''},{text:''},{text:''},{}],
+          ['1','2019','247','100%','247','60','0','60','60','19,76','19,76','229','7,212','19,76','0.23','7,212','0.30','0.46','4.94','6.18']
+          
+
+
+          
+          
+      ]).dontBreakRows(true).headerRows(1).pageOrientationAndBreak("portrait","after").end
+      );
+      
+      pdf.add(new Txt(`Se construirá una nueva captación en el manante Pullahua casa de tipo ladera (Filtros, cámara húmeda y cámara seca), será de concreto armado F'c= 210 kg/cm2, está estructuras se tarrajeará el exterior (normal), el interior con (impermeabilizante) luego se colocara sus respectivos accesorios correspondientes en cada obra de arte. Para finalizar se pintara las obras de arte. Se construirá un cerco perimétrico con dado de concreto, poste de tubo galvanizado, malla electro soldada y tendrá una puerta de acceso que será construido de marco de tubo fierro galvanizado con malla cuadrada galvanizada.
+      `).alignment('justify').end
+      )
+      pdf.add(new Txt(`Se construirá una nueva captación en el manante Pullahua casa de tipo ladera (Filtros, cámara húmeda y cámara seca), será de concreto armado F'c= 210 kg/cm2, está estructuras se tarrajeará el exterior (normal), el interior con (impermeabilizante) luego se colocara sus respectivos accesorios correspondientes en cada obra de arte. Para finalizar se pintara las obras de arte. Se construirá un cerco perimétrico con dado de concreto, poste de tubo galvanizado, malla electro soldada y tendrá una puerta de acceso que será construido de marco de tubo fierro galvanizado con malla cuadrada galvanizada.
+      `).alignment('justify').end
+      )
+      
 
     pdf.create().open()
 

@@ -27,6 +27,9 @@ export class HomeComponent extends NgxSubFormComponent<IProyecto> {
       nombre_proyecto: new FormControl(),
       tipo_proyecto: new FormControl(),
       funcionalidadesInstaladas:new FormControl([]),
+      //agregar
+      //coordenadas_utm
+      //altitud
     }
   }
 

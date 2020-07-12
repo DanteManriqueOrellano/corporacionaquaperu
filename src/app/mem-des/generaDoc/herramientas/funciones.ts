@@ -64,8 +64,9 @@ export function item(x:{title:string,detail:string}){
   }
 
   export function tableCabeceraIzquierda(data:string[]){
+    
     let tb = [];
-    let cabecera = ['Departamento / Región','Provincia','Distrito','Coordenadas Utm','Localidades','Región Geográfica','Región Natural','Altitud'];
+    let cabecera =  ['Departamento / Región','Provincia','Distrito','Coordenadas Utm','Localidades','Región Geográfica','Región Natural','Altitud'];
     data.map((elemento,index)=>{
       
       tb.push([cabecera[index],elemento])
@@ -77,39 +78,19 @@ export function item(x:{title:string,detail:string}){
   }
 
   export function convertObjToArray(obj){
-   // const o = {departamento:'depaetamento1',provincia:'provincia1',distrito:'disrtiot1',centros_poblados:[{id:0,nombre:'cp0'},{id:1,nombre:'cp1'}]}
-    /*
-    []
-    */
-   const m =[]
-   const con = [];
-   const ar:any = Object.values(obj);
+   //datos a ingresar de la colleccion  generalidades
+   // const obj = {departamento:'depaetamento1',provincia:'provincia1',distrito:'disrtiot1',centros_poblados:[{id:0,nombre:'cp0'},{id:1,nombre:'cp1'}]}//datos a ingresar de la bd
 
-   
-   const j=  ar.splice(3,3)
-   console.log(j)
-   console.log(ar)//agregar los elemento nuevos a ar
-   const ele = Object.values(j)
-   j.map((val)=>{
-     const el = Object.values(val);
-     return ar.concat(el)
-   });
-   console.log (j)
 
-   
-
-   
-   /*ar[3].map((elemento)=>{
-     con.push(Object.values(elemento))
+  const cn = obj.centros_poblados.map((val)=>{
+     const tmp = Object.values(val);
+      tmp.shift()
+      
+      return tmp[0]
    })
-  console.log(ar)
-   con.map((elemento)=>{
-    
-    const j = elemento.shift() 
-
-    
-    m.push(elemento)
-  })
-  ar.splice(3,0,m)
-//  console.log(ar)*/
+  
+  const tb = Object.values(obj)
+  tb.splice(3,3)
+  return tb.concat(cn) 
 }
+   
