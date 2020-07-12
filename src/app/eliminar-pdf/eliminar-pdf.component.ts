@@ -48,7 +48,7 @@ export class EliminarPDFComponent implements OnInit {
     // pdf.footer(await pie_pagina());
     pdf.add(pdf.ln(4))
 
-    pdf.add(new Txt('PROYECTO').alignment('center').font('Roboto-BoldItalic').end);
+    pdf.add(new Txt('PROYECTO').alignment('center').end);
     pdf.add(pdf.ln(2))
     pdf.add(new Txt(nombre_proyecto()).alignment('center').bold().end )
     pdf.add(pdf.ln(2))
