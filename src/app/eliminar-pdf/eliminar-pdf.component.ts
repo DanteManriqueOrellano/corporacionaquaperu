@@ -48,7 +48,7 @@ export class EliminarPDFComponent implements OnInit {
     // pdf.footer(await pie_pagina());
     pdf.add(pdf.ln(4))
 
-    pdf.add(new Txt('PROYECTO').alignment('center').end);
+    pdf.add(new Txt('PROYECTO').alignment('center').bold().end);
     pdf.add(pdf.ln(2))
     pdf.add(new Txt(nombre_proyecto()).alignment('center').bold().end )
     pdf.add(pdf.ln(2))
@@ -175,7 +175,7 @@ export class EliminarPDFComponent implements OnInit {
 
           
           
-      ]).dontBreakRows(true).headerRows(1).pageOrientationAndBreak("portrait","after").end
+      ]).dontBreakRows(true).headerRows(1).pageOrientationAndBreak("portrait","after").font('nilam').end
       );
       
       pdf.add(new Txt(`Se construirá una nueva captación en el manante Pullahua casa de tipo ladera (Filtros, cámara húmeda y cámara seca), será de concreto armado F'c= 210 kg/cm2, está estructuras se tarrajeará el exterior (normal), el interior con (impermeabilizante) luego se colocara sus respectivos accesorios correspondientes en cada obra de arte. Para finalizar se pintara las obras de arte. Se construirá un cerco perimétrico con dado de concreto, poste de tubo galvanizado, malla electro soldada y tendrá una puerta de acceso que será construido de marco de tubo fierro galvanizado con malla cuadrada galvanizada.

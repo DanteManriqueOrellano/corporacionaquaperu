@@ -34,11 +34,17 @@ PdfMakeWrapper.setFonts(pdfFonts, {
       italics: 'Nilam.ttf',
       bolditalics: 'Nilam.ttf'
   },
+  poppins:{
+    normal:'Poppins-Light.otf',
+    bold:'Poppins-Thin.otf',
+    italics:'Poppins-Light.otf',
+    bolditalics:'Poppins-Light.otf'
+  }
  
 
 });
 
-PdfMakeWrapper.useFont('nilam');
+PdfMakeWrapper.useFont('poppins');
 
 @NgModule({
   declarations: [
