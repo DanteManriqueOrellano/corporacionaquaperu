@@ -28,17 +28,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Configuring custom fonts
 PdfMakeWrapper.setFonts(pdfFonts, {
-  roboto: {
-      normal: 'Roboto-Light.ttf',
-      bold: 'Roboto-Bold.ttf',
-      italics: 'Roboto-Italic.ttf',
-      bolditalics: 'Roboto-BoldItalic.ttf'
+  nilam: {
+      normal: 'Nilam.ttf',
+      bold: 'Nilam-Bold.ttf',
+      italics: 'Nilam.ttf',
+      bolditalics: 'Nilam.ttf'
   },
  
 
 });
 
-PdfMakeWrapper.useFont('roboto');
+PdfMakeWrapper.useFont('nilam');
 
 @NgModule({
   declarations: [
