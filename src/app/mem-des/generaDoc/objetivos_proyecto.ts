@@ -7,14 +7,14 @@ export function objetivos_proyecto() {
 
     new Item({
       text: `OBJETIVOS
-         `}).end,
+         `}).bold().end,
 
     new Ol([
 
       [
         new Item({
           text: `OBJETIVOS DEL PROYECTO
-            `}).alignment('justify').end,
+            `}).alignment('justify').bold().end,
         [
           new Item({
             text: `El objetivo central del presente proyecto es dotar de un adecuado servicio de tratamiento y eliminación de excretas, Asegurar las condiciones para un acceso universal a la salud en forma gratuita, continua, oportuna y de calidad, con prioridad en las zonas de concentración de pobreza y en las poblaciones más vulnerables.
@@ -49,7 +49,7 @@ export function objetivos_proyecto() {
 
           [
             new Item({ text: `ACCESO UNIVERSAL A LOS SERVICIOS DE SALUD Y SEGURIDAD SOCIAL
-            ` }).end,
+            ` }).bold().end,
             [
               new Txt(`Asegurar las condiciones para un acceso universal a la salud en forma gratuita, continua, oportuna y de calidad, con prioridad en las zonas de concentración de pobreza y en las poblaciones más vulnerables.
               `).alignment('justify').end,
@@ -71,7 +71,7 @@ export function objetivos_proyecto() {
           ],
           [
             new Item({ text: `EJES ESTRATÉGICOS Nº 2 - PLAN BICENTENARIO 2021
-            ` }).end,
+            ` }).bold().end,
             [
               new Txt(`El crecimiento con democratización que el Perú se compromete a lograr para el 2021 incluye el acceso equitativo a servicios fundamentales de calidad (educación, salud, agua y saneamiento, electricidad, telecomunicaciones, vivienda y seguridad ciudadana). Para alcanzarlo, se requieren estrategias políticas que convoquen por igual al Estado y la iniciativa privada. Entre los desafíos más urgentes destaca lograr una educación de calidad y vencer el flagelo de la desnutrición.
               `).alignment('justify').end,
@@ -83,7 +83,7 @@ export function objetivos_proyecto() {
           ],
           [
             new Item({ text: `OBJETIVO NACIONAL
-            ` }).end,
+            ` }).bold().end,
             [
               new Txt(`En este caso, el objetivo es lograr que todas las personas tengan igualdad de oportunidades para desarrollarse, lo que implica tener acceso a servicios básicos de calidad, en particular educación, salud, agua y desagüe, electricidad, telecomunicaciones, vivienda y seguridad ciudadana. El acceso universal a servicios de calidad y la seguridad alimentaria son esenciales para superar la pobreza y garantizar la igualdad de oportunidades para todos.
               `).alignment('justify').end,
@@ -94,7 +94,7 @@ export function objetivos_proyecto() {
           ,
           [
             new Item({ text: `LINEAMIENTO DE POLÍTICA
-            ` }).end,
+            ` }).bold().end,
             [
               new Txt(`Descentralizar los servicios de salud y garantizar el acceso universal a la atención de salud, la seguridad social, los servicios de agua potable y saneamiento básico, priorizando a la población en situación de pobreza y vulnerabilidad y adoptando un enfoque de interculturalidad.
               `).alignment('justify').end,
@@ -106,7 +106,7 @@ export function objetivos_proyecto() {
           ,
           [
             new Item({ text: `PRIORIDADES
-            ` }).end,
+            ` }).bold().end,
             [
               new Txt(`Reducir la Mortalidad Infantil y materna y erradicar la desnutrición infantil de las madres gestantes.
               `).alignment('justify').end,
@@ -116,7 +116,7 @@ export function objetivos_proyecto() {
           ],
           [
             new Item({ text: `PROGRAMA ESTRATÉGICO
-            ` }).end,
+            ` }).bold().end,
             [
               new Txt(`Disposición sanitaria de excretas para poblaciones rurales.
               `).alignment('justify').end,
@@ -130,7 +130,7 @@ export function objetivos_proyecto() {
       ],
       [
         new Item({ text: `OBJETIVO GENERAL
-      `}).end,
+      `}).bold().end,
       [
         new Item({text:`El objetivo central del presente proyecto es dotar de un adecuado servicio de eliminación de excretas con  la construcción de UBS con arrastre hidráulico, a través de un conjunto de actividades, con el fin de garantizar el bienestar de los pobladores y de esta manera terminar con la elevada incidencia de enfermedades Digestivas, Infecciosas y parasitarias en las localidades beneficiadas.
         `}).alignment('justify').end,
@@ -139,7 +139,7 @@ export function objetivos_proyecto() {
       ],
       [
         new Item({ text: `OBJETIVO ESPECIFICO
-      `}).end,
+      `}).bold().end,
       [
         new Item({text:`Desde el punto de vista del presente documento que forma parte del Expediente Técnico del Proyecto, se trata de presentar la información técnica, en descripción, especificaciones, gráficos y planos para una buena ejecución de obra.
       `}).alignment('justify').end

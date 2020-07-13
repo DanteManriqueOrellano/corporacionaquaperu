@@ -5,7 +5,8 @@ export function parametros_disenio_calculo() {
     return [
 
         [
-            new Item({ text: `PARAMETROS DE DISEÑO Y CALCULO` }).end,
+            new Item({ text: `PARAMETROS DE DISEÑO Y CALCULO
+            ` }).bold().end,
             [
                 [
                     new Txt(`Los parámetro de diseño para el proyecto han sido calculados en concordancia a la norma “ GUÍA DE OPCIONES TECNOLÓGICAS PARA SISTEMAS DE ABASTECIMIENTO DE AGUA PARA CONSUMO HUMANO Y SANEAMIENTO EN EL ÁMBITO RURAL” y al reglamento nacional de edificaciones.
@@ -14,7 +15,7 @@ export function parametros_disenio_calculo() {
                 ],
                 new Ol([
                     [
-                        new Item({ text: `PARÁMETROS DE DISEÑO DE LOS ANEXOS` }).end,
+                        new Item({ text: `PARÁMETROS DE DISEÑO DE LOS ANEXOS` }).bold().end,
                         [
                             new Txt(`Número de viviendas.
                             `).alignment('justify').bold().end,
@@ -23,7 +24,8 @@ export function parametros_disenio_calculo() {
                             new Table([
                                 ['Anexos','Nº Viviendas','Total Beneficiarios'],
                                 ['Pucap',114,342]
-                            ]).headerRows(1).dontBreakRows(false).end,
+                            ]).headerRows(1).dontBreakRows(true).end,
+                            pdf.ln(),
                             new Txt(`Densidad Poblacional`).bold().end,
                             new Txt(`A continuación, se presentan los parámetros utilizados para calcular la demanda de agua para el proyecto:
                             `).alignment('justify').end,
@@ -42,7 +44,8 @@ export function parametros_disenio_calculo() {
                                 ['Dotación de pob.no conectada (l/hab/d)',196,169],
                                 ['Cobertura Agua Potable',196,169],
                                
-                            ]).dontBreakRows(false).headerRows(1).end,
+                            ]).dontBreakRows(true).headerRows(1).end,
+                            pdf.ln(),
                             new Txt(`Con la ejecución del proyecto se plantea generar una cobertura del 100% de la población al servicio de agua potable. se consideró un consumo medio de la población de 80L/hab./día.
                             `).alignment('justify').end,
                             new Txt(`Población actual:`).alignment('justify').bold().end,
@@ -52,7 +55,8 @@ export function parametros_disenio_calculo() {
                                 [{text:'anexo',rowSpan:2},{text:'Cantidad de Usuarios',colSpan:2},{}],
                                 [{},'Viviendas','Población'],
                                 ['asd','asd','asd']
-                            ]).headerRows(2).dontBreakRows(false).end,
+                            ]).dontBreakRows(true).headerRows(2).end,
+                            pdf.ln(),
                             new Txt(`Tasa de Crecimiento 
                             `).bold().end,
                             new Txt(`Según los términos de referencia la tasa de crecimiento a usar es la tasa inter censal a nivel distrital, a partir de los cuales se hará un análisis para evaluar si son muy altas o muy bajas.
@@ -63,7 +67,7 @@ export function parametros_disenio_calculo() {
                                 [{text:'Coeficiente de Crecimiento Anual',colSpan:7,alignment:'center'},{},{},{},{},{},{}],
                                 ['Año','Pa(Hab)','t (años)','P Pf - Pa','Pa.t','r p/Pa.t','r.t'],
                                 [1994,32654,'','','','','']
-                            ]).headerRows(2).dontBreakRows(false).end,
+                            ]).dontBreakRows(true).headerRows(2).end,
                             new Txt(`Fuente: https://www.inei.gob.pe/estadisticas/indice-tematico/poblacion-y-vivienda/
                             `).end,
                             new Txt(`r= 0.7 (Nivel Regional)`).bold().end,
@@ -72,7 +76,7 @@ export function parametros_disenio_calculo() {
                                 [{text:'Coeficiente de Crecimiento Anual',colSpan:7,alignment:'center'},{},{},{},{},{},{}],
                                 ['Año','Pa(Hab)','t (años)','P Pf - Pa','Pa.t','r p/Pa.t','r.t'],
                                 [1981,32654,'','','','','']
-                            ]).headerRows(2).dontBreakRows(false).end,
+                            ]).dontBreakRows(true).headerRows(2).end,
                             new Txt(`Fuente: https://www.inei.gob.pe/estadisticas/indice-tematico/poblacion-y-vivienda/
                             `).end,
                             new Txt(`r= 0.5% (Nivel Provincial)`).bold().end,
@@ -80,7 +84,7 @@ export function parametros_disenio_calculo() {
                                 [{text:'Coeficiente de Crecimiento Anual',colSpan:7,alignment:'center'},{},{},{},{},{},{}],
                                 ['Año','Pa(Hab)','t (años)','P Pf - Pa','Pa.t','r p/Pa.t','r.t'],
                                 [1981,32654,'','','','','']
-                            ]).headerRows(2).dontBreakRows(false).end,
+                            ]).dontBreakRows(true).headerRows(2).end,
                             new Txt(`Fuente: https://www.inei.gob.pe/estadisticas/indice-tematico/poblacion-y-vivienda/
                             `).end,
                             new Txt(`r= 0.5% (Nivel Distrital)`).bold().end,
@@ -90,7 +94,7 @@ export function parametros_disenio_calculo() {
                                 [{text:'Departamento', rowSpan:2 ,alignment:'center'},{text:'Años',colSpan:4,alignment:'center'},{},{},{}],
                                 [{},'1995 - 2000','2000 - 2005','2005 -2010','2010 - 2015']
                                 
-                            ]).dontBreakRows(false).headerRows(2).end,
+                            ]).dontBreakRows(true).headerRows(2).end,
                             new Txt(`FUENTE: https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib0015/N120/anexo064.htm
                             `).alignment('justify').end,
                             new Txt(`COEFICIENTE ASUMIDO: r = 0.5 % (para el Distrito de Cascapara)`).alignment('justify').end,
@@ -105,18 +109,20 @@ export function parametros_disenio_calculo() {
                             new Table([
                                 ['TIPO DISPOSICIÓN DE EXCRETAS','COSTA','SIERRA','SELVA'],
                                 ['Con Arrastre Hidráulico',90,80,100]
-                            ]).dontBreakRows(false).headerRows(1).end,
+                            ]).dontBreakRows(true).headerRows(1).end,
                             new Txt(`Fuente: Guía Opciones Tecnológicas para sistemas de abastecimiento de agua para consumo humano y saneamiento en el ámbito rural
                             `).bold().alignment('justify').end,
                             new Ul([
                                 new Item({text:'Coeficiente de consumo máximo diario: K1= 1.3'}).end,
                                 new Item({text:'Coeficiente de consumo máximo horario: K2= 2.0'}).end,
-                                new Item({text:'Coeficiente de regulación del reservorio: 25%'}).end,
+                                new Item({text:`Coeficiente de regulación del reservorio: 25%
+                                `}).end,
                             ]).end
                         ]
                     ],
                     [
-                        new Item({ text: `CÁLCULO` }).end,
+                        new Item({ text: `CÁLCULO
+                        ` }).bold().end,
                         [
                             new Txt(`POBLACIÓN FUTURA
                             `).bold().end,
@@ -128,7 +134,8 @@ export function parametros_disenio_calculo() {
                             new Table([
                                 [{text:'Localidad',rowSpan:2},{text:'Cantidad de Usuarios',alignment:'center',colSpan:3},{},{},{text:'Población Futura',rowSpan:2}],
                                 [{},{text:'Viviendas'},{text:'Población Actual'},{text:'Tasa de Crecimiento'},{}]
-                            ]).dontBreakRows(false).headerRows(2).end,
+                            ]).dontBreakRows(true).headerRows(2).end,
+                            pdf.ln(),
                             new Txt(`CONSUMO MEDIO DIARIO Qm`).bold().end,
                             new Txt(`Es el promedio de los gastos diarios durante un año de registros expresados en lt/seg.`).end,
                             new Txt(`CONSUMO MÁXIMO DIARIO Qmd`).bold().end,

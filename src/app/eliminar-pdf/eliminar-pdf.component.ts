@@ -20,6 +20,7 @@ import { metas_fisicas } from '../mem-des/generaDoc/metas_fisicas';
 import { ejecucion_proyecto } from '../mem-des/generaDoc/ejecucion_proyecto';
 import { memoria_costos } from '../mem-des/generaDoc/memoria_costos';
 import { MemDesService } from '../mem-des/mem.des.service';
+import { fuentes_agua } from '../mem-des/generaDoc/fuentes_agua';
 
 const cliente ='Municipalidad Distrital de Cascapara';
 const localidades = ['Pucap','Pampahuasi'];
@@ -69,13 +70,21 @@ export class EliminarPDFComponent implements OnInit {
       [
 
         new Ol([
+          [
+            new Item({text:`NOMBRE DEL PROYECTO
+            `}).bold().end,
+            [
+              new Txt(`${nombre_proyecto()}
+              `).alignment('justify').end
 
-          item({ title: 'NOMBRE DEL PROYECTO', detail: nombre_proyecto() }),
+            ]
+          ],
+          
           generalidades_antecedetes(),
           objetivos_proyecto(),
           [
             new Item({text:`PROPIETARIO DE LA OBRA
-            `}).alignment('justify').end,
+            `}).alignment('justify').bold().end,
             [
               new Item({text:`El propietario de la Obra es la ${cliente}, que luego la transferirá a la JASS de estas comunidad localidades. El propietario final de la obra serán los caseríos de ${localidades} del distrito de ${distrito}. La población beneficiaria de la infraestructura de servicios de agua potable y saneamiento proyectados.
             `}).alignment('justify').end,
@@ -93,6 +102,7 @@ export class EliminarPDFComponent implements OnInit {
           /** LOS DIAGNOSTICOS SE REALIZARAN SEGUN SE TENGA LA CANTIDAD DE LOCALIDADES BENEFICIADAS*/
           diagnostico_servicios_saneamiento(),
           parametros_disenio_calculo(),
+          //fuentes_agua(),
           item({ title: 'FUENTES DE AGUA IDENTIFICADAS PARA EL PROYECTO', detail: '' }),
           descripcion_obras_proyectadas(),
           descripcion_obras_proyectadas_hidraulico(),

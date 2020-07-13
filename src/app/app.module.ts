@@ -35,8 +35,8 @@ PdfMakeWrapper.setFonts(pdfFonts, {
       bolditalics: 'Nilam.ttf'
   },
   poppins:{
-    normal:'Poppins-Light.otf',
-    bold:'Poppins-Thin.otf',
+    normal:'Poppins-ExtraLight.otf',//
+    bold:'Poppins-Regular.otf',
     italics:'Poppins-Light.otf',
     bolditalics:'Poppins-Light.otf'
   }

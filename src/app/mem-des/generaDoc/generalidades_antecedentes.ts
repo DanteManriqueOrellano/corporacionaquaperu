@@ -17,18 +17,21 @@ export function generalidades_antecedetes(){
  
   
     return  [
-                  
-      item({title:'GENERALIDADES Y ANTECEDENTES',detail:''}),
+      new Item({text:`GENERALIDADES Y ANTECEDENTES
+      `}).bold().end,            
+      
       
         new Ol([
         [
-          new Item({text:'GENERALIDADES'}).end,
+          new Item({text:`GENERALIDADES`}).bold().end,
           [
-            new Txt('').alignment('justify') .end
+            new Txt(`RESPONSABILIDAD FUNCIONAL DEL PROYECTO DE INVERSIÓN PÚBLICA (SEGÚN ANEXO SNIP - 03)
+            `).alignment('justify').end
           ]
         ],
         [
-          new Item({text:'MARCO DE REFERENCIA'}).end,
+          new Item({text:`MARCO DE REFERENCIA
+          `}).bold().end,
           [
             new Txt(`El presente estudio se realizó en las localidades Pucap, Pampahuasi,Tinco, Huaracpampa del distrito de Cascapara - Yungay - Ancash donde en la actualidad ninguna de ellas cuenta con un sistema de eliminación o disposición de excretas lo cual genera proliferación de enfermedades infecciosas ya que la población realiza sus necesidades a campo abierto provocando la contaminación ambiental y generándose enfermedades que aquejan a sus pobladores.
             `).alignment('justify').end,
@@ -37,7 +40,7 @@ export function generalidades_antecedetes(){
         ],
         [
           new Item({text:`ANTECEDENTES
-          `}).end,
+          `}).bold().end,
           [
             new Txt( `Los antecedentes del presente estudio se basan en las localidades de Pucap, Pampahuasi, Tinco, Huaracpampa, del distrito de cascapara, donde los pobladores han venido exigiendo la realización del presente estudio a través de las diferentes autoridades locales y provinciales, esto debido a que en la actualidad ninguna vivienda cuenta con un sistema de eliminación de excretas. Según el trabajo de campo realizado, los pobladores indican que se han ejecutado algunas intervenciones en el área para mejorar su sistema de agua potable como se indica en el siguiente cuadro :
             `).alignment('justify') .end,
