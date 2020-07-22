@@ -1,6 +1,6 @@
-import { item, OrderingList, table, tablev2 } from './herramientas/funciones';
+import { item, OrderingList, table, tablev2, paleta_color } from './herramientas/funciones';
 import { Ol, Item, Txt, Ul, Table, PdfMakeWrapper } from 'pdfmake-wrapper';
-import { data } from 'src/app/eliminar-pdf/eliminar-pdf.component';
+
 import { nombre_proyecto } from './nombre_proyecto';
 
 export function generalidades_antecedetes(){
@@ -13,7 +13,7 @@ export function generalidades_antecedetes(){
   ]
   const inf_tecnico = '002–2017–MDO-IE/LAEM de fecha ' 
   const fecha_aprobacion = '14/11/2017'
-  const cuadrov2 = new Table(tablev2(dataAlumno,{nombres:['sistema', 'año construccion','unidad ejecutora','localidad'],headerStyle:{background:'red',fontColor:'green'}})).headerRows(1).color('purple')
+  const cuadrov2 = new Table(tablev2(dataAlumno,{nombres:['sistema', 'año construccion','unidad ejecutora','localidad'],headerStyle:{background:paleta_color.cabecera_tabla.background,fontColor:paleta_color.cabecera_tabla.fontColor}})).headerRows(1)
  
   
     return  [

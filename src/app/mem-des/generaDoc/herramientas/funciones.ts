@@ -93,4 +93,34 @@ export function item(x:{title:string,detail:string}){
   tb.splice(3,3)
   return tb.concat(cn) 
 }
+export const paleta_color={
+  partida:{fontColor:'#ffffff' ,background:'#8e8e93'},
+  subpartida:{fontColor:'red',background:'pink'},
+  item:{fontColor:'red',background:'pink'},
+  detalle:{fontColor:'red',background:'pink'},
+  cabecera_tabla:{fontColor:'#ffffff' ,background:'#8e8e93'},
+}
    
+/*
+morado: #7C5EFD
+verde:  #97D722
+blanco:#dadada
+rojo: #FF4848
+negro: #303030
+azul:#5856d6
+celeste oscuro: #007aff
+celeste claro:#34aadc
+verde claro:#5ac8fa
+verde limon:#97D722
+verde oscuro:#4cd964
+rojo:#ff2d55
+rojoclaro:#ff3b30
+melon:#ff9500
+amarillo:#ffcc00
+amarillo:#F7BC23
+plomo:#8e8e93        
+morado:#7C5EFD     
+    */
+export function ubicacion_geografica(){
+
+}

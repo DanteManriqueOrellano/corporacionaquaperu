@@ -1,5 +1,5 @@
-import { item, OrderingList } from './herramientas/funciones';
-import { Ol, Item, Txt, Table, Ul, PdfMakeWrapper } from 'pdfmake-wrapper';
+import { item, OrderingList, paleta_color } from './herramientas/funciones';
+import { Ol, Item, Txt, Table, Ul, PdfMakeWrapper, Cell } from 'pdfmake-wrapper';
 export function parametros_disenio_calculo() {
     const pdf = new PdfMakeWrapper();
     return [
@@ -22,7 +22,7 @@ export function parametros_disenio_calculo() {
                             new Txt(`CUADRO N° 22: RESUMEN VIVIENDAS DE LOS CASERÍOS
                             `).end,
                             new Table([
-                                ['Anexos','Nº Viviendas','Total Beneficiarios'],
+                                [new Cell(new Txt('Anexos').alignment('center').color(paleta_color.cabecera_tabla.fontColor).end).fillColor(paleta_color.cabecera_tabla.background).end,new Cell(new Txt('Nº Viviendas').alignment('center').color(paleta_color.cabecera_tabla.fontColor).end).fillColor(paleta_color.cabecera_tabla.background).end,new Cell(new Txt('Total Beneficiarios').alignment('center').color(paleta_color.cabecera_tabla.fontColor).end).fillColor(paleta_color.cabecera_tabla.background).end],
                                 ['Pucap',114,342]
                             ]).headerRows(1).dontBreakRows(true).end,
                             pdf.ln(),
@@ -31,7 +31,9 @@ export function parametros_disenio_calculo() {
                             `).alignment('justify').end,
                             new Txt(`Cuadro: Resumen de Parámetros de Diseño - Anexo Curanco (repetir para cada anexo)`).alignment('justify').bold().end,
                             new Table([
-                                ['Detalle','Sin Proyecto','Con Proyecto'],
+                                [new Cell(new Txt('Detalle').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('Sin Proyecto').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('Con Proyecto').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end],
                                 ['Población Inicial',196,169],
                                 ['Población con servicio de agua potable',196,169],
                                 ['N° total de Viviendas',196,169],
@@ -65,16 +67,28 @@ export function parametros_disenio_calculo() {
 
                             new Table([
                                 [{text:'Coeficiente de Crecimiento Anual',colSpan:7,alignment:'center'},{},{},{},{},{},{}],
-                                ['Año','Pa(Hab)','t (años)','P Pf - Pa','Pa.t','r p/Pa.t','r.t'],
+                                [new Cell(new Txt('Año').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('Pa(Hab)').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('t (años)').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('P Pf - Pa').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('Pa.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('r p/Pa.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('r.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end],
                                 [1994,32654,'','','','','']
                             ]).dontBreakRows(true).headerRows(2).end,
-                            new Txt(`Fuente: https://www.inei.gob.pe/estadisticas/indice-tematico/poblacion-y-vivienda/
+                            new Txt(`Fuente: https://www.inei.gob.pe/+estadisticas/indice-tematico/poblacion-y-vivienda/
                             `).end,
                             new Txt(`r= 0.7 (Nivel Regional)`).bold().end,
 
                             new Table([
                                 [{text:'Coeficiente de Crecimiento Anual',colSpan:7,alignment:'center'},{},{},{},{},{},{}],
-                                ['Año','Pa(Hab)','t (años)','P Pf - Pa','Pa.t','r p/Pa.t','r.t'],
+                                [new Cell(new Txt('Año').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('Pa(Hab)').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('t (años)').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('P Pf - Pa').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('Pa.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('r p/Pa.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('r.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end],
                                 [1981,32654,'','','','','']
                             ]).dontBreakRows(true).headerRows(2).end,
                             new Txt(`Fuente: https://www.inei.gob.pe/estadisticas/indice-tematico/poblacion-y-vivienda/
@@ -82,7 +96,13 @@ export function parametros_disenio_calculo() {
                             new Txt(`r= 0.5% (Nivel Provincial)`).bold().end,
                             new Table([
                                 [{text:'Coeficiente de Crecimiento Anual',colSpan:7,alignment:'center'},{},{},{},{},{},{}],
-                                ['Año','Pa(Hab)','t (años)','P Pf - Pa','Pa.t','r p/Pa.t','r.t'],
+                                [new Cell(new Txt('Año').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('Pa(Hab)').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('t (años)').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('P Pf - Pa').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('Pa.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('r p/Pa.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                new Cell(new Txt('r.t').color(paleta_color.cabecera_tabla.fontColor).alignment('center').end).fillColor(paleta_color.cabecera_tabla.background).end],
                                 [1981,32654,'','','','','']
                             ]).dontBreakRows(true).headerRows(2).end,
                             new Txt(`Fuente: https://www.inei.gob.pe/estadisticas/indice-tematico/poblacion-y-vivienda/
@@ -91,10 +111,13 @@ export function parametros_disenio_calculo() {
 
                             new Table([
                                 [{text:'PERU: TASAS DE CRECIMIENTO MEDIO ANUAL SEGUN DEPARTAMENTOS,  1995 - 2015',colSpan:5,alignment:'center'},{},{},{},{}],
-                                [{text:'Departamento', rowSpan:2 ,alignment:'center'},{text:'Años',colSpan:4,alignment:'center'},{},{},{}],
-                                [{},'1995 - 2000','2000 - 2005','2005 -2010','2010 - 2015']
+                                [{text: new Cell(new Txt('Departamento').color(paleta_color.cabecera_tabla.fontColor).end).fillColor(paleta_color.cabecera_tabla.background).end,rowSpan:2},{text:'Años',colSpan:4,alignment:'center'},{},{},{}],
+                                ['','1995 - 2000','2000 - 2005','2005 -2010','2010 - 2015'],
+                                [ 'Ancash',1.0,0.9,0.8,0.7],
+                                [ 'Ancash',1.0,0.9,0.8,0.7],
+                                [ 'Ancash',1.0,0.9,0.8,0.7]
                                 
-                            ]).dontBreakRows(true).headerRows(2).end,
+                            ]).dontBreakRows(true).headerRows(3).alignment('center').end,
                             new Txt(`FUENTE: https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib0015/N120/anexo064.htm
                             `).alignment('justify').end,
                             new Txt(`COEFICIENTE ASUMIDO: r = 0.5 % (para el Distrito de Cascapara)`).alignment('justify').end,
@@ -107,7 +130,11 @@ export function parametros_disenio_calculo() {
                             new Txt(`CUADRO N°23: DOTACIÓN SEGÚN REGIÓN Y TIPO DE UBS ÁMBITO RURAL
                             `).bold().alignment('justify').end,
                             new Table([
-                                ['TIPO DISPOSICIÓN DE EXCRETAS','COSTA','SIERRA','SELVA'],
+                                [
+                                    new Cell(new Txt('TIPO DISPOSICIÓN DE EXCRETAS').color(paleta_color.cabecera_tabla.fontColor).end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                    new Cell(new Txt('COSTA').color(paleta_color.cabecera_tabla.fontColor).end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                    new Cell(new Txt('SIERRA').color(paleta_color.cabecera_tabla.fontColor).end).fillColor(paleta_color.cabecera_tabla.background).end,
+                                    new Cell(new Txt('SELVA').color(paleta_color.cabecera_tabla.fontColor).end).fillColor(paleta_color.cabecera_tabla.background).end],
                                 ['Con Arrastre Hidráulico',90,80,100]
                             ]).dontBreakRows(true).headerRows(1).end,
                             new Txt(`Fuente: Guía Opciones Tecnológicas para sistemas de abastecimiento de agua para consumo humano y saneamiento en el ámbito rural
