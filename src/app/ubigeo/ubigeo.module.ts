@@ -16,9 +16,11 @@ import { MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 @NgModule({
-  declarations: [ListaComponent, EditorComponent, UbigeoComponent, DepartamentoComponent, ProvinciaComponent, DistritoComponent, CacerioComponent, CentroPobladoComponent, SeleccionadoComponent, NuevoComponent],
+  declarations: [ListaComponent, EditorComponent, UbigeoComponent, DepartamentoComponent, ProvinciaComponent, DistritoComponent, CacerioComponent, CentroPobladoComponent, SeleccionadoComponent, NuevoComponent, DialogBoxComponent],
   imports: [
     CommonModule,
     UbigeoRoutingModule,
@@ -28,7 +30,11 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTableModule,
   ],
-  exports:[ListaComponent, EditorComponent, UbigeoComponent, DepartamentoComponent, ProvinciaComponent, DistritoComponent, CacerioComponent, CentroPobladoComponent, SeleccionadoComponent, NuevoComponent]
+  entryComponents: [
+    DialogBoxComponent
+  ],
+  exports:[ListaComponent, EditorComponent, UbigeoComponent, DepartamentoComponent, ProvinciaComponent, DistritoComponent, CacerioComponent, CentroPobladoComponent, SeleccionadoComponent, NuevoComponent,DialogBoxComponent]
 })
 export class UbigeoModule { }

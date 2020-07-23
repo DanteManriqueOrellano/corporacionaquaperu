@@ -43,4 +43,12 @@
     transform: translate(0%, -50%);
 
   }
+  .caja {
+    display: flex;
+    border: 2px solid red;
+  }
+  .caja .descripcion{
+    border: 2px solid blue;
+
+  }
   .close:hover {background: #bbb;}
