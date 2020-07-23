@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-interface ILocalidadesSeleccionadas {
+export interface ILocalidadesSeleccionadas {
   nombre_centro_poblado:string;
   id:number;
 }
@@ -32,6 +32,10 @@ export class LocalidadesService {
   
   obtenLocalidades():Observable<ILocalidadesSeleccionadasDocId[]>{
       return this.localidadesData$
+  }
+  obtenUnaLocalidad(docIdLocalidadesSeleccionadas){
+    return this.localidadesCollection.doc(docIdLocalidadesSeleccionadas).snapshotChanges()
+
   }
   
   obtenDocId(){

@@ -1,31 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfMakeWrapper, Txt, Ol, Ul, Item, Table, Cell, Img, Stack, Columns } from 'pdfmake-wrapper';
-import { nombre_proyecto } from '../mem-des/generaDoc/nombre_proyecto';
-import { imagenes } from '../mem-des/generaDoc/imagenes';
-import { cabecera_pagina } from '../mem-des/generaDoc/cabecera_pagina';
-import { pie_pagina } from '../mem-des/generaDoc/pie_pagina';
-import { indice_manual } from '../mem-des/generaDoc/indice';
-import { generalidades_antecedetes } from '../mem-des/generaDoc/generalidades_antecedentes';
-import { objetivos_proyecto } from '../mem-des/generaDoc/objetivos_proyecto';
-import { caracteristicas_localidad } from '../mem-des/generaDoc/caracteristicas_localidad';
-import { diagnostico_servicios_saneamiento } from '../mem-des/generaDoc/diagnostico_servicios_saneamiento';
-import { parametros_disenio_calculo } from '../mem-des/generaDoc/parametros_disenio_calculo';
-import { descripcion_obras_proyectadas } from '../mem-des/generaDoc/descripcion_obras_proyectadas';
-import { descripcion_obras_proyectadas_hidraulico } from '../mem-des/generaDoc/descripcion_obras_proyectadas_hidraulico';
-import { plan_mitigacion_ambiental } from '../mem-des/generaDoc/plan_mitigacion_ambiental';
-import { plan_capacitacion } from '../mem-des/generaDoc/plan_capacitacion';
-import { plan_gestion_saneamiento } from '../mem-des/generaDoc/plan_gestion_saneamiento';
-import { metas_fisicas } from '../mem-des/generaDoc/metas_fisicas';
-import { ejecucion_proyecto } from '../mem-des/generaDoc/ejecucion_proyecto';
-import { memoria_costos } from '../mem-des/generaDoc/memoria_costos';
+import { nombre_proyecto } from '../mem-des/generaDoc/f_nombre_proyecto';
+import { imagenes } from '../mem-des/generaDoc/f_imagenes';
+import { cabecera_pagina } from '../mem-des/generaDoc/f_cabecera_pagina';
+import { pie_pagina } from '../mem-des/generaDoc/f_pie_pagina';
+import { indice_manual } from '../mem-des/generaDoc/f_indice';
+import { generalidades_antecedetes } from '../mem-des/generaDoc/f_generalidades_antecedentes';
+import { objetivos_proyecto } from '../mem-des/generaDoc/f_objetivos_proyecto';
+import { caracteristicas_localidad } from '../mem-des/generaDoc/f_caracteristicas_localidad';
+import { diagnostico_servicios_saneamiento } from '../mem-des/generaDoc/f_diagnostico_servicios_saneamiento';
+import { parametros_disenio_calculo } from '../mem-des/generaDoc/f_parametros_disenio_calculo';
+import { descripcion_obras_proyectadas } from '../mem-des/generaDoc/f_descripcion_obras_proyectadas';
+import { descripcion_obras_proyectadas_hidraulico } from '../mem-des/generaDoc/f_descripcion_obras_proyectadas_hidraulico';
+import { plan_mitigacion_ambiental } from '../mem-des/generaDoc/f_plan_mitigacion_ambiental';
+import { plan_capacitacion } from '../mem-des/generaDoc/f_plan_capacitacion';
+import { plan_gestion_saneamiento } from '../mem-des/generaDoc/f_plan_gestion_saneamiento';
+import { metas_fisicas } from '../mem-des/generaDoc/f_metas_fisicas';
+import { ejecucion_proyecto } from '../mem-des/generaDoc/f_ejecucion_proyecto';
+import { memoria_costos } from '../mem-des/generaDoc/f_memoria_costos';
 import { MemDesService } from '../mem-des/mem.des.service';
-import { fuentes_agua } from '../mem-des/generaDoc/fuentes_agua';
-import { capacidad_operativa_operador } from '../mem-des/generaDoc/capacidad_operativa_operador';
-import { modalidad_plazo_ejecucion } from '../mem-des/generaDoc/modalidad_plazo_ejecucion';
+import { fuentes_agua } from '../mem-des/generaDoc/f_fuentes_agua';
+import { capacidad_operativa_operador } from '../mem-des/generaDoc/f_capacidad_operativa_operador';
+import { modalidad_plazo_ejecucion } from '../mem-des/generaDoc/f_modalidad_plazo_ejecucion';
+import { HomeService } from '../home/home.service';
+import { LocalidadesService } from '../ubigeo/localidades.service';
 
-const cliente ='Municipalidad Distrital de Cascapara';
-const localidades = ['Pucap','Pampahuasi'];
-const distrito = 'Cascapara'
 @Component({
   selector: 'app-eliminar-pdf',
   templateUrl: './eliminar-pdf.component.html',
@@ -34,13 +33,17 @@ const distrito = 'Cascapara'
 export class EliminarPDFComponent implements OnInit {
 
   constructor(
-    private memdesService:MemDesService
+    private memdesService:MemDesService,
+    private homeservice:HomeService,
+    private localidadService:LocalidadesService,
   ) { }
   
 
   ngOnInit(): void {
-    console.log(this.memdesService.localidadesSeleccionadas)
+    
+    this.localidadService.obtenUnaLocalidad('50xVoNFBLc7QN2tGt9lw').subscribe((val)=>{console.log(val)})
   }
+
 
   async generarMemoriaDescriptiva() {
     const pdf = new PdfMakeWrapper()

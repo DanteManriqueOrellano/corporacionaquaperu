@@ -1,13 +1,15 @@
 import { Ol, Item, Table, Txt, Cell, Ul, PdfMakeWrapper } from 'pdfmake-wrapper'
-
+const cliente = 'Municipalidad Provincial de Cotabamba'
 export function capacidad_operativa_operador(){
+  
+
     return  [
         new Item({text:`CAPACIDAD OPERATIVA DEL OPERADOR
         `}).bold().end,
         [
-          new Txt(`En la fase de post ejecución, la entidad encargada de la administración, operación y mantenimiento del servicio de Agua potable y Saneamiento será la Junta Administradora de Servicios de Saneamiento de los anexos de Cotanerae, Chacacanta, Huayllahuirqui, Ñuñopata, Conchapallana, Curanco, Ttastayoc, Huincho, Ventana, Pumamarca y Ñuñohuayoc del C.P. de Pumamarca del, distrito de Tambobamba, provincia de Cotabambas – Apurímac”, La estrategia de intervención en el Ámbito rural a nivel de Gobiernos locales, son planteadas conforme a la política y al marco legal vigente por lo tanto la Municipalidad de Provincial de Tambobamba y los especialistas sociales, aseguran la sostenibilidad de los proyectos mediante la capacitación que se imparte a los usuarios del sistema.
+          new Txt(`En la fase de post ejecución, la entidad encargada de la administración, operación y mantenimiento del servicio de Agua potable y Saneamiento será la Junta Administradora de Servicios de Saneamiento de las localidades intervenidas, La estrategia de intervención en el Ámbito rural a nivel de Gobiernos locales, son planteadas conforme a la política y al marco legal vigente; por lo tanto la Municipalidad responsable del proyecto y los especialistas sociales, aseguran la sostenibilidad de los proyectos mediante la capacitación que se imparte a los usuarios del sistema.
           `).alignment('justify').end,
-          new Txt(`Las responsabilidades y atribuciones de las JASS se regirán mediante Estatutos y Reglamentos, bajo la supervisión y asesoramiento del Responsable de Saneamiento de la Municipalidad Provincial de Tambobamba, es necesario precisar que en la etapa de pre inversión las JASS han quedado constituidas y reconocidas mediante Resolución del Consejo Municipal. La Municipalidad Provincial de Cotabambas - Tambobamba, será el encargado de monitorear y mantener la calidad del agua en el sistema.
+          new Txt(`Las responsabilidades y atribuciones de las JASS se regirán mediante Estatutos y Reglamentos, bajo la supervisión y asesoramiento del Responsable de Saneamiento de la Municipalidad responsable del proyecto, es necesario precisar que en la etapa de pre inversión las JASS han quedado constituidas y reconocidas mediante Resolución del Consejo Municipal. La Municipalidad Provincial de Cotabambas - Tambobamba, será el encargado de monitorear y mantener la calidad del agua en el sistema.
           `).alignment('justify').end,
           new Txt(`Para cubrir los costos de Administración, Operación y Mantenimiento del Sistema de Agua, la JASS de los anexos de Cotanerae, Chacacanta, Huayllahuirqui, Ñuñopata, Conchapallana, Curanco, Ttastayoc, Huincho, Ventana, Pumamarca y Ñuñohuayoc del C.P. de Pumamarca del, distrito de Tambobamba, provincia de Cotabambas – Apurímac” en asamblea general de usuarios, determinarán una cuota familiar o tarifa mensual en función a la realidad socio-económica de la población.
           `).alignment('justify').end,

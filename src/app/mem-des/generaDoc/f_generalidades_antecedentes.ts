@@ -1,7 +1,7 @@
 import { item, OrderingList, table, tablev2, paleta_color } from './herramientas/funciones';
 import { Ol, Item, Txt, Ul, Table, PdfMakeWrapper } from 'pdfmake-wrapper';
 
-import { nombre_proyecto } from './nombre_proyecto';
+import { nombre_proyecto } from './f_nombre_proyecto';
 
 export function generalidades_antecedetes(){
   const pdf = new PdfMakeWrapper()
