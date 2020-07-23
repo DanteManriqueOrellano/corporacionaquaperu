@@ -1,6 +1,8 @@
 <section [formGroup]="formGroup">
     <fieldset>
-        <legend>CENTRO POBLADO</legend>
-        <input [formControlName]="formControlNames.nombre_centro_poblado">
+        <legend>Centro Poblado</legend>
+        <mat-form-field>
+            <input matInput placeholder="Nombre Centro Poblado" [formControlName]="formControlNames.nombre_centro_poblado">
+        </mat-form-field>
     </fieldset>
 </section>

@@ -1,12 +1,16 @@
 <section [formGroup]="formGroup">
     <fieldset>
-        <legend>CACERIO</legend>
-        <input [formControlName]="formControlNames.nombre_cacerio">
+        <legend>Cacerio</legend>
+        <mat-form-field>
+            <input matInput placeholder="Nombre Cacerio" [formControlName]="formControlNames.nombre_cacerio">
+
+        </mat-form-field>
+        
         <div [formArrayName]="formControlNames.centros_poblados" *ngFor="let unCentroPoblado of formGroupControls.centros_poblados.controls; let i = index">
             <app-centro-poblado [formControl]="unCentroPoblado"></app-centro-poblado>
-            <button (click)="eliminarCentroPoblado(i)">Eliminar Centro Poblado</button>
+            <button mat-button color='warn' (click)="eliminarCentroPoblado(i)">Eliminar Centro Poblado</button>
         </div>
-        <button (click)="agregarCentroPoblado()">Agregar Centro Poblado</button>
+        <button mat-button color='primary' (click)="agregarCentroPoblado()">Agregar Centro Poblado</button>
     
     </fieldset>
 </section>

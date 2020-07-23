@@ -9,7 +9,8 @@ import { FileUploadComponent } from '../upload/file-upload/file-upload.component
 const routes: Routes = [
   
   //{path: "",loadChildren:()=>import('../home/home.module').then(m=>m.HomeModule)},
-  {path:'',component:EliminarPDFComponent}//funciona, crea el pdf
+  //{path:'',component:EliminarPDFComponent},//funciona, crea el pdf
+  {path: "",loadChildren:()=>import('../ubigeo/ubigeo.module').then(m=>m.UbigeoModule)},
   
 ];
 

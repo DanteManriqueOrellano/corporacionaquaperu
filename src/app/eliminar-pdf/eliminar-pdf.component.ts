@@ -23,7 +23,9 @@ import { fuentes_agua } from '../mem-des/generaDoc/f_fuentes_agua';
 import { capacidad_operativa_operador } from '../mem-des/generaDoc/f_capacidad_operativa_operador';
 import { modalidad_plazo_ejecucion } from '../mem-des/generaDoc/f_modalidad_plazo_ejecucion';
 import { HomeService } from '../home/home.service';
-import { LocalidadesService } from '../ubigeo/localidades.service';
+import { LocalidadesService, ILocalidadesSeleccionadas } from '../ubigeo/localidades.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-eliminar-pdf',
@@ -31,6 +33,13 @@ import { LocalidadesService } from '../ubigeo/localidades.service';
   styleUrls: ['./eliminar-pdf.component.css']
 })
 export class EliminarPDFComponent implements OnInit {
+
+  localidad$:Observable<any> = this.localidadService.obtenUnaLocalidad('50xVoNFBLc7QN2tGt9lw').pipe(
+    map(actions => {
+      const data = actions.payload.data();
+      //const docIdLocalidadesSeleccionadas = actions.payload;
+      return {data };})
+  )
 
   constructor(
     private memdesService:MemDesService,
@@ -40,8 +49,8 @@ export class EliminarPDFComponent implements OnInit {
   
 
   ngOnInit(): void {
+    console.log(this.localidad$)
     
-    this.localidadService.obtenUnaLocalidad('50xVoNFBLc7QN2tGt9lw').subscribe((val)=>{console.log(val)})
   }
 
 

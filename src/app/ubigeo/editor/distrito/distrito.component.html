@@ -1,12 +1,17 @@
 <section [formGroup]="formGroup">
     <Fieldset>
-        <legend>DISTRITO</legend>
-        <input [formControlName]="formControlNames.nombre_distrito">
+        <legend>Distrito</legend>
+        <mat-form-field>
+            <input matInput placeholder="Nombre Distrito" [formControlName]="formControlNames.nombre_distrito">
+
+        </mat-form-field>
+
+        
         <div [formArrayName]="formControlNames.cacerios"
             *ngFor="let unCacerio of formGroupControls.cacerios.controls; let i = index">
             <app-cacerio [formControl]="unCacerio"></app-cacerio>
-            <button (click)="eliminarCacerio(i)">Eliminar Cacerio</button>
+            <button mat-button color='warn' (click)="eliminarCacerio(i)">Eliminar Cacerio</button>
         </div>
-        <button (click)="agregarCacerio()">Agregar Cacerio</button>
+        <button mat-button color ="primary" (click)="agregarCacerio()">Agregar Cacerio</button>
     </Fieldset>
 </section>

@@ -15,6 +15,7 @@ import { NuevoComponent } from './nuevo/nuevo.component';
 import { MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [ListaComponent, EditorComponent, UbigeoComponent, DepartamentoComponent, ProvinciaComponent, DistritoComponent, CacerioComponent, CentroPobladoComponent, SeleccionadoComponent, NuevoComponent],
@@ -23,6 +24,7 @@ import {MatButtonModule} from '@angular/material/button';
     UbigeoRoutingModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatInputModule,
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,

@@ -1,11 +1,14 @@
 <section [formGroup]="formGroup">
     <fieldset>
-        <legend>DEPARTAMENTO</legend>
-        <input [formControlName]="formControlNames.nombre_departamento">
+        <legend>Departamento</legend>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Nombre Departamento" [formControlName]="formControlNames.nombre_departamento">
+        </mat-form-field>
+        
         <div [formArrayName]="formControlNames.provincias" *ngFor="let unaProvincia of formGroupControls.provincias.controls; let i = index">
             <app-provincia [formControl]="unaProvincia"></app-provincia>
-            <button (click)="eliminarProvincia(i)">Eliminar Provincia</button>
+            <button mat-button color='warn' (click)="eliminarProvincia(i)">Eliminar Provincia</button>
         </div>
-        <button (click)="agregarProvincia()">Agregar Provincia</button>
+        <button mat-button color='primary' (click)="agregarProvincia()">Agregar Provincia</button>
     </fieldset>
 </section>
