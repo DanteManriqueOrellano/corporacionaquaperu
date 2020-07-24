@@ -2,7 +2,7 @@
     <fieldset>
         <legend>Departamento</legend>
         <mat-form-field>
-            <input matInput type="text" placeholder="Nombre Departamento" [formControlName]="formControlNames.nombre_departamento" #input [value]="input.value.toUpperCase()">
+            <input matInput type="text" placeholder="Nombre Departamento" [formControlName]="formControlNames.nombre_departamento"  autocomplete="off">
         </mat-form-field>
         
         <div [formArrayName]="formControlNames.provincias" *ngFor="let unaProvincia of formGroupControls.provincias.controls; let i = index">

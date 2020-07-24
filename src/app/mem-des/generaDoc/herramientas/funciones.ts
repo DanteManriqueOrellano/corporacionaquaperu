@@ -1,5 +1,5 @@
 import { Txt, Ol, Item, Cell } from 'pdfmake-wrapper';
-import { NuevoComponent } from 'src/app/ubigeo/nuevo/nuevo.component';
+
 
 export function item(x:{title:string,detail:string}){
     const data = 

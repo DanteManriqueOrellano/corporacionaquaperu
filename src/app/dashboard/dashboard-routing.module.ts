@@ -5,7 +5,7 @@ import { ConfigComponent } from './dashboard/config/config.component';
 import { EstadisticasComponent } from '../estadisticas/estadisticas/estadisticas.component';
 import { FuncionalidadesComponent } from '../funcionalidades/funcionalidades/funcionalidades.component';
 import { MemDesComponent } from '../mem-des/mem-des/mem-des.component';
-import { UbigeoComponent } from '../ubigeo/ubigeo/ubigeo.component';
+
 import { SeleccionadoComponent } from '../ubigeo/seleccionado/seleccionado.component';
 
 

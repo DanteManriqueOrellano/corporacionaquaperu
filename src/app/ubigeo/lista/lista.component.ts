@@ -30,15 +30,20 @@ export class ListaComponent   {
     this.ubigeoService.eliminaUbigeo(id);
 
   }
-  openDialog(action,obj) {
-    obj.action = action;
+  openDialog(accion,obj) {
+    console.log(obj)
+    obj.accion = accion;
+    
     const dialogRef = this.dialog.open(DialogBoxComponent, {
     //  width: '90%',
-      height: '50%',
-      data:obj
+      height: '100%',
+      data:obj,
+
+      
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
       if(result === undefined) return null
       if(result.event == 'Agregar'){
         this.addRowData(result.data);
@@ -51,13 +56,13 @@ export class ListaComponent   {
   };
   addRowData(row_obj){
    console.log(row_obj)
-    this.ubigeoService.agregaUbigeo(row_obj.ubigeo)
-    this.table.renderRows();
+   this.ubigeoService.agregaUbigeo(row_obj)
+   this.table.renderRows();
   }
   updateRowData(row_obj){
-    console.log(row_obj.docId)
-
-    
+   //console.log(row_obj)
+   this.ubigeoService.actualizaUbigeo(row_obj)
+   this.table.renderRows();
   }
   deleteRowData(row_obj){
     this.ubigeoService.eliminaUbigeo(row_obj.docId)

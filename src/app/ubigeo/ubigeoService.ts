@@ -1,13 +1,15 @@
-import { Injectable, ɵConsole } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { IUbigeo } from './editor/editor.component';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable} from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UbigeoService {
+
+
 
  private ubigeosData$:Observable<IUbigeo[]>;
  private ubigeoCollection:AngularFirestoreCollection<IUbigeo>;
@@ -19,12 +21,14 @@ export class UbigeoService {
         map(actions => actions.map(a => {
           const data = a.payload.doc.data() as IUbigeo;
           const docId = a.payload.doc.id;
+          
           return { docId, ...data };
         }))
       );
  }
  
  obtenUbigeos():Observable<IUbigeo[]>{
+  //this.ubigeosData$.subscribe((val)=>{console.log(val)})
      return this.ubigeosData$
  }
  obtenUnUbigeoPorDocId(docId: string){
@@ -35,11 +39,23 @@ export class UbigeoService {
      return this.afs.createId();
  }
  agregaUbigeo(ubigeoData:IUbigeo){
-     console.log(ubigeoData)
-     this.ubigeoCollection.doc(this.obtenDocId()).set(ubigeoData)
+  const identificador = this.obtenDocId() 
+  
+   ubigeoData.docId = identificador
+   ubigeoData.accion="Agregar"
+   this.afs.collection('ubigeos').doc(identificador).set(ubigeoData)
+    
+     
  }
- actualizaUbigeo(ubigeoData:IUbigeo){    
-   // this.afs.collection("ubigeos").doc(ubigeoData.docId).update(ubigeoData);
+ actualizaUbigeo(ubigeoData){  
+   console.log(ubigeoData.docId)
+  this.ubigeoDocument = this.afs.doc<IUbigeo>(`ubigeos/${ubigeoData.docId}`);
+  this.ubigeoDocument.update(ubigeoData).then(()=>{
+    console.log('Documento Actualizado Satisfactoriamente')
+
+  }).catch((error)=>{console.error('Error al Actualizar Documento',error)});
+   
+
  }
  eliminaUbigeo(ubigeoDataId:string){
     this.afs.collection("ubigeos").doc(ubigeoDataId).delete().then(function() {
