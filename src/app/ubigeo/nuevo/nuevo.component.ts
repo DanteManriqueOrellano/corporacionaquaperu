@@ -15,7 +15,7 @@ export class NuevoComponent {
   constructor(private ubigeoService: UbigeoService){}
   
   ubigeoDataUpdate($event:IUbigeo){
-    $event.docId = this.ubigeoService.obtenDocId()
-    this.ubigeoService.creaUbigeo($event)
+    //$event.docId = this.ubigeoService.obtenDocId()
+   // this.ubigeoService.creaUbigeo($event)
   }
 }

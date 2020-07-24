@@ -4,7 +4,7 @@ import { subformComponentProviders, NgxRootFormComponent, Controls, DataInput } 
 import { FormControl } from '@angular/forms';
 export interface IUbigeo {
   departamento:IDepartamento,
-  docId:string;
+  //docId:string;
 }
 
 @Component({
@@ -23,7 +23,7 @@ export class EditorComponent extends NgxRootFormComponent<IUbigeo> {
   protected getFormControls(): Controls<IUbigeo> {
     return {
       departamento: new FormControl(),
-      docId: new FormControl(),
+     // docId: new FormControl(),
     }
   }
 }

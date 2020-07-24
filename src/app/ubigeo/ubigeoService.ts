@@ -34,15 +34,12 @@ export class UbigeoService {
  obtenDocId(){
      return this.afs.createId();
  }
- creaUbigeo(ubigeoData:IUbigeo){
-     let ubigeos = this.obtenUbigeos()
-     ubigeos.subscribe((val)=>{
-
-     })
-     this.ubigeoCollection.doc(ubigeoData.docId).set(ubigeoData)
+ agregaUbigeo(ubigeoData:IUbigeo){
+     console.log(ubigeoData)
+     this.ubigeoCollection.doc(this.obtenDocId()).set(ubigeoData)
  }
  actualizaUbigeo(ubigeoData:IUbigeo){    
-    this.afs.collection("ubigeos").doc(ubigeoData.docId).update(ubigeoData);
+   // this.afs.collection("ubigeos").doc(ubigeoData.docId).update(ubigeoData);
  }
  eliminaUbigeo(ubigeoDataId:string){
     this.afs.collection("ubigeos").doc(ubigeoDataId).delete().then(function() {

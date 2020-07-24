@@ -1,8 +1,10 @@
-import { Component, Optional, Inject } from '@angular/core';
+import { Component, Optional, Inject, InjectionToken, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-export interface UsersData {
-  name: string;
-  id: number;
+import { IUbigeo } from '../editor/editor.component';
+
+import { UbigeoService } from '../ubigeoService';
+ interface IUbigeoId extends IUbigeo {
+  docId: number;
 };
 
 @Component({
@@ -10,18 +12,26 @@ export interface UsersData {
   templateUrl: './dialog-box.component.html',
   styleUrls: ['./dialog-box.component.css']
 })
-export class DialogBoxComponent {
+export class DialogBoxComponent implements OnInit {
 
   action:string;
   local_data:any;
+  
+  ubigeosData$:any; 
 
   constructor(
+    private ubigeoService:UbigeoService,
     public dialogRef: MatDialogRef<DialogBoxComponent>,
-    //@Optional() is used to prevent error if no data is passed
-    @Optional() @Inject(MAT_DIALOG_DATA) public data: UsersData) {
-    console.log(data);
+  
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: IUbigeoId)   {
+  
     this.local_data = {...data};
     this.action = this.local_data.action;
+  }
+  ngOnInit(){
+    if( this.data.docId === undefined) return null
+    this.ubigeosData$ = this.ubigeoService.obtenUnUbigeoPorDocId( this.data.docId.toString())
+    
   }
 
   doAction(){
@@ -29,7 +39,8 @@ export class DialogBoxComponent {
   }
 
   closeDialog(){
-    this.dialogRef.close({event:'Cancel'});
+
+    this.dialogRef.close({event:'Cancelar'});
   }
 
 }

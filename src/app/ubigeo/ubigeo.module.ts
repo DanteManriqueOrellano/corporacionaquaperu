@@ -18,6 +18,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 
 @NgModule({
   declarations: [ListaComponent, EditorComponent, UbigeoComponent, DepartamentoComponent, ProvinciaComponent, DistritoComponent, CacerioComponent, CentroPobladoComponent, SeleccionadoComponent, NuevoComponent, DialogBoxComponent],
@@ -31,6 +33,7 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    ScrollingModule,
   ],
   entryComponents: [
     DialogBoxComponent

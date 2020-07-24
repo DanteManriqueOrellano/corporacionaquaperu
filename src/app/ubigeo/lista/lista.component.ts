@@ -7,16 +7,6 @@ import { MatTable } from '@angular/material/table';
 
 import { MatDialog } from '@angular/material/dialog';
 import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
-export interface UsersData {
-  name: string;
-  id: number;
-};
-const ELEMENT_DATA: UsersData[] = [
-  {id: 1560608769632, name: 'Artificial Intelligence'},
-  {id: 1560608796014, name: 'Machine Learning'},
-  {id: 1560608787815, name: 'Robotic Process Automation'},
-  {id: 1560608805101, name: 'Blockchain'}
-];
 
 @Component({
   selector: 'app-lista',
@@ -24,12 +14,13 @@ const ELEMENT_DATA: UsersData[] = [
   styleUrls: ['./lista.component.css']
 })
 export class ListaComponent   {
-
-  displayedColumns: string[] = ['id', 'name', 'action'];
-  dataSource = ELEMENT_DATA;
-  @ViewChild(MatTable,{static:true}) table: MatTable<any>;
+ 
   ubigeosData$:Observable<IUbigeo[]> = this.ubigeoService.obtenUbigeos()
-
+  displayedColumns: string[] = ['docId','nombre', 'accion'];
+  dataSource = this.ubigeosData$ ;
+  @ViewChild(MatTable,{static:true}) table: MatTable<any>;
+  
+  
   constructor(
     private ubigeoService: UbigeoService,
     public dialog: MatDialog
@@ -42,41 +33,35 @@ export class ListaComponent   {
   openDialog(action,obj) {
     obj.action = action;
     const dialogRef = this.dialog.open(DialogBoxComponent, {
-      width: '250px',
+    //  width: '90%',
+      height: '90%',
       data:obj
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result.event == 'Add'){
+      if(result === undefined) return null
+      if(result.event == 'Agregar'){
         this.addRowData(result.data);
-      }else if(result.event == 'Update'){
+      }else if(result.event == 'Actualizar'){
         this.updateRowData(result.data);
-      }else if(result.event == 'Delete'){
+      }else if(result.event == 'Eliminar'){
         this.deleteRowData(result.data);
       }
     });
   };
   addRowData(row_obj){
-    var d = new Date();
-    this.dataSource.push({
-      id:d.getTime(),
-      name:row_obj.name
-    });
+   console.log(row_obj)
+    this.ubigeoService.agregaUbigeo(row_obj.ubigeo)
     this.table.renderRows();
-    
   }
   updateRowData(row_obj){
-    this.dataSource = this.dataSource.filter((value,key)=>{
-      if(value.id == row_obj.id){
-        value.name = row_obj.name;
-      }
-      return true;
-    });
+    console.log(row_obj.docId)
+
+    
   }
   deleteRowData(row_obj){
-    this.dataSource = this.dataSource.filter((value,key)=>{
-      return value.id != row_obj.id;
-    });
+    this.ubigeoService.eliminaUbigeo(row_obj.docId)
+    this.table.renderRows();
   }
 
  

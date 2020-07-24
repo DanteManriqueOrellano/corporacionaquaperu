@@ -52,3 +52,6 @@
 
   }
   .close:hover {background: #bbb;}
+  .mytable{
+    width: 500px;
+  }
