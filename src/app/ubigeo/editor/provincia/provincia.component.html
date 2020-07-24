@@ -2,7 +2,7 @@
     <Fieldset>
         <legend>Provincia</legend>
         <mat-form-field>
-            <input matInput placeholder="Nombre Provincia" [formControlName]="formControlNames.nombre_provincia">
+            <input matInput placeholder="Nombre Provincia" [formControlName]="formControlNames.nombre_provincia" #input [value]="input.value.toUpperCase()">
 
         </mat-form-field>
 

@@ -2,7 +2,7 @@
     <fieldset>
         <legend>Cacerio</legend>
         <mat-form-field>
-            <input matInput placeholder="Nombre Cacerio" [formControlName]="formControlNames.nombre_cacerio">
+            <input matInput placeholder="Nombre Cacerio" [formControlName]="formControlNames.nombre_cacerio" #input [value]="input.value.toUpperCase()">
 
         </mat-form-field>
         

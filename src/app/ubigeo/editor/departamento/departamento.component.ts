@@ -13,7 +13,7 @@ export interface IDepartamento {
   providers:subformComponentProviders(DepartamentoComponent)
 })
 export class DepartamentoComponent extends NgxSubFormComponent<IDepartamento> {
-  
+  inputvalue = "";
   
   protected getFormControls():Controls<IDepartamento>{
     return {

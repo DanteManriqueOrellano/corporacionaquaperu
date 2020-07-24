@@ -2,7 +2,7 @@
     <fieldset>
         <legend>Centro Poblado</legend>
         <mat-form-field>
-            <input matInput placeholder="Nombre Centro Poblado" [formControlName]="formControlNames.nombre_centro_poblado">
+            <input matInput placeholder="Nombre Centro Poblado" [formControlName]="formControlNames.nombre_centro_poblado" #input [value]="input.value.toUpperCase()">
         </mat-form-field>
     </fieldset>
 </section>

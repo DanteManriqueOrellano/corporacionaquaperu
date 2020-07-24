@@ -16,7 +16,7 @@ import { DialogBoxComponent } from '../dialog-box/dialog-box.component';
 export class ListaComponent   {
  
   ubigeosData$:Observable<IUbigeo[]> = this.ubigeoService.obtenUbigeos()
-  displayedColumns: string[] = ['docId','nombre', 'accion'];
+  displayedColumns: string[] = ['nombre', 'accion'];
   dataSource = this.ubigeosData$ ;
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
   
@@ -34,7 +34,7 @@ export class ListaComponent   {
     obj.action = action;
     const dialogRef = this.dialog.open(DialogBoxComponent, {
     //  width: '90%',
-      height: '90%',
+      height: '50%',
       data:obj
     });
 
