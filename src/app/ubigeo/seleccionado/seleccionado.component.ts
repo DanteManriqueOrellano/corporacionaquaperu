@@ -192,7 +192,7 @@ export class SeleccionadoComponent extends NgxSubFormComponent<IUbigeo_seleccion
     //this.departamentos$.subscribe((val)=>{this.dataBar =val[this.depId].provincias[this.proId].distritos[this.proId].cacerios[this.disId].cps[this.casId].anexos[this.aneId].barrios[barId]})
 
   }*/
-
+/*
   public guardarLocalidades():void{
 
     this.localidaesService.creaLocalidades(this.dataBar)
@@ -208,7 +208,7 @@ export class SeleccionadoComponent extends NgxSubFormComponent<IUbigeo_seleccion
     this.router.navigate(['proyecto',this.docIdservice.DocId,'overview','funcionalidades'])
 
   }
-
+*/
   
 
 }

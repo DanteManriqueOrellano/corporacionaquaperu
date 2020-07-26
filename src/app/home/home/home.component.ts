@@ -11,31 +11,31 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent extends NgxSubFormComponent<IProyecto> {
 
-  tipoProyectos:string[]= this.homeService.tipoProyectos;
+  tipoProyectos: string[] = this.homeService.tipoProyectos;
   constructor(
-    private homeService:HomeService,
-    private route:Router,
-  ){
+    private homeService: HomeService,
+    private route: Router,
+  ) {
     super();
   }
 
-  protected getFormControls():Controls<IProyecto>{
+  protected getFormControls(): Controls<IProyecto> {
     return {
       alias: new FormControl(),
       cliente: new FormControl(),
       fecha: new FormControl(),
       nombre_proyecto: new FormControl(),
       tipo_proyecto: new FormControl(),
-      funcionalidadesInstaladas:new FormControl([]),
-      //agregar
-      //coordenadas_utm
-      //altitud
+      funcionalidadesInstaladas: new FormControl([]),
+      localidadesSeleccionadas: new FormControl(),
+      altitud: new FormControl(),
+      coordenadas_utm: new FormControl(),
     }
   }
 
-  public nuevoProyecto(){
+  public nuevoProyecto() {
     const docId = this.homeService.crearUnProyecto(this.formGroupValues)
-    this.route.navigate(['proyecto',docId,'overview'])
+    this.route.navigate(['proyecto', docId, 'overview'])
 
 
   }

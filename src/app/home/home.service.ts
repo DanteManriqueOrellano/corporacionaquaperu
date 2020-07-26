@@ -13,7 +13,10 @@ export interface IProyecto {
   cliente:string;
   fecha:string;
   tipo_proyecto:string;
-  funcionalidadesInstaladas:IFuncionalidad[]
+  funcionalidadesInstaladas:IFuncionalidad[];
+  localidadesSeleccionadas:string[];
+  coordenadas_utm:string;
+  altitud:string;
 }
 export interface IProyectoDocId extends IProyecto {
   docId:string;

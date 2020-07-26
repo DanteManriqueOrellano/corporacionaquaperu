@@ -1,9 +1,9 @@
-.example-container {
+.example-container { /*de toda la caartilla*/
     display: flex;
     justify-content: center;
   
     width: 90%;
-    height: 200px;
+    height: 600px;
     border: 1px solid rgba(0, 0, 255, 0.15);
     margin-top: 15px;
   }
@@ -15,10 +15,10 @@
    
   }
   
-  .example-sidenav {
+  .example-sidenav {/*del contenido*/
     padding: 20px;
     width: 100%;
-    height: 200px;
+   /* height: 100%;*/
    
     
   }

@@ -1,24 +1,39 @@
 <section [formGroup]="formGroup">
-    <mat-form-field>
-        <input matInput placeholder="alias" [formControlName]="formControlNames.alias" autocomplete="off">
-    </mat-form-field>
+    
+    <div class="contenedor" >
+     
+      
+        <mat-form-field>
+            <input matInput placeholder="alias" [formControlName]="formControlNames.alias" autocomplete="off">
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Tipo de Proyecto</mat-label>
+            <mat-select [formControlName]="formControlNames.tipo_proyecto">
+              <mat-option *ngFor="let tipoProyecto of tipoProyectos" [value]="tipoProyecto">{{tipoProyecto}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+        <mat-form-field>
+            <input matInput placeholder="cliente" [formControlName]="formControlNames.cliente" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="fecha" [formControlName]="formControlNames.fecha" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="nombre_proyecto" [formControlName]="formControlNames.nombre_proyecto" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Altitud" [formControlName]="formControlNames.altitud" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Coordenadas Utm" [formControlName]="formControlNames.coordenadas_utm" autocomplete="off">
+        </mat-form-field>
+        
 
-    <mat-form-field>
-        <mat-label>Tipo de Proyecto</mat-label>
-        <mat-select [formControlName]="formControlNames.tipo_proyecto">
-          <mat-option *ngFor="let tipoProyecto of tipoProyectos" [value]="tipoProyecto">{{tipoProyecto}}</mat-option>
-        </mat-select>
-      </mat-form-field>
+    </div>
+    <app-seleccionado [formControlName]="formControlNames.localidadesSeleccionadas"></app-seleccionado>
 
-    <mat-form-field>
-        <input matInput placeholder="cliente" [formControlName]="formControlNames.cliente" autocomplete="off">
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="fecha" [formControlName]="formControlNames.fecha" autocomplete="off">
-    </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="nombre_proyecto" [formControlName]="formControlNames.nombre_proyecto" autocomplete="off">
-    </mat-form-field>
 
 </section>
 
