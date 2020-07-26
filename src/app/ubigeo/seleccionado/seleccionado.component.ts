@@ -1,18 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UbigeoService } from '../ubigeoService';
 import { Observable } from 'rxjs';
 import { IUbigeo } from '../editor/editor.component';
-import { FormControl,FormArray } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { NgxSubFormComponent,Controls, subformComponentProviders } from 'ngx-sub-form';
 import { IProvincia } from '../editor/provincia/provincia.component';
 import { IDistrito } from '../editor/distrito/distrito.component';
 import { ICacerio } from '../editor/cacerio/cacerio.component';
 import { ICentroPoblado } from '../editor/centro-poblado/centro-poblado.component';
 import { IDepartamento } from '../editor/departamento/departamento.component';
-import { MemDesService } from 'src/app/mem-des/mem.des.service';
-import { LocalidadesService } from '../localidades.service';
-import { Router } from '@angular/router';
-import { DocidService } from 'src/app/shared/docid.service';
+
 export interface IUbigeo_seleccionado {
   cacerios: string[]
   centros_poblados: string[]
@@ -49,10 +46,8 @@ export class SeleccionadoComponent extends NgxSubFormComponent<IUbigeo_seleccion
   public departamentos$:Observable<IUbigeo[]> = this.ubigeoService.obtenUbigeos()
   constructor(
     private ubigeoService:UbigeoService,
-    private memDesService:MemDesService,
-    private localidaesService:LocalidadesService,
-    private docIdservice:DocidService,
-    private router:Router,
+ 
+   
     ) { super()}
   protected getFormControls():Controls<IUbigeo_seleccionado>{
     return {

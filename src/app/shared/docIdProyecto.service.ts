@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DocidService {
+export class DocIdProyectoService {
 
-  public DocId:string;
+  public docIdProyecto:string;
 
   constructor() { }
 }

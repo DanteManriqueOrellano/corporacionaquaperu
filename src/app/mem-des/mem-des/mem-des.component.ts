@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { MemDesService, IMemoriaDescriptiva } from '../mem.des.service';
-import { DocidService } from 'src/app/shared/docid.service';
+import { DocIdProyectoService } from 'src/app/shared/docIdProyecto.service';
 import { IGeneralidadRoot } from './generalidad-root-form/generalidad-root-form.component';
 
 @Component({
@@ -13,10 +13,10 @@ import { IGeneralidadRoot } from './generalidad-root-form/generalidad-root-form.
 export class MemDesComponent {
 
 
-  generalidadData$: Observable<IMemoriaDescriptiva> = this.memDesService.obtenUnaMemoriaDescriptiva(this.docIdService.DocId)
+  generalidadData$: Observable<IMemoriaDescriptiva> = this.memDesService.obtenUnaMemoriaDescriptiva(this.docIdService.docIdProyecto)
   constructor(
     private memDesService: MemDesService,
-    private docIdService: DocidService
+    private docIdService: DocIdProyectoService
   ) {
 
   }

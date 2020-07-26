@@ -5,7 +5,7 @@ import { map, shareReplay, mergeMap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HomeService, IProyectoDocId, IProyecto } from 'src/app/home/home.service';
 import { async } from '@angular/core/testing';
-import { DocidService } from 'src/app/shared/docid.service';
+import { DocIdProyectoService } from 'src/app/shared/docIdProyecto.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
     map(
       (param)=>{
         const docId = param.get('docId')
-        this.docIdService.DocId = docId
+        this.docIdService.docIdProyecto = docId
         return param.get('docId')}),
     mergeMap(
       (docId:string)=>{return this.homeservice.obtenUnProyecto(docId)}
@@ -39,7 +39,7 @@ constructor(
   private breakpointObserver: BreakpointObserver,
   private route:ActivatedRoute,
   private homeservice:HomeService,
-  private docIdService: DocidService,
+  private docIdService: DocIdProyectoService,
   private router:Router,
   
 ) {}
@@ -50,7 +50,7 @@ ngOnInit():void{
     if (proyecto.funcionalidadesInstaladas.length > 0){
       this.router.navigate([''])
     }else{//si no tiene funcionalidades instaladas enivar a funcionalidades
-      this.router.navigate(['proyecto',this.docIdService.DocId,'overview','funcionalidades'])
+      this.router.navigate(['proyecto',this.docIdService.docIdProyecto,'overview','funcionalidades'])
 
     }
   })

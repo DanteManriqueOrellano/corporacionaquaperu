@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class DashboardService {
 
 /*  private proyectos: Observable<IProyectoDocId[]>;
   private proyectoCollection: AngularFirestoreCollection<IProyectoDocId>;

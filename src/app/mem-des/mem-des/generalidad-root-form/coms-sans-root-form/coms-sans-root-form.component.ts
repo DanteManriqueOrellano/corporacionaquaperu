@@ -3,6 +3,8 @@ import { NgxSubFormComponent, subformComponentProviders, Controls } from 'ngx-su
 import { IComSan } from './com-san/com-san.component';
 import { FormArray, FormControl } from '@angular/forms';
 import { MemDesService } from 'src/app/mem-des/mem.des.service';
+import { HomeService } from 'src/app/home/home.service';
+import { DocIdProyectoService} from 'src/app/shared/docIdProyecto.service';
 
 export interface IComSanForm {
   comsSans:IComSan[]
@@ -19,16 +21,18 @@ export class ComsSansRootFormComponent extends NgxSubFormComponent<IComSanForm> 
  
   constructor(
     private memDesService:MemDesService,
+    private homeService:HomeService,
+    private sharedServide:DocIdProyectoService
     ){super();}
  
     ngOnInit(): void {
-    const array = this.memDesService.localidadesSeleccionadas
-    array.forEach(element => {
-      console.log(element)
-      this.agregarComponenteSanitario()
+    this.homeService.obtenUnProyecto(this.sharedServide.docIdProyecto).subscribe((val)=>{
+      console.log(val.localidadesSeleccionadas['centros_poblados'].length)
       
-    });
-    
+      for(let i =0; i<val.localidadesSeleccionadas['centros_poblados'].length;i++){
+        this.agregarComponenteSanitario()
+      } 
+    })  
   }
 
   protected getFormControls():Controls<IComSanForm>{

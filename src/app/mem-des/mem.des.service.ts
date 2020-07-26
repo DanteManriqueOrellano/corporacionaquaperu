@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 
-import { DocidService } from 'src/app/shared/docid.service';
+import { DocIdProyectoService } from 'src/app/shared/docIdProyecto.service';
 import { IGeneralidadRoot } from './mem-des/generalidad-root-form/generalidad-root-form.component';
 
 
@@ -33,7 +33,7 @@ export class MemDesService {
 
   //public generalidadData$:BehaviorSubject<IGeneralidadRoot> = new BehaviorSubject(generalidadData)
 
-  constructor(private firestore: AngularFirestore, private docIdService:DocidService) {
+  constructor(private firestore: AngularFirestore, private docIdProyectoService:DocIdProyectoService) {
     this.memoriaDescriptivaCollection = this.firestore.collection<IMemoriaDescriptiva>('memoriadescriptiva');
     this.memoriasDescriptivas = this.memoriaDescriptivaCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -45,7 +45,7 @@ export class MemDesService {
   }
   
   public crearUnaMemoriaDescriptiva(generalidad: IGeneralidadRoot) {
-    const docId = this.docIdService.DocId
+    const docId = this.docIdProyectoService.docIdProyecto
     this.memoriaDescriptivaCollection.doc(docId).set(generalidad)
     .then(()=>{
       console.log("Documento creado Satisfactoriamente");
