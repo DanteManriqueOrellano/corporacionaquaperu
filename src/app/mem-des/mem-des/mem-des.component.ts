@@ -16,13 +16,17 @@ export class MemDesComponent {
   generalidadData$: Observable<IMemoriaDescriptiva> = this.memDesService.obtenUnaMemoriaDescriptiva(this.docIdService.docIdProyecto)
   constructor(
     private memDesService: MemDesService,
-    private docIdService: DocIdProyectoService
+    private docIdService: DocIdProyectoService,
+    
   ) {
 
   }
 
   generalidadDataUpdated(event:IGeneralidadRoot) {
-    console.log(event)
+    const docIdProyecto = this.docIdService.docIdProyecto
+    const men = {...event,docIdProyecto}
+
+   this.memDesService.crearUnaMemoriaDescriptiva(men)
     
    }
 }

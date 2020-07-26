@@ -3,7 +3,9 @@ import { subformComponentProviders, NgxSubFormComponent, Controls } from 'ngx-su
 import { FormControl } from '@angular/forms';
 export interface IReservorio {
   antiguedad:String;
-  ubicacion:string;
+  ubicacion_norte:string;
+  ubicacion_este:string;
+  ubicacion_latitud:string;
   forma_estructura:string;
   capacidad_almacenamiento:string;
   caceta_cloracion:string;
@@ -24,7 +26,9 @@ export class ReservorioComponent extends NgxSubFormComponent<IReservorio> {
       capacidad_almacenamiento:new FormControl(),
       cerco_perimetrico:new FormControl(),
       forma_estructura:new FormControl(),
-      ubicacion:new FormControl(),
+      ubicacion_este:new FormControl(),
+      ubicacion_latitud:new FormControl(),
+      ubicacion_norte:new FormControl(),
     }
   }
 

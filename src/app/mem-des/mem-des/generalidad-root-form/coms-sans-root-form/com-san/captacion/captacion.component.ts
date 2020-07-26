@@ -3,7 +3,9 @@ import { subformComponentProviders, NgxSubFormComponent, Controls } from 'ngx-su
 import { FormControl } from '@angular/forms';
 export interface ICaptacion{
   nombre_captacion:string;
-  ubicacion:string;
+  ubicacion_norte:string;
+  ubicacion_este:string;
+  ubicacion_latitud:string;
   antiguedad:string;
   estado_concervacion:string;
   reutilizable:string;
@@ -24,7 +26,9 @@ export class CaptacionComponent  extends NgxSubFormComponent<ICaptacion> {
       estado_concervacion: new FormControl(),
       nombre_captacion: new FormControl(),
       reutilizable: new FormControl(),
-      ubicacion: new FormControl(),
+      ubicacion_este:new FormControl(),
+      ubicacion_latitud:new FormControl(),
+      ubicacion_norte:new FormControl(),
     }
 
   }
