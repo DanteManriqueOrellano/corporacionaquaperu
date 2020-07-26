@@ -3,19 +3,19 @@
         <legend>Reservorio</legend>
         <div style="display:flex; flex-wrap: wrap; justify-content: space-around;">
             <mat-form-field>
-                <input matInput placeholder="antiguedad" [formControlName]="formControlNames.antiguedad" autocomplete="off">
+                <input matInput placeholder="Antiguedad" [formControlName]="formControlNames.antiguedad" autocomplete="off">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="forma_estructura" [formControlName]="formControlNames.forma_estructura" autocomplete="off">
+                <input matInput placeholder="Forma de la Estructura" [formControlName]="formControlNames.forma_estructura" autocomplete="off">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="capacidad_almacenamiento" [formControlName]="formControlNames.capacidad_almacenamiento" autocomplete="off">
+                <input matInput placeholder="Capacidad Almacenamiento" [formControlName]="formControlNames.capacidad_almacenamiento" autocomplete="off">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="caceta_cloracion" [formControlName]="formControlNames.caceta_cloracion" autocomplete="off">
+                <input matInput placeholder="Caceta Cloración" [formControlName]="formControlNames.caceta_cloracion" autocomplete="off">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="cerco_perimetrico" [formControlName]="formControlNames.cerco_perimetrico" autocomplete="off">
+                <input matInput placeholder="Cerco Perimetrico" [formControlName]="formControlNames.cerco_perimetrico" autocomplete="off">
             </mat-form-field>
             <mat-form-field>
                 <input matInput placeholder="Ubicacion Norte" [formControlName] = "formControlNames.ubicacion_norte" autocomplete="off"> 
@@ -26,6 +26,11 @@
             <mat-form-field>
                 <input matInput placeholder="Ubicacion Latitud" [formControlName] = "formControlNames.ubicacion_latitud" autocomplete="off"> 
             </mat-form-field>
+            
         </div>
+        <ng-container>
+            <app-file-upload></app-file-upload>
+
+        </ng-container>
     </fieldset>
 </section>

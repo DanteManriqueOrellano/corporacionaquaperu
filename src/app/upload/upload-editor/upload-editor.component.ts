@@ -1,14 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgxRootFormComponent, Controls, DataInput, subformComponentProviders } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
+import { IFoto } from '../upload.service';
 
-export interface IFoto {
-  docIdProyecto:string;
-  descripcion:string;
-  accion:string
-  UrlWeb:string;
 
-}
 
 @Component({
   selector: 'app-upload-editor',
@@ -32,7 +27,9 @@ export class UploadEditorComponent extends NgxRootFormComponent <IFoto> {
       docIdProyecto: new FormControl(),
       descripcion: new FormControl(),
       accion: new FormControl(),
-      UrlWeb: new FormControl(),
+      dowloadUrl: new FormControl(),
+      path: new FormControl(),
+      archivo:new FormControl()
     }
   }
   
@@ -51,6 +48,9 @@ export class UploadEditorComponent extends NgxRootFormComponent <IFoto> {
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
       this.imgURL = reader.result;
+      this.formGroupControls.archivo.setValue(files)
+     // console.log(this.imgURL)
+     
     }
   }
 

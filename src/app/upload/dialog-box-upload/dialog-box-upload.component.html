@@ -10,8 +10,10 @@
   -->
   
   
-<app-upload-editor *ngIf="accion != 'Eliminar'; else elseTemplate" [ubigeosData]='ubigeosData'
-  (ubigeoDataUpdate)='ubigeoDataUpdate($event)' [(ngModel)]="ubigeosData">
+<app-upload-editor *ngIf="accion != 'Eliminar'; else elseTemplate" 
+  [ubigeosData]='ubigeosData'
+  (ubigeoDataUpdate)='ubigeoDataUpdate($event)' 
+  [(ngModel)]="ubigeosData">
 
 </app-upload-editor>
  

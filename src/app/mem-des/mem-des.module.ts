@@ -6,7 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UbigeoModule } from '../ubigeo/ubigeo.module';
+
 import {MatTabsModule} from '@angular/material/tabs';
 
 import {MatDividerModule} from '@angular/material/divider';
@@ -39,6 +39,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { PoblacionesComponent } from './mem-des/generalidad-root-form/poblacion-root-form/poblaciones/poblaciones.component';
 import { PoblacionComponent } from './mem-des/generalidad-root-form/poblacion-root-form/poblaciones/poblacion/poblacion.component';
+import { UploadModule } from '../upload/upload.module';
 
 @NgModule({
   declarations: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent, PoblacionComponent, PoblacionesComponent],
@@ -57,7 +58,8 @@ import { PoblacionComponent } from './mem-des/generalidad-root-form/poblacion-ro
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-   // UbigeoModule,
+    UploadModule,
+   
   ],
   exports: [MemDesComponent,  PoblacionRootFormComponent, ComSanComponent, RedTuberiaComponent, LineaConduccionComponent, LineaAduccionComponent, RedDistribucionComponent, ConexionDomiciliariaComponent, CaptacionComponent, ReservorioComponent, TecnologiaExcretaComponent, ComsSansRootFormComponent,GeneralidadComponent,HistDocComponent,ColindanteComponent,AntecedenteIntervencionComponent,ViaAccesoComponent,ViasAccesosComponent,InstEduComponent,InstsEdusComponent,GeneralidadRootFormComponent, PoblacionComponent, PoblacionesComponent]
 })

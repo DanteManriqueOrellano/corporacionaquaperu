@@ -4,7 +4,7 @@
         <div class="id__wrapper">
 
             <label class="your-face">
-                <input #file type="file" accept='image/*' (change)="preview(file.files)" />
+                <input #file type="file" accept='image/*' (change)="preview(file.files)"/>
                 <div class="image-persuader">Selecciona Una Foto</div>
                 <span style="color:red;" *ngIf="message">{{message}}</span>
                 <img [src]="imgURL" height="200" *ngIf="imgURL">

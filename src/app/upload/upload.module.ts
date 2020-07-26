@@ -18,6 +18,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { UploadEditorComponent } from './upload-editor/upload-editor.component';
+import { UploadRoutingModule } from './upload-routing.module';
 
 
 @NgModule({
@@ -35,10 +36,12 @@ import { UploadEditorComponent } from './upload-editor/upload-editor.component';
     MatDividerModule,
     MatListModule,
     MatButtonModule,
+    UploadRoutingModule,
     
   ],
   entryComponents:[
     DialogBoxComponent
   ],
+  exports:[DropZoneDirective, FileUploadComponent, FormatFileSizePipe, UploadTaskComponent,ProgressbarComponent, DialogBoxUploadComponent, UploadEditorComponent]
 })
 export class UploadModule { }
