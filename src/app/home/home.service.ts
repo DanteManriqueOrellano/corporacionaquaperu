@@ -15,7 +15,8 @@ export interface IProyecto {
   tipo_proyecto:string;
   funcionalidadesInstaladas:IFuncionalidad[];
   localidadesSeleccionadas:string[];
-  coordenadas_utm:string;
+  este:string;
+  norte:string;
   altitud:string;
 }
 export interface IProyectoDocId extends IProyecto {

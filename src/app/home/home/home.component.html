@@ -1,8 +1,8 @@
 <section [formGroup]="formGroup">
     
-    <div class="contenedor" >
-     
-      
+  
+    <fieldset class="contenedor">
+        <legend>Generalidades</legend>
         <mat-form-field>
             <input matInput placeholder="alias" [formControlName]="formControlNames.alias" autocomplete="off">
         </mat-form-field>
@@ -23,15 +23,21 @@
         <mat-form-field>
             <input matInput placeholder="nombre_proyecto" [formControlName]="formControlNames.nombre_proyecto" autocomplete="off">
         </mat-form-field>
+        
+    
+    </fieldset>
+    <fieldset>
+        <legend>Coordenadas</legend>
+        <mat-form-field>
+            <input matInput placeholder="Este" [formControlName]="formControlNames.este" autocomplete="off">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Norte" [formControlName]="formControlNames.norte" autocomplete="off">
+        </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Altitud" [formControlName]="formControlNames.altitud" autocomplete="off">
         </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Coordenadas Utm" [formControlName]="formControlNames.coordenadas_utm" autocomplete="off">
-        </mat-form-field>
-        
-
-    </div>
+    </fieldset>
     <app-seleccionado [formControlName]="formControlNames.localidadesSeleccionadas"></app-seleccionado>
 
 

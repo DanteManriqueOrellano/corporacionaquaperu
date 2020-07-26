@@ -29,7 +29,8 @@ export class HomeComponent extends NgxSubFormComponent<IProyecto> {
       funcionalidadesInstaladas: new FormControl([]),
       localidadesSeleccionadas: new FormControl(),
       altitud: new FormControl(),
-      coordenadas_utm: new FormControl(),
+      este: new FormControl(),
+      norte: new FormControl(),
     }
   }
 
