@@ -3,6 +3,9 @@ import { NgxSubFormComponent, subformComponentProviders, Controls } from 'ngx-su
 import { FormArray, FormControl } from '@angular/forms';
 import { IPoblacion } from './poblacion/poblacion.component';
 import { MemDesService } from 'src/app/mem-des/mem.des.service';
+import { DocIdProyectoService } from 'src/app/shared/docIdProyecto.service';
+import { HomeService } from 'src/app/home/home.service';
+import { Observable } from 'rxjs';
 
 export interface IPoblacionForm {
   poblaciones:IPoblacion[]
@@ -15,19 +18,20 @@ export interface IPoblacionForm {
 })
 export class PoblacionesComponent extends NgxSubFormComponent<IPoblacionForm> implements OnInit {
 
-  constructor(private memDesService:MemDesService){
+  constructor(private docIdProyecto:DocIdProyectoService,private homeService:HomeService ){
     super();
 
   }
   
-  public nombreLocalidad  = this.memDesService.localidadesSeleccionadas
+  public proyecto:Observable<any>  = this.homeService.obtenUnProyecto(this.docIdProyecto.docIdProyecto)
+  i:number
   ngOnInit():void{
-    const array = this.memDesService.localidadesSeleccionadas
-   console.log(array);
-    if (!array) return null
-    array.forEach(element => {
+   this.homeService.obtenUnProyecto(this.docIdProyecto.docIdProyecto).subscribe((val)=>{
+    for(let i =0; i<val.localidadesSeleccionadas['centros_poblados'].length;i++){
       this.agregarPoblacion()
-    });
+    } 
+   })
+  
 
   }
   protected getFormControls():Controls<IPoblacionForm>{

@@ -5,6 +5,7 @@ import { FormArray, FormControl } from '@angular/forms';
 import { MemDesService } from 'src/app/mem-des/mem.des.service';
 import { HomeService } from 'src/app/home/home.service';
 import { DocIdProyectoService} from 'src/app/shared/docIdProyecto.service';
+import { Observable } from 'rxjs';
 
 export interface IComSanForm {
   comsSans:IComSan[]
@@ -17,22 +18,22 @@ export interface IComSanForm {
 })
 export class ComsSansRootFormComponent extends NgxSubFormComponent<IComSanForm> implements OnInit {
 
-  public nombreLocalidad  = this.memDesService.localidadesSeleccionadas
  
-  constructor(
-    private memDesService:MemDesService,
-    private homeService:HomeService,
-    private sharedServide:DocIdProyectoService
-    ){super();}
- 
-    ngOnInit(): void {
-    this.homeService.obtenUnProyecto(this.sharedServide.docIdProyecto).subscribe((val)=>{
-      console.log(val.localidadesSeleccionadas['centros_poblados'].length)
-      
-      for(let i =0; i<val.localidadesSeleccionadas['centros_poblados'].length;i++){
-        this.agregarComponenteSanitario()
-      } 
-    })  
+  constructor(private docIdProyecto:DocIdProyectoService,private homeService:HomeService ){
+    super();
+
+  }
+  
+  public proyecto:Observable<any>  = this.homeService.obtenUnProyecto(this.docIdProyecto.docIdProyecto)
+  i:number
+  ngOnInit():void{
+   this.homeService.obtenUnProyecto(this.docIdProyecto.docIdProyecto).subscribe((val)=>{
+    for(let i =0; i<val.localidadesSeleccionadas['centros_poblados'].length;i++){
+      this.agregarComponenteSanitario()
+    } 
+   })
+  
+
   }
 
   protected getFormControls():Controls<IComSanForm>{

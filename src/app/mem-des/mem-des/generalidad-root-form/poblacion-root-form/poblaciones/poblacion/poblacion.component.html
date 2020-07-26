@@ -1,42 +1,47 @@
 <section [formGroup]="formGroup">
-    <fieldset>
-        <legend> Localidad "{{localidad[0].cp[nombreLocalidad].nombre_centro_poblado }}"</legend>
-        
+    <ng-container *ngIf="proyecto | async as p">
+        <fieldset>
+            <legend> Localidad {{p.localidadesSeleccionadas.centros_poblados[i].nombre }}</legend>
+            
+    
+            <div style="display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(6rem,2fr));
+            ">
+                <mat-form-field>
+                    <input matInput placeholder="concentración x familia" autocomplete="off"
+                        [formControlName]='formControlNames.concentracion_miembros_x_familia'>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Dencidad Poblacional" autocomplete="off"
+                        [formControlName]='formControlNames.dencidad_poblacional'>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Población Actual" autocomplete="off"
+                        [formControlName]='formControlNames.poblacion_actual'>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Poblacion Futura" autocomplete="off"
+                        [formControlName]='formControlNames.poblacion_futura'>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Tasa Crecimiento" autocomplete="off"
+                        [formControlName]='formControlNames.tasa_crecimiento'>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="tot.Beneficiarios" autocomplete="off"
+                        [formControlName]='formControlNames.total_beneficiarios'>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Tot.Fam.Beneficiadas" autocomplete="off"
+                        [formControlName]='formControlNames.total_familias_beneficiadas'>
+                </mat-form-field>
+    
+            </div>
+    
+        </fieldset>
 
-        <div style="display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(6rem,2fr));
-        ">
-            <mat-form-field>
-                <input matInput placeholder="concentración x familia" autocomplete="off"
-                    [formControlName]='formControlNames.concentracion_miembros_x_familia'>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Dencidad Poblacional" autocomplete="off"
-                    [formControlName]='formControlNames.dencidad_poblacional'>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Población Actual" autocomplete="off"
-                    [formControlName]='formControlNames.poblacion_actual'>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Poblacion Futura" autocomplete="off"
-                    [formControlName]='formControlNames.poblacion_futura'>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Tasa Crecimiento" autocomplete="off"
-                    [formControlName]='formControlNames.tasa_crecimiento'>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="tot.Beneficiarios" autocomplete="off"
-                    [formControlName]='formControlNames.total_beneficiarios'>
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Tot.Fam.Beneficiadas" autocomplete="off"
-                    [formControlName]='formControlNames.total_familias_beneficiadas'>
-            </mat-form-field>
-
-        </div>
-
-    </fieldset>
+    </ng-container>
+    
+    
 
 </section>

@@ -4,7 +4,8 @@ import { IRedTuberia } from './red-tuberia/red-tuberia.component';
 import { ICaptacion } from './captacion/captacion.component';
 import { IReservorio } from './reservorio/reservorio.component';
 import { FormControl } from '@angular/forms';
-import { MemDesService } from 'src/app/mem-des/mem.des.service';
+
+import { Observable } from 'rxjs';
 
 export interface IComSan{
   captacion:ICaptacion,
@@ -20,10 +21,9 @@ export interface IComSan{
 })
 export class ComSanComponent extends NgxSubFormComponent<IComSan> {
 
-  @Input('nombreLocalidad') public nombreLocalidad;
-  localidad = this.memDesService.localidadesSeleccionadas;
-
-  constructor(private memDesService:MemDesService){super();}
+  @Input('proyecto') public proyecto:Observable<any>;
+  @Input('i') public i:number
+ 
 
   protected getFormControls():Controls<IComSan>{
     return {

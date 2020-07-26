@@ -1,14 +1,13 @@
 <section [formGroup]="formGroup">
-    <fieldset>
-        <legend>Componentes Sanitarios - localidad ""</legend>
-     <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));">
-        <app-captacion [formControlName]="formControlNames.captacion"></app-captacion>
-        <app-reservorio [formControlName]="formControlNames.reservorio"></app-reservorio>
-        <app-tecnologia-excreta [formControlName]="formControlNames.tecnologiaExcreta"></app-tecnologia-excreta>
-     </div>   
-   
-    
-    <app-red-tuberia [formControlName]="formControlNames.redTuberia"></app-red-tuberia>
-
-    </fieldset>
+    <ng-container *ngIf="proyecto | async as p">
+        <fieldset>
+            <legend>Localidad "{{p.localidadesSeleccionadas.centros_poblados[i].nombre }}"</legend>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));">
+                <app-captacion [formControlName]="formControlNames.captacion"></app-captacion>
+                <app-reservorio [formControlName]="formControlNames.reservorio"></app-reservorio>
+                <app-tecnologia-excreta [formControlName]="formControlNames.tecnologiaExcreta"></app-tecnologia-excreta>
+            </div>
+            <app-red-tuberia [formControlName]="formControlNames.redTuberia"></app-red-tuberia>
+        </fieldset>
+    </ng-container>
 </section>

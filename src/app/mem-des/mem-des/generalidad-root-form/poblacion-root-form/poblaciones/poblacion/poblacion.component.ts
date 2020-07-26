@@ -1,7 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { subformComponentProviders, NgxSubFormComponent, Controls } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
 import { MemDesService } from 'src/app/mem-des/mem.des.service';
+import { Observable } from 'rxjs';
+import { HomeService } from 'src/app/home/home.service';
+import { DocIdProyectoService } from 'src/app/shared/docIdProyecto.service';
 export interface IPoblacion{
   total_familias_beneficiadas:number;
   total_beneficiarios:number;
@@ -17,12 +20,12 @@ export interface IPoblacion{
   styleUrls: ['./poblacion.component.css'],
   providers: subformComponentProviders(PoblacionComponent)
 })
-export class PoblacionComponent extends NgxSubFormComponent<IPoblacion> {
+export class PoblacionComponent extends NgxSubFormComponent<IPoblacion>  {
 
-  @Input('nombreLocalidad') public nombreLocalidad;
-  localidad = this.memDesService.localidadesSeleccionadas;
-  constructor (private memDesService:MemDesService){super()}
-
+  @Input('proyecto') public proyecto:Observable<any>;
+  @Input('i') public i:number
+  
+  
   protected getFormControls():Controls<IPoblacion>{
     return{
       concentracion_miembros_x_familia: new FormControl(),
@@ -34,4 +37,5 @@ export class PoblacionComponent extends NgxSubFormComponent<IPoblacion> {
       total_familias_beneficiadas: new FormControl()
     }
   }
+ 
 }

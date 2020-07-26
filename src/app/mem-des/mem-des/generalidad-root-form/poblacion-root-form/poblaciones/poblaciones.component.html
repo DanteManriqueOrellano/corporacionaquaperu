@@ -1,5 +1,5 @@
 <section [formGroup]="formGroup">    
     <div  [formArrayName]="formControlNames.poblaciones" *ngFor="let unaPoblacion of formGroupControls.poblaciones.controls; let i = index">
-        <app-poblacion [formControl]="unaPoblacion" [nombreLocalidad]="i"></app-poblacion>
+        <app-poblacion [formControl]="unaPoblacion" [proyecto]="proyecto" [i]='i'></app-poblacion>
     </div>
 </section>
