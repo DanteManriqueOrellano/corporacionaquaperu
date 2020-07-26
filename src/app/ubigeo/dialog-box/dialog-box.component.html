@@ -8,14 +8,8 @@
 
   -->
   
-
-
-  <app-editor
-  *ngIf="accion != 'Eliminar'; else elseTemplate" 
-  [ubigeosData]="ubigeosData"
-  (ubigeoDataUpdate)="ubigeoDataUpdate($event)"
-  [(ngModel)]="ubigeosData"
-></app-editor>
+<app-editor *ngIf="accion != 'Eliminar'; else elseTemplate" [ubigeosData]="ubigeosData"
+  (ubigeoDataUpdate)="ubigeoDataUpdate($event)" [(ngModel)]="ubigeosData"></app-editor>
 
   
   <ng-template #elseTemplate>

@@ -1,0 +1,15 @@
+input[type='file']{
+  display: none;
+}
+
+table {
+  
+  width: 25%;
+  
+
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}

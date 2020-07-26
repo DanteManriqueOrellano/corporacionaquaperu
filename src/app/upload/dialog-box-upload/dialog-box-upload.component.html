@@ -1,0 +1,29 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title>Row Action :: <strong>{{accion}}</strong></h1>
+<div mat-dialog-content>
+  <!--
+    (ubigeoDataUpdate)="ubigeoDataUpdate($event)"
+    ESTA LINEA DE CODIGO ES NECESARIA PARA EL CORRECTO
+    USO DE NGXSUBFORM
+ 
+
+  -->
+  
+  
+<app-upload-editor *ngIf="accion != 'Eliminar'; else elseTemplate" [ubigeosData]='ubigeosData'
+  (ubigeoDataUpdate)='ubigeoDataUpdate($event)' [(ngModel)]="ubigeosData">
+
+</app-upload-editor>
+ 
+  <ng-template #elseTemplate>
+    Sure to delete <b>{{local_data.name}}</b>?
+  </ng-template>
+</div>
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()">{{accion}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
+
+

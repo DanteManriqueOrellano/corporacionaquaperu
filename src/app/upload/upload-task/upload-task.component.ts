@@ -3,6 +3,7 @@ import { AngularFireUploadTask, AngularFireStorage } from '@angular/fire/storage
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { tap, finalize } from 'rxjs/operators';
+import { UploadService } from '../upload.service';
 
 
 @Component({
@@ -17,12 +18,14 @@ export class UploadTaskComponent implements OnInit {
   percentage:Observable<number>;
   snapshot:Observable<any>
   downloadURL; 
-  constructor(private storage:AngularFireStorage,private db:AngularFirestore) { }
+  constructor(private storage:AngularFireStorage,private db:AngularFirestore,private uploadService:UploadService) { }
 
   ngOnInit(): void {
     this.startUpload()
   }
   startUpload(){
+   
+
     const path = `test/${Date.now()}_${this.file.name}`
     const ref = this.storage.ref(path);
     this.task = this.storage.upload(path,this.file);
@@ -31,7 +34,7 @@ export class UploadTaskComponent implements OnInit {
       tap(console.log),
       finalize(async()=>{
         this.downloadURL = await ref.getDownloadURL().toPromise();
-        this.db.collection('files').add({downloadUrl:this.downloadURL,path})
+        this.db.collection('files').add({downloadUrl:this.downloadURL,path,'docIdUpload':2})
       })
     )
     

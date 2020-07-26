@@ -1,0 +1,248 @@
+.main-content {
+    margin: 4em auto;
+    max-width: 500px;
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .id__wrapper {
+    display: grid;
+    width: 100%;
+    transition: width 0.2s ease-in-out;
+    margin: auto;
+    grid-gap: 15px;
+    padding: 15px;
+    background: rgba(76, 162, 205, 0.2);/*el fondo de la tarjeta*/
+    border: 2px solid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, auto);
+    grid-template-areas: "your-face name name" "your-face job country" "your-face twitter codepen" "your-face blood blood";
+  }
+  
+  .id__wrapper > div {
+    transition: all 0.1s ease;
+  }
+  
+  .header {
+    grid-area: header;
+    text-align: center;
+    
+    padding: 10px 0;
+    font: 600 28px "Prompt";
+  }
+  
+  .header span:nth-child(2) {
+    display: none;
+  }
+  
+  .your-face {
+    grid-area: your-face;
+    background: #fff;
+    border: 2px solid;
+    cursor: pointer;
+    position: relative;
+    max-height: 300px;
+    overflow: hidden;
+  }
+  .your-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 10;
+    position: relative;
+    
+  }
+  .your-face .image-persuader {
+    position: absolute;
+    top: 40%;
+    text-align: center;
+    width: 70%;
+    left: 15%;
+  }
+  .your-face input {
+    display: none;
+  }
+  
+  label {
+    font: 600 16px "Prompt";
+    margin-bottom: 2px;
+    display: block;
+    flex: 0 0 auto;
+  }
+  
+  input.full {
+    font: 400 20px "Prompt";
+    border: none;
+    padding: 10px;
+    height: 40px;
+    width: 100%;
+    border-bottom: 2px solid;
+  }
+  input.full:focus {
+    outline: none;
+  }
+  
+  .name {
+    grid-area: name;
+  }
+  
+  .job {
+    grid-area: job;
+  }
+  
+  .country {
+    grid-area: country;
+  }
+  
+  .twitter {
+    grid-area: twitter;
+  }
+  
+  .codepen {
+    grid-area: codepen;
+  }
+  
+  .as-card {
+    box-shadow: none;
+    background: none;
+    pointer-events: none;
+  }
+  .as-card .header span:nth-child(1) {
+    display: none;
+  }
+  .as-card .header span:nth-child(2) {
+    display: block;
+  }
+  .as-card .deco,
+  .as-card .deco:before {
+    opacity: 1;
+    width: 120%;
+    animation: .8s deco-piece forwards;
+  }
+  .as-card .id__wrapper {
+    width: 325px;
+    overflow: hidden;
+    margin: 2em auto 0;
+    border-radius: 10px;
+    border: none;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    padding: 85px 25px 65px;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "your-face your-face" "name name" "job job" "country country" "blood blood" "twitter codepen";
+  }
+  .as-card .id__wrapper:before {
+    content: "Attendee";
+   
+    position: absolute;
+    bottom: -0.5px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    letter-spacing: 2px;
+    font: 600 20px "Prompt";
+    text-align: center;
+    color: #fff;
+  }
+  .as-card .id__wrapper:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    width: 80px;
+    height: 12px;
+    margin-left: -40px;
+    background: #f8f8f8;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .as-card .id__wrapper input.full {
+    background: transparent;
+    border: none;
+    height: auto;
+    padding: 0;
+  }
+  .as-card .id__wrapper .checkbox__wrapper {
+    margin: 5px;
+  }
+  .as-card .id__wrapper .checkbox__wrapper label {
+    padding: 0;
+    font-size: 14px;
+    color: #4ca2cd;
+    margin: 0;
+    padding-right: 10px;
+  }
+  .as-card .id__wrapper .checkbox__wrapper label:before, .as-card .id__wrapper .checkbox__wrapper label:after {
+    content: none;
+  }
+  .as-card .id__wrapper .checkbox__wrapper input {
+    display: none;
+  }
+  .as-card .id__wrapper .checkbox {
+    padding-right: 0;
+  }
+  .as-card .id__wrapper .checkbox input:not(:checked),
+  .as-card .id__wrapper .checkbox input:not(:checked) + label {
+    display: none;
+    padding: 0;
+  }
+  .as-card .your-face {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    border: 4px solid #4ca2cd;
+  }
+  .as-card .your-face img {
+    border-radius: 50%;
+  }
+  .as-card .your-face .image-persuader {
+    display: none;
+  }
+  .as-card .name label:not(.label-check),
+  .as-card .job label:not(.label-check),
+  .as-card .country label:not(.label-check),
+  .as-card .blood label:not(.label-check) {
+    display: none;
+  }
+  .as-card .name input {
+    font: 600 32px "Prompt";
+    margin: 0px 5px;
+    color: #ffffff;
+    position: relative;
+  }
+  .as-card .job input {
+    color: #4ca2cd;
+    font: 600 20px "Prompt";
+    margin: 0 5px;
+  }
+  .as-card .country input {
+    color: #4ca2cd;
+    font: 400 18px "Prompt";
+    margin: -15px 5px 10px;
+  }
+  .as-card .twitter,
+  .as-card .codepen {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .as-card .twitter label,
+  .as-card .codepen label {
+    font: 600 12px "Prompt";
+    color: #ffffff;
+    margin: 0 0 -2px;
+  }
+  .as-card .twitter input,
+  .as-card .codepen input {
+    font: 400 16px "Prompt";
+    color: #374e71;
+    text-align: center;
+  }
+  
+  
+  

@@ -1,40 +1,64 @@
-<div class="dropzone"
-     dropzone
-     (hovered)="toggleHover($event)"
-     (dropped)="onDrop($event)"
-     [class.hovering]="isHovering">
-<h3>AngularFire Drop Zone</h3>
-<p>Drag And Drop a file</p>
-<div class="file">
-    <label class="file-label">
-        <input class="file-input" type="file" multiple (change)="onDrop($event.target.files)">
-    </label>
-</div>
-</div>
-<h3>uploads</h3>
 
-<div style=" display:grid;
-grid-template-columns: repeat(6rem,2fr);
-">
+<mat-list>
+  <mat-list-item>
+    <h1 style="display: flex; justify-content: center; align-items: center;">Panel Fotográfico</h1>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>
+    <h1 style="display: flex; justify-content: center; align-items: center;">Galeria Fotográfica</h1>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  
+</mat-list>
 
-<div  *ngFor="let file of files">
-    <!--
-        <app-upload-task [file]="file"></app-upload-task>
 
-    -->
-
+  
+    <div style="display: flex; justify-content: center;">
     
-      
-          
-        <app-upload-task  [file]="file"></app-upload-task>
+      <button mat-button (click)="openDialog('Agregar',{})" mat-flat-button color="primary">Add Row</button>
+<table mat-table [dataSource]="dataSource" #mytable class="my-table mat-elevation-z8">
+  
+
+  <!--- Note that these columns can be defined in any order.
+      The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Descripción </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+  <!-- url Imagenes-->
+
+  <ng-container matColumnDef="imageUrl">
+    <th mat-header-cell *matHeaderCellDef> Foto </th>
+    <td mat-cell *matCellDef="let element"> <img [src]="element.imageUrl" /> </td>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Acción </th>
+    <td mat-cell *matCellDef="let element" class="action-link"> 
+      <a style="cursor: pointer;" (click)="openDialog('Actualizar',element)">Editar</a> | 
+      <a style="cursor: pointer;" (click)="openDialog('Eliminar',element)">Borrar</a>  
+    </td>
+  </ng-container>
+
+ 
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
 
 
-            
-
-      
-
-</div>
-
-</div>
 
 
+
+
+
+  </div>
