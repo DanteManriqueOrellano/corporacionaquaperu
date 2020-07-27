@@ -29,7 +29,8 @@ export class UploadEditorComponent extends NgxRootFormComponent <IFoto> {
       accion: new FormControl(),
       dowloadUrl: new FormControl(),
       path: new FormControl(),
-      archivo:new FormControl()
+      archivo:new FormControl(),
+      idlocal: new FormControl()
     }
   }
   

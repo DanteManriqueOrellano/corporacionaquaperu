@@ -1,9 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { AngularFireUploadTask, AngularFireStorage } from '@angular/fire/storage';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+
 import { DialogBoxUploadComponent } from '../dialog-box-upload/dialog-box-upload.component';
 import { UploadService, IFoto } from '../upload.service';
 interface tb {
@@ -25,10 +23,8 @@ export class FileUploadComponent {
   public imagePath;
   imgURL: any;
   public message: string;
-  displayedColumns: string[] = ['id', 'name', 'imageUrl', 'action'];
-  dataSource: IFoto[] = []
-    // {id: '1560608769632', name: 'Artificial Intelligence',foto:''},
-    ;
+  displayedColumns: string[] = ['idlocal', 'descripcion', 'foto', 'action'];
+  dataSource: IFoto[] = [];
 
   @ViewChild(MatTable, { static: true }) table: MatTable<tb>;
 
@@ -101,7 +97,7 @@ export class FileUploadComponent {
   deleteRowData(row_obj) {
 
     this.dataSource = this.dataSource.filter((value,key)=>{
-      return value.docIdProyecto != row_obj.docIdProyecto;
+      return value.idlocal != row_obj.idlocal;
     });
   }
   preview_add(files) {
@@ -128,12 +124,13 @@ export class FileUploadComponent {
       var d = new Date();
       this.dataSource = this.dataSource.concat(
         {
-          docIdProyecto: d.getTime().toString(),
+          docIdProyecto: '',
           descripcion: 'joder tio',
           archivo: this.imgURL,
           accion: '',
           dowloadUrl: '',
-          path: ''
+          path: '',
+          idlocal:d.getTime().toString()
 
         })
 
@@ -159,13 +156,13 @@ export class FileUploadComponent {
     reader.onload = (_event) => {
       this.imgURL = reader.result;
       
-      let updateItem = this.dataSource.find(this.findIndexToUpdate, files.docIdProyecto);
+      let updateItem = this.dataSource.find(this.findIndexToUpdate, files.idlocal);
 
       if(updateItem === undefined){
         return
     }else {
         let index = this.dataSource.indexOf(updateItem);
-        console.log(files)
+        
         this.dataSource[index].archivo = this.imgURL ;
     }
       

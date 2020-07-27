@@ -7,6 +7,7 @@ import { map, mergeMap } from 'rxjs/operators';
 import { DocIdProyectoService } from '../shared/docIdProyecto.service';
 
 export interface IFoto {
+  idlocal:string;
   docIdProyecto:string;
   descripcion:string;
   accion:string
