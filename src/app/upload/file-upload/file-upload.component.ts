@@ -8,7 +8,7 @@ import { UploadService, IFoto } from '../upload.service';
   templateUrl: './file-upload.component.html',
   styleUrls: ['./file-upload.component.css']
 })
-//export class FileUploadComponent  {
+
 export class FileUploadComponent {
   public imagePath;
   imgURL: any;
@@ -43,7 +43,7 @@ export class FileUploadComponent {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
   }
   openDialog(accion, obj) {
-    console.log(obj)
+    
     obj.accion = accion;
 
     const dialogRef = this.dialog.open(DialogBoxUploadComponent, {
