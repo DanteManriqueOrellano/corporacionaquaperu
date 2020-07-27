@@ -22,8 +22,8 @@ export class DialogBoxUploadComponent  {
       this.accion = this.local_data.accion;
     }else {
       console.log(data)
-     /* this.ubigeosData = data;
-      this.accion = this.ubigeosData.accion;*/
+      this.ubigeosData = data;
+      this.accion = this.ubigeosData.accion;
     }
   }
 

@@ -7,12 +7,13 @@ import { map } from 'rxjs/operators';
 import { DialogBoxUploadComponent } from '../dialog-box-upload/dialog-box-upload.component';
 import { UploadService, IFoto } from '../upload.service';
 interface tb {
-  id:string,
-  name:string,
-  foto:string,
-  
+  id: string,
+  name: string,
+  foto: string,
+
 
 }
+
 
 @Component({
   selector: 'app-file-upload',
@@ -25,10 +26,10 @@ export class FileUploadComponent {
   imgURL: any;
   public message: string;
   displayedColumns: string[] = ['id', 'name', 'imageUrl', 'action'];
-  dataSource:tb[] = []
-   // {id: '1560608769632', name: 'Artificial Intelligence',foto:''},
-  ;
- 
+  dataSource: IFoto[] = []
+    // {id: '1560608769632', name: 'Artificial Intelligence',foto:''},
+    ;
+
   @ViewChild(MatTable, { static: true }) table: MatTable<tb>;
 
   selectedValue: string;
@@ -37,8 +38,8 @@ export class FileUploadComponent {
 
   constructor(
     public dialog: MatDialog,
-    private uploadService:UploadService
-    ) { }
+    private uploadService: UploadService
+  ) { }
 
   public isHovering: boolean;
   files: File[] = [
@@ -55,50 +56,53 @@ export class FileUploadComponent {
   public isActive(snapshot) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
   }
-  openDialog(accion,obj) {
+  openDialog(accion, obj) {
     console.log(obj)
     obj.accion = accion;
-    
+
     const dialogRef = this.dialog.open(DialogBoxUploadComponent, {
       //width: '90%',
       //height: '100%',
-      data:obj,
+      data: obj,
 
-      
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(result)
-      if(result === undefined) return null
-      if(result.event == 'Agregar'){
+      if (result === undefined) return null
+      if (result.event == 'Agregar') {
         this.addRowData(result.data);
-      }else if(result.event == 'Actualizar'){
+      } else if (result.event == 'Actualizar') {
         this.updateRowData(result.data);
-      }else if(result.event == 'Eliminar'){
+      } else if (result.event == 'Eliminar') {
         this.deleteRowData(result.data);
       }
     });
   };
-  addRowData(row_obj){
-    
-   
-    this.preview(row_obj.archivo)
-   
-    console.log(this.dataSource)
-    
+  addRowData(row_obj) {
+
+
+    this.preview_add(row_obj.archivo)
+
+
     //this.table.renderRows();
 
 
   }
-  updateRowData(row_obj){
-   //console.log(row_obj)
-   
+  updateRowData(nuevo_obj) {
+
+
+    this.preview_update(nuevo_obj.archivo)
+
+
+
   }
-  deleteRowData(row_obj){
-   
-   // this.table.renderRows();
+  deleteRowData(row_obj) {
+
+    // this.table.renderRows();
   }
-   preview(files) {
+  preview_add(files) {
     if (files.length === 0)
       return;
 
@@ -110,16 +114,66 @@ export class FileUploadComponent {
 
     var reader = new FileReader();
     this.imagePath = files;
-    console.log(this.imagePath)
+
+
+    reader.onload = (_event) => {
+      this.imgURL = reader.result;
+
+
+
+      this.uploadService.image_local.push({ uno: reader.result })
+
+      var d = new Date();
+      this.dataSource = this.dataSource.concat(
+        {
+          docIdProyecto: d.getTime().toString(),
+          descripcion: 'joder tio',
+          archivo: this.imgURL,
+          accion: '',
+          dowloadUrl: '',
+          path: ''
+
+        })
+
+    }
     reader.readAsDataURL(files[0]);
-    reader.onload =  (_event) => {
+
+
+  }
+  preview_update(files) {
+    
+ 
+    if (files.length === 0)
+      return;
+
+    var mimeType = files[0].type;
+    if (mimeType.match(/image\/*/) == null) {
+      this.message = "Only images are supported.";
+      return;
+    }
+
+    var reader = new FileReader();
+    this.imagePath = files;
+    reader.onload = (_event) => {
       this.imgURL = reader.result;
       
-      var d = new Date();
-       this.dataSource = this.dataSource.concat({id: d.getTime().toString(),
-        name:'',
-        foto:this.imgURL})
+      let updateItem = this.dataSource.find(this.findIndexToUpdate, files.docIdProyecto);
+
+      if(updateItem === undefined){
+        return
+    }else {
+        let index = this.dataSource.indexOf(updateItem);
+        console.log(files)
+        this.dataSource[index].archivo = this.imgURL ;
     }
+      
+    }
+    reader.readAsDataURL(files[0]);
+  }
+  findIndexToUpdate(newItem) {
+    return newItem.id === this;
   }
 
 }
+
+

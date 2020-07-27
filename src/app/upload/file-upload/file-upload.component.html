@@ -25,19 +25,19 @@
   <!-- Id Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> ID. </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.docIdProyecto}} </td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Descripción </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
   </ng-container>
   <!-- url Imagenes-->
 
   <ng-container matColumnDef="imageUrl">
     <th mat-header-cell *matHeaderCellDef> Foto </th>
-    <td mat-cell *matCellDef="let element"> <img [src]="element.foto" width="400px" /> </td>
+    <td mat-cell *matCellDef="let element"> <img [src]="element.archivo" width="400px" /> </td>
   </ng-container>
 
   <!-- Action Column -->

@@ -19,6 +19,10 @@ export interface IFoto {
   providedIn: 'root'
 })
 export class UploadService {
+
+  image_local:any[]=[
+    
+  ] 
   
   
   private fotos$: Observable<IFoto[]>;
