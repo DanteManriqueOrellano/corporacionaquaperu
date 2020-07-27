@@ -1,18 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-
 import { DialogBoxUploadComponent } from '../dialog-box-upload/dialog-box-upload.component';
 import { UploadService, IFoto } from '../upload.service';
-interface tb {
-  id: string,
-  name: string,
-  foto: string,
-
-
-}
-
-
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
@@ -26,7 +16,7 @@ export class FileUploadComponent {
   displayedColumns: string[] = ['idlocal', 'descripcion', 'foto', 'action'];
   dataSource: IFoto[] = [];
 
-  @ViewChild(MatTable, { static: true }) table: MatTable<tb>;
+  @ViewChild(MatTable, { static: true }) table: MatTable<IFoto>;
 
   selectedValue: string;
   selectedCar: string;
@@ -65,7 +55,7 @@ export class FileUploadComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      
+
       if (result === undefined) return null
       if (result.event == 'Agregar') {
         this.addRowData(result.data);
@@ -77,29 +67,18 @@ export class FileUploadComponent {
     });
   };
   addRowData(row_obj) {
-
-
     this.preview_add(row_obj.archivo)
-
-
-    //this.table.renderRows();
-
-
   }
   updateRowData(nuevo_obj) {
-
-
     this.preview_update(nuevo_obj.archivo)
-
-
-
   }
   deleteRowData(row_obj) {
 
-    this.dataSource = this.dataSource.filter((value,key)=>{
+    this.dataSource = this.dataSource.filter((value, key) => {
       return value.idlocal != row_obj.idlocal;
     });
   }
+
   preview_add(files) {
     if (files.length === 0)
       return;
@@ -130,7 +109,7 @@ export class FileUploadComponent {
           accion: '',
           dowloadUrl: '',
           path: '',
-          idlocal:d.getTime().toString()
+          idlocal: d.getTime().toString()
 
         })
 
@@ -140,8 +119,8 @@ export class FileUploadComponent {
 
   }
   preview_update(files) {
-    
- 
+
+
     if (files.length === 0)
       return;
 
@@ -155,17 +134,17 @@ export class FileUploadComponent {
     this.imagePath = files;
     reader.onload = (_event) => {
       this.imgURL = reader.result;
-      
+
       let updateItem = this.dataSource.find(this.findIndexToUpdate, files.idlocal);
 
-      if(updateItem === undefined){
+      if (updateItem === undefined) {
         return
-    }else {
+      } else {
         let index = this.dataSource.indexOf(updateItem);
-        
-        this.dataSource[index].archivo = this.imgURL ;
-    }
-      
+
+        this.dataSource[index].archivo = this.imgURL;
+      }
+
     }
     reader.readAsDataURL(files[0]);
   }
