@@ -69,7 +69,7 @@ export class FileUploadComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
+      
       if (result === undefined) return null
       if (result.event == 'Agregar') {
         this.addRowData(result.data);
@@ -100,7 +100,9 @@ export class FileUploadComponent {
   }
   deleteRowData(row_obj) {
 
-    // this.table.renderRows();
+    this.dataSource = this.dataSource.filter((value,key)=>{
+      return value.docIdProyecto != row_obj.docIdProyecto;
+    });
   }
   preview_add(files) {
     if (files.length === 0)
