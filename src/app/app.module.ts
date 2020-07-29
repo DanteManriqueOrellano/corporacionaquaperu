@@ -25,6 +25,7 @@ import { EliminarPDFComponent } from './eliminar-pdf/eliminar-pdf.component';
 import { FileUploadModule } from '@iplab/ngx-file-upload';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EstudioFotograficoModule } from './estudio-fotografico/estudio-fotografico.module';
 
 // Configuring custom fonts
 PdfMakeWrapper.setFonts(pdfFonts, {
@@ -68,8 +69,8 @@ PdfMakeWrapper.useFont('poppins');
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-   
-    NgbModule
+    NgbModule,
+    EstudioFotograficoModule,
 
   ],
   providers: [

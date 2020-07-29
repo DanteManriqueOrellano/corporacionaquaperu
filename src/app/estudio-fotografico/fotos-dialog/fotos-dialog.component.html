@@ -1,0 +1,47 @@
+<!-- dialog-box.component.html -->
+<h1 mat-dialog-title>Acción  <strong>{{accion}}</strong></h1>
+<div mat-dialog-content>
+  <!--
+    (ubigeoDataUpdate)="ubigeoDataUpdate($event)"
+    ESTA LINEA DE CODIGO ES NECESARIA PARA EL CORRECTO
+    USO DE NGXSUBFORM
+  -->
+<!--
+
+  <section [formGroup]="formGroup"  *ngIf="accion != 'Eliminar'; else elseTemplate">
+  <div class="main-content" >
+      <div class="header"> <span>Galeria Fotográfica</span></div>
+      <div class="id__wrapper">
+
+          <label class="your-face">
+              <input type="file" #file accept='image/*' (change)="fotografiaSeleccionada($event)">  
+              <div class="image-persuader">Selecciona Una Foto</div>
+              <span style="color:red;" *ngIf="message">{{message}}</span>
+              <img [src]="imgURL" height="200" *ngIf="imgURL">
+          </label>
+
+          <div class="name">
+
+              <mat-form-field>
+                  <input type="text" matInput placeholder="Descripcion" [formControlName]='formControlNames.descripcion' autocomplete="off">
+              </mat-form-field>
+
+          </div>
+
+      </div>
+  </div>
+</section>
+-->
+
+
+
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="doAction()" mat-flat-button color="primary">{{accion}}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancelar</button>
+</div>
+
+<pre>{{formGroupValues | json}}</pre>
+
+

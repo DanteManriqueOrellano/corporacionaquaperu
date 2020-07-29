@@ -1,0 +1,21 @@
+<section [formGroup]="formGroup">
+  <fieldset>
+    <legend>Foto</legend>
+
+    <div class="grid-container">
+      <div [formArrayName]="formControlNames.fotografias"
+        *ngFor="let unaFotografia of formGroupControls.fotografias.controls;let i=index">
+
+        <app-foto [formControl]='unaFotografia'></app-foto>
+
+        <button style="margin-top: 0.05rem;" (click)='eliminarUnaFotografia(i)' mat-button color='warn'>Eliminar Foto</button>
+      </div>
+
+    </div>
+
+
+
+  </fieldset>
+
+  <button style="margin-top: 0.9rem;" (click)="agregarUnaFotografia()" mat-stroked-button color='primary'>Agregar Foto</button>
+</section>

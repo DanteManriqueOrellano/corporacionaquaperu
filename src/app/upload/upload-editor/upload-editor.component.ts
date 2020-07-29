@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgxRootFormComponent, Controls, DataInput, subformComponentProviders } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
-import { IFoto } from '../upload.service';
+import { IFoto, UploadService } from '../upload.service';
+
 
 
 
@@ -12,6 +13,7 @@ import { IFoto } from '../upload.service';
   providers:subformComponentProviders(UploadEditorComponent)
 })
 export class UploadEditorComponent extends NgxRootFormComponent <IFoto> {
+  
   public imagePath;
   imgURL: any;
   public message: string;
@@ -21,6 +23,7 @@ export class UploadEditorComponent extends NgxRootFormComponent <IFoto> {
   dataInput: Required<IFoto>;
   @Output('ubigeoDataUpdate')
   dataOutput: EventEmitter<IFoto> = new EventEmitter();
+  constructor(private uploadService:UploadService){super()}
   
   protected getFormControls(): Controls<IFoto> {
     return {
@@ -30,11 +33,13 @@ export class UploadEditorComponent extends NgxRootFormComponent <IFoto> {
       dowloadUrl: new FormControl(),
       path: new FormControl(),
       archivo:new FormControl(),
-      idlocal: new FormControl()
+      idlocal: new FormControl(),
+      foto: new FormControl()
     }
   }
   
   preview(files) {
+
     if (files.length === 0)
       return;
 
@@ -43,6 +48,8 @@ export class UploadEditorComponent extends NgxRootFormComponent <IFoto> {
       this.message = "Only images are supported.";
       return;
     }
+    this.uploadService.array_panel.push({foto:files,detalle:''})
+    
 
     var reader = new FileReader();
     this.imagePath = files;
@@ -50,9 +57,12 @@ export class UploadEditorComponent extends NgxRootFormComponent <IFoto> {
     reader.onload = (_event) => {
       this.imgURL = reader.result;
       this.formGroupControls.archivo.setValue(files)
-     // console.log(this.imgURL)
+   
      
     }
+  }
+  findIndexToUpdate(newItem) {
+    return newItem.name === this;
   }
 
 

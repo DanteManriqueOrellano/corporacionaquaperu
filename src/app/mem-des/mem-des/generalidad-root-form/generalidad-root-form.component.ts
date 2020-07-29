@@ -13,6 +13,8 @@ import { FormControl, FormArray } from '@angular/forms';
 import { IComSan } from './coms-sans-root-form/com-san/com-san.component';
 import { MatAccordion } from '@angular/material/expansion';
 import { IPoblacionRootForm } from './poblacion-root-form/poblacion-root-form.component';
+import { IEstudioFotografico } from 'src/app/estudio-fotografico/fotografia-root/fotografia-root.component';
+
 
 export interface IGeneralidadRoot{
   generalidad:IGeneralidad;
@@ -33,7 +35,8 @@ export interface IGeneralidadRoot{
   agregando el componte poblacion, cada localidad tiene una sola caracteristica
   de poblacion 
   */ 
-  poblacion:IPoblacionRootForm
+  poblacion:IPoblacionRootForm;
+  
 
 }
 
@@ -64,7 +67,8 @@ export class GeneralidadRootFormComponent  extends NgxRootFormComponent<IGeneral
     //  ubigeo_selecionado: new FormControl(),
       vias_accesos: new FormControl(),
       compsSans:new FormControl(),
-      poblacion: new FormControl()
+      poblacion: new FormControl(),
+      
     }
   }
 

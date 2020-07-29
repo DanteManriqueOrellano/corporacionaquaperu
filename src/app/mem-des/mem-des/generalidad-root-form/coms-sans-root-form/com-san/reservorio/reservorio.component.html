@@ -12,24 +12,24 @@
                 <input matInput placeholder="Capacidad Almacenamiento" [formControlName]="formControlNames.capacidad_almacenamiento" autocomplete="off">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Caceta Cloración" [formControlName]="formControlNames.caceta_cloracion" autocomplete="off">
+                <input matInput placeholder="Situación de la Caceta Cloración" [formControlName]="formControlNames.caceta_cloracion" autocomplete="off">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Cerco Perimetrico" [formControlName]="formControlNames.cerco_perimetrico" autocomplete="off">
+                <input matInput placeholder="Situación del  Cerco Perimetrico" [formControlName]="formControlNames.cerco_perimetrico" autocomplete="off">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Ubicacion Norte" [formControlName] = "formControlNames.ubicacion_norte" autocomplete="off"> 
+                <input matInput placeholder="Ubicación Norte" [formControlName] = "formControlNames.ubicacion_norte" autocomplete="off"> 
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Ubicacion Este" [formControlName] = "formControlNames.ubicacion_este" autocomplete="off"> 
+                <input matInput placeholder="Ubicación Este" [formControlName] = "formControlNames.ubicacion_este" autocomplete="off"> 
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Ubicacion Latitud" [formControlName] = "formControlNames.ubicacion_latitud" autocomplete="off"> 
+                <input matInput placeholder="Ubicación Latitud" [formControlName] = "formControlNames.ubicacion_latitud" autocomplete="off"> 
             </mat-form-field>
             
         </div>
         <ng-container>
-            <app-file-upload></app-file-upload>
+            <app-fotografia-root [formControlName] = "formControlNames.fotografia"></app-fotografia-root>
 
         </ng-container>
     </fieldset>

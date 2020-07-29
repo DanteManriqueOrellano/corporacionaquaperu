@@ -1,5 +1,5 @@
 <!-- dialog-box.component.html -->
-<h1 mat-dialog-title>Row Action :: <strong>{{accion}}</strong></h1>
+<h1 mat-dialog-title>Acción  <strong>{{accion}}</strong></h1>
 <div mat-dialog-content>
   <!--
     (ubigeoDataUpdate)="ubigeoDataUpdate($event)"
@@ -24,7 +24,7 @@
 
 
 <div mat-dialog-actions>
-  <button mat-button (click)="doAction()">{{accion}}</button>
+  <button mat-button (click)="doAction()" mat-flat-button color="primary">{{accion}}</button>
   <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancelar</button>
 </div>
 

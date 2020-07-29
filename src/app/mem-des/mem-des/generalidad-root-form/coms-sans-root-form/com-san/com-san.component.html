@@ -3,8 +3,8 @@
         <fieldset>
             <legend>Localidad "{{p.localidadesSeleccionadas.centros_poblados[i].nombre }}"</legend>
             <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(12rem,1fr));">
-                <app-captacion [formControlName]="formControlNames.captacion"></app-captacion>
-                <app-reservorio [formControlName]="formControlNames.reservorio"></app-reservorio>
+                <app-captacion style="padding-right: 0.5rem;" [formControlName]="formControlNames.captacion"></app-captacion>
+                <app-reservorio style="padding-left: 0.5rem;" [formControlName]="formControlNames.reservorio"></app-reservorio>
                 
             </div>
             <app-tecnologia-excreta [formControlName]="formControlNames.tecnologiaExcreta"></app-tecnologia-excreta>

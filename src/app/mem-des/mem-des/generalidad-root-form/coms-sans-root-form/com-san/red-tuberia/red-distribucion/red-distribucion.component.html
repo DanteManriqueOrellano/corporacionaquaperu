@@ -1,13 +1,13 @@
 <section [formGroup]="formGroup">
 
     <fieldset >
-        <legend>Red de Distribucion</legend>
+        <legend>Red de Distribución</legend>
         
-    <mat-form-field>
-        <input matInput placeholder="Cantidad en M.L" [formControlName]="formControlNames.cantidad_ML" autocomplete="off">
+    <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Cantidad en Metros Lineales" [formControlName]="formControlNames.cantidad_ML" autocomplete="off">
     </mat-form-field>
-    <mat-form-field>
-        <input matInput placeholder="Describa el Estado de Conservacion"
+    <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Describa el Estado de Conservación"
             [formControlName]="formControlNames.estado_conservacion" autocomplete="off">
     </mat-form-field>
     <mat-checkbox [checked]="checkedObrasArte" [formControlName]="formControlNames.obras_arte">

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { PdfMakeWrapper, Txt, Ol, Ul, Item, Table, Cell, Img, Stack, Columns } from 'pdfmake-wrapper';
+import { Component  } from '@angular/core';
+import { PdfMakeWrapper, Txt, Ol,  Item, Table,  } from 'pdfmake-wrapper';
 import { nombre_proyecto } from '../mem-des/generaDoc/f_nombre_proyecto';
 import { imagenes } from '../mem-des/generaDoc/f_imagenes';
 import { cabecera_pagina } from '../mem-des/generaDoc/f_cabecera_pagina';
@@ -23,16 +23,21 @@ import { fuentes_agua } from '../mem-des/generaDoc/f_fuentes_agua';
 import { capacidad_operativa_operador } from '../mem-des/generaDoc/f_capacidad_operativa_operador';
 import { modalidad_plazo_ejecucion } from '../mem-des/generaDoc/f_modalidad_plazo_ejecucion';
 import { HomeService } from '../home/home.service';
-import { LocalidadesService, ILocalidadesSeleccionadas } from '../ubigeo/localidades.service';
+import { LocalidadesService } from '../ubigeo/localidades.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { IFotografia } from '../estudio-fotografico/estudio-fotografico.service';
 
 @Component({
   selector: 'app-eliminar-pdf',
   templateUrl: './eliminar-pdf.component.html',
   styleUrls: ['./eliminar-pdf.component.css']
 })
-export class EliminarPDFComponent implements OnInit {
+export class EliminarPDFComponent  {
+
+  fotografiaInput:IFotografia
+ 
+  
 
   localidad$:Observable<any> = this.localidadService.obtenUnaLocalidad('50xVoNFBLc7QN2tGt9lw').pipe(
     map(actions => {
@@ -46,12 +51,13 @@ export class EliminarPDFComponent implements OnInit {
     private homeservice:HomeService,
     private localidadService:LocalidadesService,
   ) { }
+
+  fotografiaOutput($event){
+    console.log($event)
+
+  }
   
 
-  ngOnInit(): void {
-    console.log(this.localidad$)
-    
-  }
 
 
   async generarMemoriaDescriptiva() {

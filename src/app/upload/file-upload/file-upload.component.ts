@@ -28,8 +28,7 @@ export class FileUploadComponent {
   ) { }
 
   public isHovering: boolean;
-  files: File[] = [
-  ]
+  files: File[] = []
 
   public toggleHover(event: boolean) {
     this.isHovering = event
@@ -68,6 +67,7 @@ export class FileUploadComponent {
   };
   addRowData(row_obj) {
     this.preview_add(row_obj.archivo)
+    
   }
   updateRowData(nuevo_obj) {
     this.preview_update(nuevo_obj.archivo)
@@ -109,7 +109,8 @@ export class FileUploadComponent {
           accion: '',
           dowloadUrl: '',
           path: '',
-          idlocal: d.getTime().toString()
+          idlocal: d.getTime().toString(),
+          foto:files
 
         })
 
@@ -120,15 +121,15 @@ export class FileUploadComponent {
   }
   preview_update(files) {
 
-
+console.log(files)
     if (files.length === 0)
       return;
 
     var mimeType = files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      this.message = "Only images are supported.";
-      return;
-    }
+   // if (mimeType.match(/image\/*/) == null) {
+     // this.message = "Only images are supported.";
+      //return;
+   // }
 
     var reader = new FileReader();
     this.imagePath = files;
@@ -143,6 +144,8 @@ export class FileUploadComponent {
         let index = this.dataSource.indexOf(updateItem);
 
         this.dataSource[index].archivo = this.imgURL;
+        this.dataSource[index].foto = files
+
       }
 
     }

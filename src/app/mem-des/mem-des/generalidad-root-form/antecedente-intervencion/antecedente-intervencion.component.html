@@ -1,11 +1,19 @@
 <section [formGroup]="formGroup">
     <fieldset >
-        <legend>Detalla las Intervenciones</legend>
+        <legend>Mejoras en Saneamiento </legend>
         <div style="display: flex; flex-wrap: wrap;justify-content: space-around;">
 
         </div>
-        <mat-form-field>
-            <input matInput placeholder="detalle_intervencion" [formControlName]="formControlNames.detalle_intervencion" autocomplete="off">
+        <mat-form-field style="width: 100%;" >
+            <mat-label>Detallar las Intervenciones</mat-label>
+            <textarea 
+            
+            matInput  
+            rows="5"
+            cdkTextareaAutosize
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="20"
+            [formControlName]="formControlNames.detalle_intervencion" autocomplete="off"></textarea>
         </mat-form-field>
     </fieldset>
 

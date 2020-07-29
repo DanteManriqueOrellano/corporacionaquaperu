@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { subformComponentProviders, NgxSubFormComponent, Controls } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
+import { IEstudioFotografico } from 'src/app/estudio-fotografico/fotografia-root/fotografia-root.component';
 export interface IReservorio {
   antiguedad:String;
   ubicacion_norte:string;
@@ -10,6 +11,7 @@ export interface IReservorio {
   capacidad_almacenamiento:string;
   caceta_cloracion:string;
   cerco_perimetrico:string;
+  fotografia:IEstudioFotografico;
 }
 @Component({
   selector: 'app-reservorio',
@@ -29,6 +31,7 @@ export class ReservorioComponent extends NgxSubFormComponent<IReservorio> {
       ubicacion_este:new FormControl(),
       ubicacion_latitud:new FormControl(),
       ubicacion_norte:new FormControl(),
+      fotografia:new FormControl()
     }
   }
 

@@ -62,3 +62,18 @@
 
 
   </div>
+
+  <div class="container" *ngIf="dataSource.length; else loggedOut">
+    <h1>Galeria de Fotos Subidas</h1>
+    <div class="galery-area">
+        <div class="single-image">
+            <div *ngFor="let file of dataSource">
+                <!--{{file | json}}  <app-upload-task [file]="file.archivo"></app-upload-task>--> 
+               
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #loggedOut>
+  Please friend, login.
+</ng-template>

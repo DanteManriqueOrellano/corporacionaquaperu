@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { subformComponentProviders, NgxSubFormComponent, Controls } from 'ngx-sub-form';
 import { FormControl } from '@angular/forms';
+import { IEstudioFotografico } from 'src/app/estudio-fotografico/fotografia-root/fotografia-root.component';
 export interface ICaptacion{
   nombre_captacion:string;
   ubicacion_norte:string;
@@ -10,6 +11,7 @@ export interface ICaptacion{
   estado_concervacion:string;
   reutilizable:string;
   cerco_perimetrico:string;
+  foto:IEstudioFotografico;
 }
 @Component({
   selector: 'app-captacion',
@@ -29,6 +31,7 @@ export class CaptacionComponent  extends NgxSubFormComponent<ICaptacion> {
       ubicacion_este:new FormControl(),
       ubicacion_latitud:new FormControl(),
       ubicacion_norte:new FormControl(),
+      foto:new FormControl()
     }
 
   }

@@ -1,3 +1,9 @@
 <p>eliminar-pdf works!</p>
 <button (click)="generarMemoriaDescriptiva()">pdf</button>
 <pre>{{localidad$ | async | json}}</pre>
+
+<app-fotografia-root
+[fotografiaInput]='fotografiaInput'
+(fotografiaOutput)='fotografiaOutput($event)'
+>
+</app-fotografia-root>

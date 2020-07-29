@@ -1,6 +1,6 @@
 <section [formGroup]="formGroup">
    <fieldset>
-    <legend>Captacion</legend>
+    <legend>Captación</legend>
     
     <div style="display: flex;flex-wrap: wrap;justify-content: space-around; ">
         
@@ -9,34 +9,35 @@
         </mat-form-field>
        
         <mat-form-field>
-            <input matInput placeholder="Cerco Perimetrico" [formControlName] = "formControlNames.cerco_perimetrico" autocomplete="off"> 
+            <input matInput placeholder="Situación del Cerco Perimetrico" [formControlName] = "formControlNames.cerco_perimetrico" autocomplete="off"> 
         </mat-form-field>
         
         <mat-form-field>
-            <input matInput placeholder="Estado Concervacion" [formControlName] = "formControlNames.estado_concervacion" autocomplete="off"> 
+            <input matInput placeholder="Situación del Estado Concervacion" [formControlName] = "formControlNames.estado_concervacion" autocomplete="off"> 
         </mat-form-field>
         
         <mat-form-field>
-            <input matInput placeholder="Nombre Captacion" [formControlName] = "formControlNames.nombre_captacion" autocomplete="off"> 
+            <input matInput placeholder="Nombre Captación" [formControlName] = "formControlNames.nombre_captacion" autocomplete="off"> 
         </mat-form-field>
         
         <mat-form-field>
-            <input matInput placeholder="Reutilizable?" [formControlName] = "formControlNames.reutilizable" autocomplete="off"> 
+            <input matInput placeholder="Sustente si es Reutilizable?" [formControlName] = "formControlNames.reutilizable" autocomplete="off"> 
         </mat-form-field>
         
         <mat-form-field>
-            <input matInput placeholder="Ubicacion Norte" [formControlName] = "formControlNames.ubicacion_norte" autocomplete="off"> 
+            <input matInput placeholder="Ubicación Norte" [formControlName] = "formControlNames.ubicacion_norte" autocomplete="off"> 
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Ubicacion Este" [formControlName] = "formControlNames.ubicacion_este" autocomplete="off"> 
+            <input matInput placeholder="Ubicación Este" [formControlName] = "formControlNames.ubicacion_este" autocomplete="off"> 
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Ubicacion Latitud" [formControlName] = "formControlNames.ubicacion_latitud" autocomplete="off"> 
+            <input matInput placeholder="Ubicación Latitud" [formControlName] = "formControlNames.ubicacion_latitud" autocomplete="off"> 
         </mat-form-field>
 
     </div>
+    <app-fotografia-root [formControlName] = "formControlNames.foto"></app-fotografia-root>
 
     
     </fieldset>

@@ -1,0 +1,25 @@
+<section [formGroup]="formGroup">
+    <div class="main-content" >
+        
+        <div class="id__wrapper">
+  
+            <label class="your-face">
+                <input type="file" #file accept='image/*' (change)="fotografiaSeleccionada($event)">  
+                <div class="image-persuader">Foto</div>
+                
+                <img [src]="imgURL" height="200" *ngIf="imgURL">
+            </label>
+  
+            <div class="name">
+  
+                <mat-form-field>
+                    <input type="text" matInput placeholder="Descripcion" [formControlName]='formControlNames.descripcion' autocomplete="off">
+                </mat-form-field>
+
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+  

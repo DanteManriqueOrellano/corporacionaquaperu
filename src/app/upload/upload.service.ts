@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { HomeService } from '../home/home.service';
+
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
-import { map, mergeMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { DocIdProyectoService } from '../shared/docIdProyecto.service';
 
 export interface IFoto {
@@ -14,12 +13,18 @@ export interface IFoto {
   dowloadUrl:string;
   path:string;
   archivo:string;
-
+  foto:any;
+}
+export interface IPanelFotografico {
+  foto:any;
+  detalle:string;
 }
 @Injectable({
   providedIn: 'root'
 })
 export class UploadService {
+  
+  array_panel:IPanelFotografico[] = [];
 
   image_local:any[]=[
     
@@ -42,6 +47,7 @@ export class UploadService {
   }
   
   public crearUnaFoto(foto: IFoto) {
+    
     const docId = this.docIdProyectoService.docIdProyecto
     this.fotoCollection.doc(docId).set(foto)
     .then(()=>{

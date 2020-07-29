@@ -21,6 +21,7 @@ import { MatListModule } from '@angular/material/list';
 import { DashboardModule } from '../dashboard/dashboard.module';
 import { HomeModule } from '../home/home.module';
 import { UploadModule } from '../upload/upload.module';
+import { EstudioFotograficoModule } from '../estudio-fotografico/estudio-fotografico.module';
 
 
 
@@ -52,6 +53,7 @@ import { UploadModule } from '../upload/upload.module';
     DashboardModule,
     HomeModule,
     UploadModule,
+    EstudioFotograficoModule,
  
 
     
